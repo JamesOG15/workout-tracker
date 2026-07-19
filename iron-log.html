@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+<title>Iron Log</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Iron Log">
+<meta name="theme-color" content="#14161A">
+<style>
+  :root{
+    --bg:#14161A;
+    --surface:#1C1F25;
+    --surface-2:#242830;
+    --surface-3:#2C313A;
+    --border:#33383F;
+    --border-soft:#2A2E35;
+    --text:#ECEDEE;
+    --text-dim:#9096A0;
+    --text-faint:#5C6169;
+    --accent:#E8B93F;
+    --accent-dim:#C9A233;
+    --accent-ink:#14161A;
+    --teal:#4A9B8E;
+    --red:#C1554A;
+    --radius:16px;
+    --radius-sm:10px;
+    --safe-bottom:env(safe-area-inset-bottom,0px);
+    --safe-top:env(safe-area-inset-top,0px);
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;height:100%;background:var(--bg);}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+    color:var(--text);
+    overscroll-behavior-y:none;
+    -webkit-font-smoothing:antialiased;
+  }
+  #app{
+    max-width:560px;
+    margin:0 auto;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    background:
+      radial-gradient(ellipse 600px 300px at 50% 0%, rgba(232,185,63,0.06), transparent 70%),
+      var(--bg);
+  }
+  h1,h2,h3,.display{
+    font-family:-apple-system,BlinkMacSystemFont,'Arial Narrow',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+    font-weight:800;
+    margin:0;
+  }
+  .mono{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;}
+  .view{
+    flex:1;
+    padding:calc(18px + var(--safe-top)) 16px 100px;
+    animation:fadein .18s ease;
+  }
+  @keyframes fadein{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
+  .topbar{
+    display:flex;align-items:baseline;justify-content:space-between;
+    margin-bottom:18px;
+  }
+  .topbar h1{font-size:22px;color:var(--text);}
+  .topbar .date-sub{font-size:12px;color:var(--text-faint);font-family:ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;}
+  .card{
+    background:var(--surface);
+    border:1px solid var(--border-soft);
+    border-radius:var(--radius);
+    padding:16px;
+    margin-bottom:12px;
+  }
+  .card-title{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    color:var(--text-faint);
+    font-weight:600;
+    margin-bottom:10px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    background:var(--surface-3);
+    color:var(--text);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:12px 16px;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+    user-select:none;
+    transition:transform .08s ease, background .15s ease;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-primary{
+    background:var(--accent);
+    color:var(--accent-ink);
+    border-color:var(--accent);
+  }
+  .btn-primary:active{background:var(--accent-dim);}
+  .btn-ghost{background:transparent;border-color:var(--border);}
+  .btn-danger{background:transparent;color:var(--red);border-color:rgba(193,85,74,0.4);}
+  .btn-block{width:100%;}
+  .btn-sm{padding:8px 12px;font-size:12px;border-radius:9px;}
+  .btn-lg{padding:18px;font-size:16px;border-radius:16px;}
+  .row{display:flex;gap:8px;}
+  .row.wrap{flex-wrap:wrap;}
+  .grow{flex:1;}
+  .muted{color:var(--text-dim);}
+  .faint{color:var(--text-faint);}
+  input, select, textarea{
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    color:var(--text);
+    border-radius:10px;
+    padding:11px 12px;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    font-size:15px;
+    width:100%;
+  }
+  input:focus, select:focus, textarea:focus{outline:2px solid var(--accent);outline-offset:1px;}
+  input.mono-input{font-family:ui-monospace,monospace;}
+  label.field-label{
+    display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;
+    color:var(--text-faint);margin-bottom:5px;font-weight:600;
+  }
+  .field{margin-bottom:12px;}
+
+  /* Tab bar */
+  .tabbar{
+    position:fixed;bottom:0;left:0;right:0;
+    max-width:560px;margin:0 auto;
+    display:flex;
+    background:rgba(28,31,37,0.92);
+    backdrop-filter:blur(12px);
+    border-top:1px solid var(--border-soft);
+    padding:8px 4px calc(8px + var(--safe-bottom));
+    z-index:50;
+  }
+  .tab{
+    flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;
+    background:none;border:none;color:var(--text-faint);
+    padding:6px 2px;cursor:pointer;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;
+  }
+  .tab.active{color:var(--accent);}
+  .tab svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.8;}
+
+  /* Plate badge - signature element */
+  .plate{
+    width:82px;height:82px;border-radius:50%;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 35% 30%, var(--surface-3), var(--surface-2) 70%);
+    border:3px solid var(--accent);
+    box-shadow:inset 0 0 0 4px var(--bg), inset 0 0 0 5px var(--border);
+    flex-shrink:0;
+  }
+  .plate .plate-num{font-family:-apple-system,BlinkMacSystemFont,'Arial Narrow',sans-serif;font-weight:700;font-size:20px;font-weight:700;color:var(--accent);line-height:1;}
+  .plate .plate-unit{font-family:ui-monospace,monospace;font-size:9px;color:var(--text-faint);margin-top:2px;}
+  .plate.plate-dim{border-color:var(--border);}
+  .plate.plate-dim .plate-num{color:var(--text-dim);}
+  .plate-row{display:flex;gap:14px;align-items:center;}
+  .plate-label{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;margin-top:8px;text-align:center;font-weight:600;}
+  .plate-col{display:flex;flex-direction:column;align-items:center;flex:1;}
+
+  .pr-star{
+    display:inline-flex;align-items:center;gap:3px;
+    background:rgba(232,185,63,0.15);color:var(--accent);
+    border:1px solid rgba(232,185,63,0.4);
+    border-radius:20px;padding:2px 8px;font-size:10px;font-weight:700;
+    text-transform:uppercase;letter-spacing:.04em;
+  }
+
+  /* Home */
+  .hero-btn{
+    background:linear-gradient(135deg, var(--accent), #d9a92e);
+    color:var(--accent-ink);border:none;border-radius:18px;
+    padding:22px;width:100%;text-align:left;cursor:pointer;
+    display:flex;align-items:center;justify-content:space-between;
+    margin-bottom:14px;
+  }
+  .hero-btn .hero-title{font-family:-apple-system,BlinkMacSystemFont,'Arial Narrow',sans-serif;font-weight:700;font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;}
+  .hero-btn .hero-sub{font-size:12px;opacity:.75;margin-top:2px;font-weight:600;}
+  .hero-btn svg{width:30px;height:30px;stroke:var(--accent-ink);stroke-width:2;fill:none;}
+
+  .week-dots{display:flex;gap:6px;margin-top:8px;}
+  .week-dot{
+    width:100%;height:8px;border-radius:4px;background:var(--surface-3);flex:1;
+  }
+  .week-dot.filled{background:var(--accent);}
+
+  .stat-row{display:flex;gap:10px;}
+  .stat-box{flex:1;background:var(--surface-2);border-radius:12px;padding:12px;text-align:center;}
+  .stat-box .stat-num{font-family:-apple-system,BlinkMacSystemFont,'Arial Narrow',sans-serif;font-weight:700;font-size:26px;font-weight:700;color:var(--accent);}
+  .stat-box .stat-label{font-size:10px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;margin-top:2px;}
+
+  .wk-item{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:10px 0;border-bottom:1px solid var(--border-soft);
+  }
+  .wk-item:last-child{border-bottom:none;}
+  .wk-item .wk-name{font-weight:600;font-size:14px;}
+  .wk-item .wk-meta{font-size:11px;color:var(--text-faint);margin-top:2px;}
+
+  /* Exercise picker / lists */
+  .search-input{margin-bottom:10px;}
+  .group-header{
+    font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);
+    font-weight:700;margin:16px 0 8px;
+  }
+  .group-header:first-child{margin-top:0;}
+  .list-item{
+    display:flex;align-items:center;justify-content:space-between;
+    background:var(--surface-2);border-radius:12px;padding:13px 14px;margin-bottom:8px;
+    cursor:pointer;
+  }
+  .list-item:active{background:var(--surface-3);}
+  .list-item .li-name{font-weight:600;font-size:14.5px;}
+  .list-item .li-sub{font-size:11.5px;color:var(--text-faint);margin-top:2px;}
+  .icon-btn{
+    background:none;border:none;color:var(--text-faint);cursor:pointer;
+    padding:6px;display:flex;align-items:center;justify-content:center;
+  }
+  .icon-btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;}
+  .icon-btn.danger{color:var(--red);}
+
+  /* Modal */
+  .modal-backdrop{
+    position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:100;
+    display:flex;align-items:flex-end;
+  }
+  .modal-sheet{
+    background:var(--surface);width:100%;max-width:560px;margin:0 auto;
+    border-radius:20px 20px 0 0;border:1px solid var(--border-soft);border-bottom:none;
+    max-height:88vh;overflow-y:auto;padding:18px 16px calc(20px + var(--safe-bottom));
+    animation:slideup .2s ease;
+  }
+  @keyframes slideup{from{transform:translateY(24px);opacity:0;}to{transform:none;opacity:1;}}
+  .modal-handle{width:36px;height:4px;background:var(--border);border-radius:2px;margin:0 auto 14px;}
+  .modal-title{font-size:18px;margin-bottom:14px;}
+
+  /* Exercise card during logging */
+  .ex-card{background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius);padding:14px;margin-bottom:12px;}
+  .ex-card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+  .ex-card-head .ex-name{font-family:-apple-system,BlinkMacSystemFont,'Arial Narrow',sans-serif;font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.02em;}
+  .ex-card-head .ex-muscle{font-size:10.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;}
+  .set-row{
+    display:flex;align-items:center;justify-content:space-between;
+    background:var(--surface-2);border-radius:10px;padding:9px 12px;margin-bottom:6px;
+  }
+  .set-row .set-idx{font-family:ui-monospace,monospace;color:var(--text-faint);font-size:12px;width:20px;}
+  .set-row .set-disp{font-family:ui-monospace,monospace;font-size:14px;flex:1;margin-left:6px;}
+  .set-row .set-vol{font-family:ui-monospace,monospace;font-size:11px;color:var(--text-faint);}
+  .segment-row{display:flex;gap:8px;align-items:center;margin-bottom:8px;}
+  .segment-row input{flex:1;}
+  .segment-row .x-sep{color:var(--text-faint);font-family:ui-monospace,monospace;}
+  .add-set-panel{border-top:1px dashed var(--border);padding-top:10px;margin-top:6px;}
+
+  /* Timer */
+  .timer-widget{
+    position:sticky;bottom:calc(70px + var(--safe-bottom));z-index:40;
+    background:var(--surface-3);border:1px solid var(--border);border-radius:16px;
+    padding:12px 14px;display:flex;align-items:center;justify-content:space-between;
+    margin-bottom:12px;box-shadow:0 6px 18px rgba(0,0,0,0.35);
+  }
+  .timer-display{font-family:-apple-system,BlinkMacSystemFont,'Arial Narrow',sans-serif;font-weight:700;font-size:26px;font-weight:700;letter-spacing:.03em;}
+  .timer-display.running{color:var(--accent);}
+
+  /* Charts */
+  .chart-wrap{position:relative;height:200px;margin-top:6px;}
+
+  /* Heatmap */
+  .heatmap-scroll{overflow-x:auto;padding-bottom:6px;}
+  .heatmap-grid{display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,11px);gap:3px;}
+  .heat-cell{width:11px;height:11px;border-radius:2px;background:var(--surface-3);}
+  .heat-month-labels{display:flex;font-size:10px;color:var(--text-faint);margin-bottom:4px;font-family:ui-monospace,monospace;}
+
+  .week-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 0;border-bottom:1px solid var(--border-soft);
+  }
+  .week-row:last-child{border-bottom:none;}
+  .week-row .wr-range{font-size:13px;font-weight:600;}
+  .week-row .wr-days{font-size:11px;color:var(--text-faint);margin-top:2px;}
+  .badge-plate{
+    width:34px;height:34px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    border:2px solid var(--accent);color:var(--accent);
+  }
+  .badge-plate svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2;}
+  .badge-plate.empty{border-color:var(--border);color:var(--text-faint);}
+
+  /* Segmented control */
+  .segctl{display:flex;background:var(--surface-2);border-radius:12px;padding:3px;margin-bottom:16px;}
+  .segctl button{
+    flex:1;background:none;border:none;color:var(--text-dim);padding:9px 4px;
+    border-radius:9px;font-size:12.5px;font-weight:600;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;cursor:pointer;
+    text-transform:uppercase;letter-spacing:.03em;
+  }
+  .segctl button.active{background:var(--surface-3);color:var(--accent);}
+
+  .empty-state{text-align:center;padding:40px 16px;color:var(--text-faint);}
+  .empty-state svg{width:40px;height:40px;stroke:var(--text-faint);fill:none;stroke-width:1.5;margin-bottom:10px;}
+  .empty-state .es-title{font-size:14px;color:var(--text-dim);font-weight:600;margin-bottom:4px;}
+  .empty-state .es-sub{font-size:12.5px;}
+
+  .toast{
+    position:fixed;top:calc(14px + var(--safe-top));left:50%;transform:translateX(-50%);
+    background:var(--surface-3);border:1px solid var(--accent);color:var(--text);
+    padding:10px 18px;border-radius:30px;font-size:13px;font-weight:600;z-index:200;
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
+    animation:toastin .25s ease;
+  }
+  @keyframes toastin{from{opacity:0;transform:translate(-50%,-10px);}to{opacity:1;transform:translate(-50%,0);}}
+
+  ::-webkit-scrollbar{display:none;}
+  a{color:var(--accent);}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+(function(){
+"use strict";
+
+/* ============ CONSTANTS ============ */
+const DEFAULT_MUSCLE_GROUPS = ['Chest','Back','Legs','Shoulders','Arms','Core'];
+const REST_PRESETS = [60,90,120];
+const DAY_MS = 86400000;
+
+/* ============ STATE ============ */
+let STORE = {
+  exercises: [],
+  templates: [],
+  workouts: [],
+  bodyweight: [],
+  settings: { muscleGroups: DEFAULT_MUSCLE_GROUPS.slice(), defaultRest: 90 },
+  activeWorkout: null
+};
+let currentTab = 'home';
+let libSubTab = 'exercises';
+let progressExerciseId = null;
+let ready = false;
+
+/* ============ STORAGE ============ */
+async function loadKey(key, fallback){
+  try{
+    const res = await window.storage.get(key, false);
+    return res && res.value ? JSON.parse(res.value) : fallback;
+  }catch(e){ return fallback; }
+}
+async function saveKey(key, value){
+  try{ await window.storage.set(key, JSON.stringify(value), false); }
+  catch(e){ console.error('storage save failed', key, e); }
+}
+async function loadAll(){
+  const [exercises, templates, workouts, bodyweight, settings, activeWorkout] = await Promise.all([
+    loadKey('exercises', []),
+    loadKey('templates', []),
+    loadKey('workouts', []),
+    loadKey('bodyweight', []),
+    loadKey('settings', null),
+    loadKey('active-workout', null)
+  ]);
+  STORE.exercises = exercises;
+  STORE.templates = templates;
+  STORE.workouts = workouts;
+  STORE.bodyweight = bodyweight;
+  STORE.settings = settings || { muscleGroups: DEFAULT_MUSCLE_GROUPS.slice(), defaultRest: 90 };
+  STORE.activeWorkout = activeWorkout;
+  ready = true;
+}
+function saveExercises(){ saveKey('exercises', STORE.exercises); }
+function saveTemplates(){ saveKey('templates', STORE.templates); }
+function saveWorkouts(){ saveKey('workouts', STORE.workouts); }
+function saveBodyweight(){ saveKey('bodyweight', STORE.bodyweight); }
+function saveSettings(){ saveKey('settings', STORE.settings); }
+function saveActiveWorkout(){ saveKey('active-workout', STORE.activeWorkout); }
+
+/* ============ UTIL ============ */
+function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,8); }
+function todayISO(){ return new Date().toISOString().slice(0,10); }
+function fmtDate(iso){
+  const d = new Date(iso + 'T00:00:00');
+  return d.toLocaleDateString('en-US', {month:'short', day:'numeric'});
+}
+function fmtDateFull(iso){
+  const d = new Date(iso + 'T00:00:00');
+  return d.toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric', year:'numeric'});
+}
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function exerciseById(id){ return STORE.exercises.find(e => e.id === id); }
+function templateById(id){ return STORE.templates.find(t => t.id === id); }
+function setVolume(set){ return set.segments.reduce((s,seg) => s + (Number(seg.weight)||0)*(Number(seg.reps)||0), 0); }
+function segDisplay(segments){
+  return segments.map(s => `${s.reps}x${s.weight}kg`).join(' + ');
+}
+function sessionVolumeForExercise(workout, exerciseId){
+  const ex = workout.exercises.find(e => e.exerciseId === exerciseId);
+  if(!ex) return 0;
+  return ex.sets.reduce((s,set) => s + setVolume(set), 0);
+}
+function workoutTotalVolume(workout){
+  return workout.exercises.reduce((sum,ex) => sum + ex.sets.reduce((s,set)=>s+setVolume(set),0), 0);
+}
+function mondayOf(dateObj){
+  const d = new Date(dateObj);
+  const day = d.getDay(); // 0 sun .. 6 sat
+  const diff = (day === 0 ? -6 : 1 - day);
+  d.setDate(d.getDate() + diff);
+  d.setHours(0,0,0,0);
+  return d;
+}
+function weekKey(dateObj){
+  const m = mondayOf(dateObj);
+  return m.toISOString().slice(0,10);
+}
+function toast(msg){
+  const el = document.createElement('div');
+  el.className = 'toast';
+  el.textContent = msg;
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(), 2200);
+}
+
+/* ============ PR CALCULATION ============ */
+// Returns {maxWeight:{weight,date}|null, bestByReps: {reps:{weight,date}}, maxSetVolume:{volume,date}|null}
+function computePRsFromWorkouts(exerciseId, workouts){
+  let maxWeight = null;
+  let maxSetVolume = null;
+  const bestByReps = {};
+  workouts.forEach(w => {
+    const ex = w.exercises.find(e => e.exerciseId === exerciseId);
+    if(!ex) return;
+    ex.sets.forEach(set => {
+      const vol = setVolume(set);
+      if(!maxSetVolume || vol > maxSetVolume.volume){ maxSetVolume = {volume:vol, date:w.date}; }
+      set.segments.forEach(seg => {
+        const weight = Number(seg.weight)||0, reps = Number(seg.reps)||0;
+        if(weight <= 0 || reps <= 0) return;
+        if(!maxWeight || weight > maxWeight.weight){ maxWeight = {weight, date:w.date}; }
+        if(!bestByReps[reps] || weight > bestByReps[reps].weight){ bestByReps[reps] = {weight, date:w.date}; }
+      });
+    });
+  });
+  return {maxWeight, bestByReps, maxSetVolume};
+}
+function mergePRs(base, extra){
+  const out = {
+    maxWeight: base.maxWeight,
+    maxSetVolume: base.maxSetVolume,
+    bestByReps: Object.assign({}, base.bestByReps)
+  };
+  if(extra.maxWeight && (!out.maxWeight || extra.maxWeight.weight > out.maxWeight.weight)) out.maxWeight = extra.maxWeight;
+  if(extra.maxSetVolume && (!out.maxSetVolume || extra.maxSetVolume.volume > out.maxSetVolume.volume)) out.maxSetVolume = extra.maxSetVolume;
+  Object.keys(extra.bestByReps).forEach(r => {
+    if(!out.bestByReps[r] || extra.bestByReps[r].weight > out.bestByReps[r].weight) out.bestByReps[r] = extra.bestByReps[r];
+  });
+  return out;
+}
+
+/* ============ ICONS ============ */
+const ICONS = {
+  home: '<svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>',
+  log: '<svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h5"/><path d="M9 13h6M9 17h6"/></svg>',
+  progress: '<svg viewBox="0 0 24 24"><path d="M4 19V9M11 19V5M18 19v-7"/></svg>',
+  consistency: '<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>',
+  library: '<svg viewBox="0 0 24 24"><path d="M4 4h4v16H4zM10 4h4v16h-4zM16 4h4v16h-4z"/></svg>',
+  plus: '<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>',
+  chevron: '<svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>',
+  edit: '<svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg>',
+  trash: '<svg viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>',
+  star: '<svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>',
+  close: '<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+  scale: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+  flame: '<svg viewBox="0 0 24 24"><path d="M12 2s6 5 6 11a6 6 0 01-12 0c0-2 1-3 1-3s1 2 3 2c-1-3 0-6 2-10z"/></svg>'
+};
+
+/* ============ RENDER ROOT ============ */
+function render(){
+  if(!ready) return;
+  const app = document.getElementById('app');
+  let viewHtml = '';
+  if(currentTab === 'home') viewHtml = renderHome();
+  else if(currentTab === 'log') viewHtml = renderLog();
+  else if(currentTab === 'progress') viewHtml = renderProgress();
+  else if(currentTab === 'consistency') viewHtml = renderConsistency();
+  else if(currentTab === 'library') viewHtml = renderLibrary();
+
+  app.innerHTML = `
+    <div class="view">${viewHtml}</div>
+    <nav class="tabbar">
+      ${tabBtn('home','Home')}
+      ${tabBtn('log','Log')}
+      ${tabBtn('progress','Progress')}
+      ${tabBtn('consistency','Streaks')}
+      ${tabBtn('library','Library')}
+    </nav>
+  `;
+  afterRender();
+}
+function tabBtn(key,label){
+  return `<button class="tab ${currentTab===key?'active':''}" onclick="App.switchTab('${key}')">${ICONS[key]}<span>${label}</span></button>`;
+}
+function afterRender(){
+  // hook for chart drawing per-view
+  if(currentTab === 'progress') drawProgressChart();
+  if(currentTab === 'library' && libSubTab === 'bodyweight') drawBodyweightChart();
+  if(currentTab === 'consistency') {} // heatmap is pure CSS/HTML
+}
+
+/* ============ HOME ============ */
+function renderHome(){
+  const today = new Date();
+  const wk = weekKey(today);
+  const daysThisWeek = distinctDaysInWeek(wk);
+  const streak = computeWeekStreak();
+  const recent = STORE.workouts.slice().sort((a,b)=> b.date.localeCompare(a.date) || (b.startedAt||0)-(a.startedAt||0)).slice(0,5);
+  const latestBW = STORE.bodyweight.slice().sort((a,b)=>b.date.localeCompare(a.date))[0];
+
+  let dots = '';
+  for(let i=0;i<3;i++){ dots += `<div class="week-dot ${i < daysThisWeek ? 'filled':''}"></div>`; }
+
+  let recentHtml = '';
+  if(recent.length === 0){
+    recentHtml = `<div class="empty-state" style="padding:24px 8px;">
+      <div class="es-title">No workouts yet</div>
+      <div class="es-sub">Tap Start Workout to log your first session.</div>
+    </div>`;
+  } else {
+    recentHtml = recent.map(w => {
+      const exCount = w.exercises.length;
+      const vol = workoutTotalVolume(w);
+      return `<div class="wk-item">
+        <div>
+          <div class="wk-name">${escapeHtml(w.templateUsed || 'Workout')}</div>
+          <div class="wk-meta">${fmtDate(w.date)} · ${exCount} exercise${exCount!==1?'s':''}</div>
+        </div>
+        <div class="mono muted" style="font-size:12px;">${vol.toLocaleString()}kg</div>
+      </div>`;
+    }).join('');
+  }
+
+  return `
+    <div class="topbar">
+      <h1>Iron Log</h1>
+      <div class="date-sub">${new Date().toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})}</div>
+    </div>
+
+    <button class="hero-btn" onclick="App.startWorkoutFlow()">
+      <div>
+        <div class="hero-title">Start Workout</div>
+        <div class="hero-sub">${STORE.activeWorkout ? 'Resume in-progress session' : 'From a template or blank'}</div>
+      </div>
+      ${ICONS.log}
+    </button>
+
+    <div class="stat-row" style="margin-bottom:12px;">
+      <div class="stat-box">
+        <div class="stat-num">${daysThisWeek}<span style="font-size:14px;color:var(--text-faint);">/3</span></div>
+        <div class="stat-label">This Week</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">${streak}</div>
+        <div class="stat-label">Week Streak</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Weekly Goal</div>
+      <div class="week-dots">${dots}</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Bodyweight</div>
+      <div class="row" style="align-items:center;">
+        <div class="grow">
+          <div style="font-family:-apple-system,BlinkMacSystemFont,'Arial Narrow',sans-serif;font-weight:700;font-size:22px;">${latestBW ? latestBW.weight+'kg' : '—'}</div>
+          <div class="faint" style="font-size:11px;">${latestBW ? 'Logged ' + fmtDate(latestBW.date) : 'No entries yet'}</div>
+        </div>
+        <button class="btn btn-sm" onclick="App.openBodyweightModal()">+ Log Weight</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Recent Workouts</div>
+      ${recentHtml}
+    </div>
+  `;
+}
+function distinctDaysInWeek(wk){
+  const dates = new Set();
+  STORE.workouts.forEach(w => { if(weekKey(new Date(w.date+'T00:00:00')) === wk) dates.add(w.date); });
+  return dates.size;
+}
+function computeWeekStreak(){
+  const today = new Date();
+  let cursor = mondayOf(today);
+  let streak = 0;
+  let first = true;
+  while(true){
+    const wk = cursor.toISOString().slice(0,10);
+    const days = distinctDaysInWeek(wk);
+    const isCurrentWeek = first;
+    if(days >= 3){
+      streak++;
+    } else if(isCurrentWeek){
+      // current week in progress and not yet at goal - don't break streak, just don't count it, move back
+    } else {
+      break;
+    }
+    first = false;
+    cursor.setDate(cursor.getDate() - 7);
+    if(streak > 520) break; // safety
+    // stop scanning if we've gone way past any data and streak is 0
+    if(days === 0 && !isCurrentWeek && streak === 0) break;
+  }
+  return streak;
+}
+
+/* ============ LOG (ACTIVE WORKOUT) ============ */
+function renderLog(){
+  if(!STORE.activeWorkout){
+    return renderStartWorkoutScreen();
+  }
+  return renderActiveWorkoutScreen();
+}
+function renderStartWorkoutScreen(){
+  let tHtml = '';
+  if(STORE.templates.length === 0){
+    tHtml = `<div class="empty-state">
+      ${ICONS.log}
+      <div class="es-title">No templates yet</div>
+      <div class="es-sub">Start blank, or build a template in Library.</div>
+    </div>`;
+  } else {
+    tHtml = STORE.templates.map(t => `
+      <div class="list-item" onclick="App.beginWorkout('${t.id}')">
+        <div>
+          <div class="li-name">${escapeHtml(t.name)}</div>
+          <div class="li-sub">${t.exercises.length} exercise${t.exercises.length!==1?'s':''}</div>
+        </div>
+        ${ICONS.chevron}
+      </div>`).join('');
+  }
+  return `
+    <div class="topbar"><h1>Start Workout</h1></div>
+    <button class="btn btn-block btn-lg btn-primary" style="margin-bottom:18px;" onclick="App.beginWorkout(null)">Blank Workout</button>
+    <div class="card-title" style="margin-bottom:10px;">Or Pick a Template</div>
+    ${tHtml}
+  `;
+}
+function renderActiveWorkoutScreen(){
+  const w = STORE.activeWorkout;
+  const baselineWorkouts = STORE.workouts; // completed only
+  let exercisesHtml = '';
+  if(w.exercises.length === 0){
+    exercisesHtml = `<div class="empty-state">
+      ${ICONS.progress}
+      <div class="es-title">No exercises yet</div>
+      <div class="es-sub">Add an exercise to start logging sets.</div>
+    </div>`;
+  } else {
+    exercisesHtml = w.exercises.map((exEntry, exIdx) => {
+      const ex = exerciseById(exEntry.exerciseId);
+      if(!ex) return '';
+      // running PR baseline = completed workouts + sets already logged earlier in this exercise entry
+      const baseline = computePRsFromWorkouts(ex.id, baselineWorkouts);
+      let running = baseline;
+      const setsHtml = exEntry.sets.map((set, setIdx) => {
+        const vol = setVolume(set);
+        const thisSetPR = computePRsFromWorkouts(ex.id, [{date:w.date, exercises:[{exerciseId:ex.id, sets:[set]}]}]);
+        const isNewMax = thisSetPR.maxWeight && (!running.maxWeight || thisSetPR.maxWeight.weight > running.maxWeight.weight);
+        const isNewVol = thisSetPR.maxSetVolume && (!running.maxSetVolume || thisSetPR.maxSetVolume.volume > running.maxSetVolume.volume);
+        running = mergePRs(running, thisSetPR);
+        const prTag = (isNewMax || isNewVol) ? `<span class="pr-star">${ICONS.star}PR</span>` : '';
+        return `<div class="set-row">
+          <span class="set-idx">${setIdx+1}</span>
+          <span class="set-disp">${segDisplay(set.segments)} ${prTag}</span>
+          <span class="set-vol">${vol}kg vol</span>
+          <button class="icon-btn danger" onclick="App.deleteSet('${exEntry.exerciseId}','${set.id}')">${ICONS.trash}</button>
+        </div>`;
+      }).join('');
+
+      const addingKey = window.__addingSetFor;
+      const isAdding = addingKey === exEntry.exerciseId;
+
+      return `<div class="ex-card">
+        <div class="ex-card-head">
+          <div>
+            <div class="ex-name">${escapeHtml(ex.name)}</div>
+            <div class="ex-muscle">${escapeHtml(ex.muscleGroup)}</div>
+          </div>
+          <button class="icon-btn danger" onclick="App.removeExerciseFromWorkout('${exEntry.exerciseId}')">${ICONS.trash}</button>
+        </div>
+        ${setsHtml}
+        ${isAdding ? renderSetEntryForm(exEntry.exerciseId) : `<button class="btn btn-sm btn-ghost btn-block" onclick="App.beginAddSet('${exEntry.exerciseId}')">+ Add Set</button>`}
+      </div>`;
+    }).join('');
+  }
+
+  return `
+    <div class="topbar">
+      <div>
+        <h1>Logging</h1>
+        <div class="date-sub">${fmtDate(w.date)}${w.templateUsed ? ' · ' + escapeHtml(w.templateUsed) : ''}</div>
+      </div>
+      <button class="icon-btn danger" onclick="App.cancelWorkout()">${ICONS.close}</button>
+    </div>
+
+    ${renderTimerWidget()}
+
+    ${exercisesHtml}
+
+    <button class="btn btn-block btn-ghost" style="margin-bottom:14px;" onclick="App.openExercisePicker()">+ Add Exercise</button>
+
+    <div class="card">
+      <div class="card-title">Notes</div>
+      <textarea rows="2" placeholder="How did it feel?" oninput="App.updateWorkoutNotes(this.value)">${escapeHtml(w.notes||'')}</textarea>
+    </div>
+
+    <button class="btn btn-block btn-primary btn-lg" onclick="App.finishWorkout()">Finish Workout</button>
+  `;
+}
+function renderSetEntryForm(exerciseId){
+  const segs = window.__draftSegments || [{weight:'',reps:''}];
+  const segHtml = segs.map((seg,i) => `
+    <div class="segment-row">
+      <input type="number" inputmode="decimal" class="mono-input" placeholder="kg" value="${seg.weight}" oninput="App.updateDraftSeg(${i},'weight',this.value)">
+      <span class="x-sep">×</span>
+      <input type="number" inputmode="numeric" class="mono-input" placeholder="reps" value="${seg.reps}" oninput="App.updateDraftSeg(${i},'reps',this.value)">
+      ${segs.length>1 ? `<button class="icon-btn danger" onclick="App.removeDraftSeg(${i})">${ICONS.close}</button>` : ''}
+    </div>
+  `).join('');
+  return `<div class="add-set-panel">
+    ${segHtml}
+    <div class="row" style="margin-bottom:8px;">
+      <button class="btn btn-sm btn-ghost grow" onclick="App.addDraftSeg()">+ Drop Set</button>
+    </div>
+    <div class="row">
+      <button class="btn btn-sm btn-ghost grow" onclick="App.cancelAddSet()">Cancel</button>
+      <button class="btn btn-sm btn-primary grow" onclick="App.commitSet('${exerciseId}')">Save Set</button>
+    </div>
+  </div>`;
+}
+function renderTimerWidget(){
+  const t = window.__timer;
+  const mins = Math.floor(t.remaining/60).toString().padStart(2,'0');
+  const secs = (t.remaining%60).toString().padStart(2,'0');
+  const presetBtns = REST_PRESETS.map(p => `<button class="btn btn-sm ${t.duration===p?'btn-primary':'btn-ghost'}" onclick="App.setTimerDuration(${p})">${p}s</button>`).join('');
+  return `<div class="timer-widget">
+    <div>
+      <div class="timer-display ${t.running?'running':''}">${mins}:${secs}</div>
+      <div class="row" style="margin-top:6px;">${presetBtns}</div>
+    </div>
+    <div class="row" style="gap:6px;">
+      <button class="btn btn-sm ${t.running?'btn-ghost':'btn-primary'}" onclick="App.toggleTimer()">${t.running?'Pause':'Start'}</button>
+      <button class="btn btn-sm btn-ghost" onclick="App.resetTimer()">Reset</button>
+    </div>
+  </div>`;
+}
+
+/* ============ PROGRESS ============ */
+function renderProgress(){
+  if(STORE.exercises.length === 0){
+    return `<div class="topbar"><h1>Progress</h1></div>
+      <div class="empty-state">${ICONS.progress}<div class="es-title">No exercises yet</div><div class="es-sub">Add exercises in Library to start tracking progress.</div></div>`;
+  }
+  if(!progressExerciseId || !exerciseById(progressExerciseId)){
+    progressExerciseId = STORE.exercises[0].id;
+  }
+  const groups = groupExercises(STORE.exercises);
+  const options = Object.keys(groups).map(g => `<optgroup label="${escapeHtml(g)}">
+    ${groups[g].map(e => `<option value="${e.id}" ${e.id===progressExerciseId?'selected':''}>${escapeHtml(e.name)}</option>`).join('')}
+  </optgroup>`).join('');
+
+  const relevantWorkouts = STORE.workouts.filter(w => w.exercises.some(e => e.exerciseId === progressExerciseId))
+    .sort((a,b)=>a.date.localeCompare(b.date));
+  const prs = computePRsFromWorkouts(progressExerciseId, STORE.workouts);
+
+  let chartSection = '';
+  if(relevantWorkouts.length === 0){
+    chartSection = `<div class="empty-state" style="padding:30px 8px;">
+      <div class="es-title">No sessions logged yet</div>
+      <div class="es-sub">Log this exercise in a workout to see progress.</div>
+    </div>`;
+  } else {
+    chartSection = `<div class="chart-wrap" id="volChartHolder"></div>`;
+  }
+
+  const repRows = Object.keys(prs.bestByReps).map(Number).sort((a,b)=>a-b)
+    .map(r => `<div class="wk-item"><div class="wk-name mono">${r} rep${r!==1?'s':''}</div><div class="mono" style="color:var(--accent);font-weight:600;">${prs.bestByReps[r].weight}kg</div></div>`)
+    .join('');
+
+  return `
+    <div class="topbar"><h1>Progress</h1></div>
+    <div class="field">
+      <select onchange="App.setProgressExercise(this.value)">${options}</select>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Volume Over Time</div>
+      ${chartSection}
+    </div>
+
+    <div class="card">
+      <div class="card-title">Personal Records</div>
+      <div class="plate-row">
+        <div class="plate-col">
+          <div class="plate ${prs.maxWeight?'':'plate-dim'}">
+            <div class="plate-num">${prs.maxWeight ? prs.maxWeight.weight : '—'}</div>
+            <div class="plate-unit">${prs.maxWeight?'KG':''}</div>
+          </div>
+          <div class="plate-label">Max Weight</div>
+        </div>
+        <div class="plate-col">
+          <div class="plate ${prs.maxSetVolume?'':'plate-dim'}">
+            <div class="plate-num">${prs.maxSetVolume ? prs.maxSetVolume.volume : '—'}</div>
+            <div class="plate-unit">${prs.maxSetVolume?'VOL':''}</div>
+          </div>
+          <div class="plate-label">Best Set Volume</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Best Weight by Rep Count</div>
+      ${repRows || `<div class="faint" style="font-size:13px;padding:6px 0;">No data yet.</div>`}
+    </div>
+  `;
+}
+function groupExercises(list){
+  const groups = {};
+  list.forEach(e => {
+    if(!groups[e.muscleGroup]) groups[e.muscleGroup] = [];
+    groups[e.muscleGroup].push(e);
+  });
+  return groups;
+}
+function drawProgressChart(){
+  const holder = document.getElementById('volChartHolder');
+  if(!holder) return;
+  const relevantWorkouts = STORE.workouts.filter(w => w.exercises.some(e => e.exerciseId === progressExerciseId))
+    .sort((a,b)=>a.date.localeCompare(b.date));
+  const labels = relevantWorkouts.map(w => fmtDate(w.date));
+  const data = relevantWorkouts.map(w => sessionVolumeForExercise(w, progressExerciseId));
+  holder.innerHTML = sparklineChart(labels, data, '#E8B93F');
+}
+/* Dependency-free inline SVG line chart */
+function sparklineChart(labels, values, color){
+  if(!values || values.length === 0) return '';
+  const w = 320, h = 160, padL = 34, padR = 10, padT = 14, padB = 22;
+  const max = Math.max(...values, 1);
+  const min = 0;
+  const range = (max - min) || 1;
+  const innerW = w - padL - padR, innerH = h - padT - padB;
+  const stepX = values.length > 1 ? innerW/(values.length-1) : 0;
+  const pts = values.map((v,i) => {
+    const x = padL + i*stepX;
+    const y = padT + innerH - ((v-min)/range)*innerH;
+    return [x,y];
+  });
+  const pathD = pts.map((p,i) => (i===0?'M':'L')+p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+  const areaD = pts.length > 1
+    ? pathD + ` L${pts[pts.length-1][0].toFixed(1)},${(padT+innerH).toFixed(1)} L${pts[0][0].toFixed(1)},${(padT+innerH).toFixed(1)} Z`
+    : '';
+  const circles = pts.map((p,i) => `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="3" fill="${color}"><title>${escapeHtml(labels[i]||'')}: ${values[i]}</title></circle>`).join('');
+  const gridLines = [0,0.5,1].map(f => {
+    const y = padT + innerH*(1-f);
+    const val = Math.round(min + range*f);
+    return `<line x1="${padL}" y1="${y.toFixed(1)}" x2="${w-padR}" y2="${y.toFixed(1)}" stroke="#2A2E35" stroke-width="1"/>
+      <text x="${padL-6}" y="${(y+3).toFixed(1)}" font-size="9" fill="#5C6169" text-anchor="end">${val}</text>`;
+  }).join('');
+  const firstLabel = labels[0] ? `<text x="${padL}" y="${h-6}" font-size="9" fill="#5C6169" text-anchor="start">${escapeHtml(labels[0])}</text>` : '';
+  const lastLabel = labels.length>1 ? `<text x="${w-padR}" y="${h-6}" font-size="9" fill="#5C6169" text-anchor="end">${escapeHtml(labels[labels.length-1])}</text>` : '';
+  return `<svg viewBox="0 0 ${w} ${h}" style="width:100%;height:100%;" preserveAspectRatio="none">
+    ${gridLines}
+    ${areaD ? `<path d="${areaD}" fill="${color}" opacity="0.14" stroke="none"/>` : ''}
+    <path d="${pathD}" fill="none" stroke="${color}" stroke-width="2.2"/>
+    ${circles}
+    ${firstLabel}${lastLabel}
+  </svg>`;
+}
+
+/* ============ CONSISTENCY ============ */
+function renderConsistency(){
+  const streak = computeWeekStreak();
+  const today = new Date();
+  const daysThisWeek = distinctDaysInWeek(weekKey(today));
+
+  // Build heatmap: last 371 days aligned to Sunday-start columns
+  const end = new Date(); end.setHours(0,0,0,0);
+  const daysBack = 370;
+  const start = new Date(end); start.setDate(start.getDate() - daysBack);
+  // align start to Sunday
+  const startAligned = new Date(start);
+  startAligned.setDate(startAligned.getDate() - startAligned.getDay());
+
+  const volByDate = {};
+  STORE.workouts.forEach(w => { volByDate[w.date] = (volByDate[w.date]||0) + workoutTotalVolume(w); });
+  const maxVol = Math.max(1, ...Object.values(volByDate));
+
+  let cells = [];
+  let cur = new Date(startAligned);
+  const monthLabels = [];
+  let lastMonth = -1;
+  let col = 0;
+  while(cur <= end){
+    const iso = cur.toISOString().slice(0,10);
+    const vol = volByDate[iso] || 0;
+    let level = 0;
+    if(vol > 0){
+      const ratio = vol / maxVol;
+      level = ratio > 0.75 ? 4 : ratio > 0.5 ? 3 : ratio > 0.25 ? 2 : 1;
+    }
+    if(cur.getDay() === 0){
+      if(cur.getMonth() !== lastMonth){
+        monthLabels.push({col, label: cur.toLocaleDateString('en-US',{month:'short'})});
+        lastMonth = cur.getMonth();
+      }
+      col++;
+    }
+    cells.push(`<div class="heat-cell" style="background:${heatColor(level)}" title="${iso}: ${vol}kg"></div>`);
+    cur.setDate(cur.getDate()+1);
+  }
+  const monthLabelsHtml = monthLabels.map(m => `<span style="margin-left:${m.col===0?0:14}px;">${m.label}</span>`).join('');
+
+  // weekly list, most recent first, last 12 weeks
+  const weeks = [];
+  let wcur = mondayOf(today);
+  for(let i=0;i<12;i++){
+    const wk = wcur.toISOString().slice(0,10);
+    const days = distinctDaysInWeek(wk);
+    const weekEnd = new Date(wcur); weekEnd.setDate(weekEnd.getDate()+6);
+    weeks.push({wk, days, start:new Date(wcur), end:weekEnd});
+    wcur = new Date(wcur); wcur.setDate(wcur.getDate()-7);
+  }
+  const weeksHtml = weeks.map(w => {
+    const rangeStr = `${w.start.toLocaleDateString('en-US',{month:'short',day:'numeric'})} – ${w.end.toLocaleDateString('en-US',{month:'short',day:'numeric'})}`;
+    const met = w.days >= 3;
+    return `<div class="week-row">
+      <div>
+        <div class="wr-range">${rangeStr}</div>
+        <div class="wr-days">${w.days} of 3 days logged</div>
+      </div>
+      <div class="badge-plate ${met?'':'empty'}">${ICONS.star}</div>
+    </div>`;
+  }).join('');
+
+  return `
+    <div class="topbar"><h1>Streaks</h1></div>
+    <div class="stat-row" style="margin-bottom:12px;">
+      <div class="stat-box"><div class="stat-num">${streak}</div><div class="stat-label">Week Streak</div></div>
+      <div class="stat-box"><div class="stat-num">${daysThisWeek}/3</div><div class="stat-label">This Week</div></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Daily Activity</div>
+      <div class="heat-month-labels">${monthLabelsHtml}</div>
+      <div class="heatmap-scroll"><div class="heatmap-grid" id="heatgrid">${cells.join('')}</div></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Weekly Goal (3x/week)</div>
+      ${weeksHtml}
+    </div>
+  `;
+}
+function heatColor(level){
+  const colors = ['#242830','#3d3419','#6b571f','#a8862c','#E8B93F'];
+  return colors[level];
+}
+
+/* ============ LIBRARY ============ */
+function renderLibrary(){
+  return `
+    <div class="topbar"><h1>Library</h1></div>
+    <div class="segctl">
+      <button class="${libSubTab==='exercises'?'active':''}" onclick="App.setLibTab('exercises')">Exercises</button>
+      <button class="${libSubTab==='templates'?'active':''}" onclick="App.setLibTab('templates')">Templates</button>
+      <button class="${libSubTab==='bodyweight'?'active':''}" onclick="App.setLibTab('bodyweight')">Bodyweight</button>
+    </div>
+    ${libSubTab==='exercises' ? renderExerciseLibrary() : libSubTab==='templates' ? renderTemplateLibrary() : renderBodyweightLibrary()}
+  `;
+}
+function renderExerciseLibrary(){
+  const groups = groupExercises(STORE.exercises);
+  const groupOrder = STORE.settings.muscleGroups.filter(g => groups[g]).concat(Object.keys(groups).filter(g => !STORE.settings.muscleGroups.includes(g)));
+  let html = '';
+  if(STORE.exercises.length === 0){
+    html = `<div class="empty-state">${ICONS.library}<div class="es-title">No exercises yet</div><div class="es-sub">Add your first exercise below.</div></div>`;
+  } else {
+    html = groupOrder.map(g => `
+      <div class="group-header">${escapeHtml(g)}</div>
+      ${groups[g].map(e => `
+        <div class="list-item">
+          <div class="li-name">${escapeHtml(e.name)}</div>
+          <div class="row">
+            <button class="icon-btn" onclick="App.openExerciseModal('${e.id}')">${ICONS.edit}</button>
+            <button class="icon-btn danger" onclick="App.deleteExercise('${e.id}')">${ICONS.trash}</button>
+          </div>
+        </div>
+      `).join('')}
+    `).join('');
+  }
+  return `${html}<button class="btn btn-block btn-primary" style="margin-top:8px;" onclick="App.openExerciseModal(null)">+ Add Exercise</button>`;
+}
+function renderTemplateLibrary(){
+  let html = '';
+  if(STORE.templates.length === 0){
+    html = `<div class="empty-state">${ICONS.log}<div class="es-title">No templates yet</div><div class="es-sub">Build one, or save a finished workout as a template.</div></div>`;
+  } else {
+    html = STORE.templates.map(t => `
+      <div class="list-item" onclick="App.openTemplateModal('${t.id}')">
+        <div>
+          <div class="li-name">${escapeHtml(t.name)}</div>
+          <div class="li-sub">${t.exercises.length} exercise${t.exercises.length!==1?'s':''}</div>
+        </div>
+        <button class="icon-btn danger" onclick="event.stopPropagation();App.deleteTemplate('${t.id}')">${ICONS.trash}</button>
+      </div>
+    `).join('');
+  }
+  return `${html}<button class="btn btn-block btn-primary" style="margin-top:8px;" onclick="App.openTemplateModal(null)">+ New Template</button>`;
+}
+function renderBodyweightLibrary(){
+  const entries = STORE.bodyweight.slice().sort((a,b)=>b.date.localeCompare(a.date));
+  let listHtml = '';
+  if(entries.length === 0){
+    listHtml = `<div class="empty-state">${ICONS.scale}<div class="es-title">No entries yet</div><div class="es-sub">Log your bodyweight to track it over time.</div></div>`;
+  } else {
+    listHtml = entries.slice(0,20).map(b => `
+      <div class="wk-item">
+        <div class="wk-name">${fmtDate(b.date)}</div>
+        <div class="row" style="align-items:center;">
+          <span class="mono">${b.weight}kg</span>
+          <button class="icon-btn danger" onclick="App.deleteBodyweight('${b.id}')">${ICONS.trash}</button>
+        </div>
+      </div>
+    `).join('');
+  }
+  const chartSection = entries.length > 0 ? `<div class="chart-wrap" id="bwChartHolder"></div>` : '';
+  return `
+    <div class="card">
+      <div class="card-title">Trend</div>
+      ${chartSection || `<div class="faint" style="font-size:13px;">Not enough data yet.</div>`}
+    </div>
+    <button class="btn btn-block btn-primary" style="margin-bottom:12px;" onclick="App.openBodyweightModal()">+ Log Weight</button>
+    <div class="card">${listHtml}</div>
+  `;
+}
+function drawBodyweightChart(){
+  const holder = document.getElementById('bwChartHolder');
+  if(!holder) return;
+  const entries = STORE.bodyweight.slice().sort((a,b)=>a.date.localeCompare(b.date));
+  holder.innerHTML = sparklineChart(entries.map(e=>fmtDate(e.date)), entries.map(e=>e.weight), '#4A9B8E');
+}
+
+/* ============ MODALS ============ */
+function openModal(html){
+  closeModal();
+  const bd = document.createElement('div');
+  bd.className = 'modal-backdrop';
+  bd.id = 'modalBackdrop';
+  bd.onclick = (e) => { if(e.target === bd) closeModal(); };
+  bd.innerHTML = `<div class="modal-sheet">${html}</div>`;
+  document.body.appendChild(bd);
+}
+function closeModal(){
+  const el = document.getElementById('modalBackdrop');
+  if(el) el.remove();
+}
+
+function exercisePickerModal(){
+  const groups = groupExercises(STORE.exercises);
+  const groupOrder = STORE.settings.muscleGroups.filter(g => groups[g]).concat(Object.keys(groups).filter(g => !STORE.settings.muscleGroups.includes(g)));
+  const listHtml = groupOrder.map(g => `
+    <div class="group-header">${escapeHtml(g)}</div>
+    ${groups[g].map(e => `<div class="list-item" data-name="${escapeHtml(e.name.toLowerCase())}" onclick="App.addExerciseToWorkout('${e.id}')">
+      <div class="li-name">${escapeHtml(e.name)}</div>${ICONS.chevron}
+    </div>`).join('')}
+  `).join('') || `<div class="empty-state"><div class="es-title">No exercises</div><div class="es-sub">Add exercises in Library first.</div></div>`;
+
+  openModal(`
+    <div class="modal-handle"></div>
+    <div class="modal-title">Add Exercise</div>
+    <input class="search-input" type="text" placeholder="Search exercises..." oninput="App.filterPicker(this.value)">
+    <div id="pickerList">${listHtml}</div>
+  `);
+}
+
+function exerciseModal(exId){
+  const ex = exId ? exerciseById(exId) : null;
+  const groupOptions = STORE.settings.muscleGroups.map(g => `<option value="${escapeHtml(g)}" ${ex&&ex.muscleGroup===g?'selected':''}>${escapeHtml(g)}</option>`).join('');
+  openModal(`
+    <div class="modal-handle"></div>
+    <div class="modal-title">${ex?'Edit Exercise':'Add Exercise'}</div>
+    <div class="field">
+      <label class="field-label">Name</label>
+      <input type="text" id="exNameInput" value="${ex?escapeHtml(ex.name):''}" placeholder="e.g. Barbell Bench Press">
+    </div>
+    <div class="field">
+      <label class="field-label">Muscle Group</label>
+      <select id="exGroupInput">${groupOptions}<option value="__new__">+ New group...</option></select>
+    </div>
+    <div class="field" id="newGroupField" style="display:none;">
+      <label class="field-label">New Group Name</label>
+      <input type="text" id="exNewGroupInput" placeholder="e.g. Cardio">
+    </div>
+    <div class="row">
+      <button class="btn btn-ghost grow" onclick="App.closeModal()">Cancel</button>
+      <button class="btn btn-primary grow" onclick="App.saveExercise(${ex?`'${ex.id}'`:'null'})">Save</button>
+    </div>
+  `);
+  document.getElementById('exGroupInput').addEventListener('change', function(){
+    document.getElementById('newGroupField').style.display = this.value === '__new__' ? 'block' : 'none';
+  });
+}
+
+function templateModal(tplId){
+  const tpl = tplId ? templateById(tplId) : {id:null, name:'', exercises:[]};
+  window.__draftTemplate = JSON.parse(JSON.stringify(tpl));
+  renderTemplateModalInner();
+}
+function renderTemplateModalInner(){
+  const tpl = window.__draftTemplate;
+  const exListHtml = tpl.exercises.map((te,idx) => {
+    const ex = exerciseById(te.exerciseId);
+    if(!ex) return '';
+    return `<div class="list-item">
+      <div class="li-name">${escapeHtml(ex.name)}</div>
+      <button class="icon-btn danger" onclick="App.removeTplExercise(${idx})">${ICONS.trash}</button>
+    </div>`;
+  }).join('') || `<div class="faint" style="font-size:13px;padding:8px 0;">No exercises added yet.</div>`;
+
+  openModal(`
+    <div class="modal-handle"></div>
+    <div class="modal-title">${tpl.id?'Edit Template':'New Template'}</div>
+    <div class="field">
+      <label class="field-label">Template Name</label>
+      <input type="text" id="tplNameInput" value="${escapeHtml(tpl.name)}" placeholder="e.g. Push Day" oninput="App.updateTplName(this.value)">
+    </div>
+    <div class="field">
+      <label class="field-label">Exercises</label>
+      ${exListHtml}
+      <button class="btn btn-sm btn-ghost btn-block" style="margin-top:6px;" onclick="App.openTplExercisePicker()">+ Add Exercise</button>
+    </div>
+    <div class="row">
+      <button class="btn btn-ghost grow" onclick="App.closeModal()">Cancel</button>
+      <button class="btn btn-primary grow" onclick="App.saveTemplate()">Save Template</button>
+    </div>
+  `);
+}
+function tplExercisePickerModal(){
+  const groups = groupExercises(STORE.exercises);
+  const groupOrder = STORE.settings.muscleGroups.filter(g => groups[g]).concat(Object.keys(groups).filter(g => !STORE.settings.muscleGroups.includes(g)));
+  const listHtml = groupOrder.map(g => `
+    <div class="group-header">${escapeHtml(g)}</div>
+    ${groups[g].map(e => `<div class="list-item" onclick="App.addTplExercise('${e.id}')">
+      <div class="li-name">${escapeHtml(e.name)}</div>${ICONS.chevron}
+    </div>`).join('')}
+  `).join('') || `<div class="empty-state"><div class="es-title">No exercises</div></div>`;
+  openModal(`
+    <div class="modal-handle"></div>
+    <div class="modal-title">Add to Template</div>
+    ${listHtml}
+    <button class="btn btn-ghost btn-block" style="margin-top:10px;" onclick="App.backToTemplateModal()">Back</button>
+  `);
+}
+
+function bodyweightModal(){
+  openModal(`
+    <div class="modal-handle"></div>
+    <div class="modal-title">Log Bodyweight</div>
+    <div class="field">
+      <label class="field-label">Weight (kg)</label>
+      <input type="number" inputmode="decimal" id="bwInput" class="mono-input" placeholder="0.0" autofocus>
+    </div>
+    <div class="field">
+      <label class="field-label">Date</label>
+      <input type="date" id="bwDateInput" value="${todayISO()}">
+    </div>
+    <div class="row">
+      <button class="btn btn-ghost grow" onclick="App.closeModal()">Cancel</button>
+      <button class="btn btn-primary grow" onclick="App.saveBodyweight()">Save</button>
+    </div>
+  `);
+}
+
+function saveAsTemplatePrompt(finishedWorkout){
+  openModal(`
+    <div class="modal-handle"></div>
+    <div class="modal-title">Save as Template?</div>
+    <p class="muted" style="font-size:13.5px;margin-top:-6px;">Save this workout's exercises as a reusable template.</p>
+    <div class="field">
+      <label class="field-label">Template Name</label>
+      <input type="text" id="saveTplNameInput" value="${escapeHtml(finishedWorkout.templateUsed || '')}" placeholder="e.g. Push Day">
+    </div>
+    <div class="row">
+      <button class="btn btn-ghost grow" onclick="App.closeModal()">No Thanks</button>
+      <button class="btn btn-primary grow" onclick="App.saveFinishedAsTemplate('${finishedWorkout.id}')">Save Template</button>
+    </div>
+  `);
+}
+
+/* ============ APP ACTIONS (window.App) ============ */
+window.__timer = { remaining: 90, duration: 90, running: false, intervalId: null };
+window.__addingSetFor = null;
+window.__draftSegments = null;
+
+const App = {
+  switchTab(tab){ currentTab = tab; render(); },
+  setLibTab(tab){ libSubTab = tab; render(); },
+  setProgressExercise(id){ progressExerciseId = id; render(); },
+  closeModal(){ closeModal(); },
+
+  /* ---- workout lifecycle ---- */
+  startWorkoutFlow(){
+    currentTab = 'log';
+    render();
+  },
+  beginWorkout(templateId){
+    const tpl = templateId ? templateById(templateId) : null;
+    STORE.activeWorkout = {
+      id: uid(),
+      date: todayISO(),
+      startedAt: Date.now(),
+      templateUsed: tpl ? tpl.name : null,
+      exercises: tpl ? tpl.exercises.map(te => ({exerciseId: te.exerciseId, sets: []})) : [],
+      notes: ''
+    };
+    saveActiveWorkout();
+    render();
+  },
+  cancelWorkout(){
+    if(!confirm('Discard this workout? This cannot be undone.')) return;
+    STORE.activeWorkout = null;
+    saveActiveWorkout();
+    render();
+  },
+  updateWorkoutNotes(val){
+    if(!STORE.activeWorkout) return;
+    STORE.activeWorkout.notes = val;
+    saveActiveWorkout();
+  },
+  openExercisePicker(){ exercisePickerModal(); },
+  filterPicker(q){
+    q = q.toLowerCase();
+    document.querySelectorAll('#pickerList .list-item').forEach(el => {
+      el.style.display = el.dataset.name.includes(q) ? '' : 'none';
+    });
+  },
+  addExerciseToWorkout(exId){
+    if(!STORE.activeWorkout) return;
+    if(STORE.activeWorkout.exercises.some(e => e.exerciseId === exId)){ closeModal(); return; }
+    STORE.activeWorkout.exercises.push({exerciseId: exId, sets: []});
+    saveActiveWorkout();
+    closeModal();
+    render();
+  },
+  removeExerciseFromWorkout(exId){
+    if(!STORE.activeWorkout) return;
+    if(!confirm('Remove this exercise and its logged sets?')) return;
+    STORE.activeWorkout.exercises = STORE.activeWorkout.exercises.filter(e => e.exerciseId !== exId);
+    saveActiveWorkout();
+    render();
+  },
+  beginAddSet(exId){
+    window.__addingSetFor = exId;
+    window.__draftSegments = [{weight:'',reps:''}];
+    render();
+  },
+  cancelAddSet(){
+    window.__addingSetFor = null;
+    window.__draftSegments = null;
+    render();
+  },
+  updateDraftSeg(i, field, val){
+    window.__draftSegments[i][field] = val;
+  },
+  addDraftSeg(){
+    window.__draftSegments.push({weight:'',reps:''});
+    render();
+  },
+  removeDraftSeg(i){
+    window.__draftSegments.splice(i,1);
+    render();
+  },
+  commitSet(exId){
+    const segs = (window.__draftSegments||[]).filter(s => s.weight !== '' && s.reps !== '')
+      .map(s => ({weight:Number(s.weight), reps:Number(s.reps)}));
+    if(segs.length === 0){ toast('Enter weight and reps'); return; }
+    const exEntry = STORE.activeWorkout.exercises.find(e => e.exerciseId === exId);
+    exEntry.sets.push({id: uid(), segments: segs});
+    saveActiveWorkout();
+    window.__addingSetFor = null;
+    window.__draftSegments = null;
+    render();
+  },
+  deleteSet(exId, setId){
+    const exEntry = STORE.activeWorkout.exercises.find(e => e.exerciseId === exId);
+    exEntry.sets = exEntry.sets.filter(s => s.id !== setId);
+    saveActiveWorkout();
+    render();
+  },
+  finishWorkout(){
+    const w = STORE.activeWorkout;
+    const hasAnySets = w.exercises.some(e => e.sets.length > 0);
+    if(!hasAnySets){ if(!confirm('No sets logged. Finish anyway?')) return; }
+    STORE.workouts.push(w);
+    saveWorkouts();
+    STORE.activeWorkout = null;
+    saveActiveWorkout();
+    App.resetTimer();
+    currentTab = 'home';
+    render();
+    toast('Workout saved');
+    setTimeout(() => saveAsTemplatePrompt(w), 400);
+  },
+  saveFinishedAsTemplate(workoutId){
+    const w = STORE.workouts.find(x => x.id === workoutId);
+    const nameInput = document.getElementById('saveTplNameInput');
+    const name = (nameInput.value || 'Untitled Template').trim();
+    const newTpl = { id: uid(), name, exercises: w.exercises.map(e => ({exerciseId: e.exerciseId})), createdAt: Date.now() };
+    STORE.templates.push(newTpl);
+    saveTemplates();
+    closeModal();
+    toast('Template saved');
+  },
+
+  /* ---- timer ---- */
+  setTimerDuration(sec){
+    const t = window.__timer;
+    t.duration = sec; t.remaining = sec;
+    render();
+  },
+  toggleTimer(){
+    const t = window.__timer;
+    if(t.running){
+      clearInterval(t.intervalId);
+      t.running = false;
+    } else {
+      t.running = true;
+      t.intervalId = setInterval(() => {
+        t.remaining--;
+        if(t.remaining <= 0){
+          clearInterval(t.intervalId);
+          t.running = false;
+          t.remaining = 0;
+          if(navigator.vibrate) navigator.vibrate([200,100,200]);
+          toast('Rest complete');
+        }
+        // lightweight refresh of just the timer display area if on log tab
+        if(currentTab === 'log' && STORE.activeWorkout) render();
+      }, 1000);
+    }
+    render();
+  },
+  resetTimer(){
+    const t = window.__timer;
+    clearInterval(t.intervalId);
+    t.running = false;
+    t.remaining = t.duration;
+    render();
+  },
+
+  /* ---- exercise library ---- */
+  openExerciseModal(exId){ exerciseModal(exId); },
+  saveExercise(exId){
+    const name = document.getElementById('exNameInput').value.trim();
+    if(!name){ toast('Enter a name'); return; }
+    let group = document.getElementById('exGroupInput').value;
+    if(group === '__new__'){
+      const newGroup = document.getElementById('exNewGroupInput').value.trim();
+      if(!newGroup){ toast('Enter a group name'); return; }
+      group = newGroup;
+      if(!STORE.settings.muscleGroups.includes(newGroup)){
+        STORE.settings.muscleGroups.push(newGroup);
+        saveSettings();
+      }
+    }
+    if(exId){
+      const ex = exerciseById(exId);
+      ex.name = name; ex.muscleGroup = group;
+    } else {
+      STORE.exercises.push({id: uid(), name, muscleGroup: group, createdAt: Date.now()});
+    }
+    saveExercises();
+    closeModal();
+    render();
+  },
+  deleteExercise(exId){
+    if(!confirm('Delete this exercise? Past workout history stays intact but it will disappear from pickers.')) return;
+    STORE.exercises = STORE.exercises.filter(e => e.id !== exId);
+    saveExercises();
+    render();
+  },
+
+  /* ---- templates ---- */
+  openTemplateModal(tplId){ templateModal(tplId); },
+  updateTplName(val){ window.__draftTemplate.name = val; },
+  openTplExercisePicker(){ tplExercisePickerModal(); },
+  backToTemplateModal(){ renderTemplateModalInner(); },
+  addTplExercise(exId){
+    if(!window.__draftTemplate.exercises.some(e=>e.exerciseId===exId)){
+      window.__draftTemplate.exercises.push({exerciseId: exId});
+    }
+    renderTemplateModalInner();
+  },
+  removeTplExercise(idx){
+    window.__draftTemplate.exercises.splice(idx,1);
+    renderTemplateModalInner();
+  },
+  saveTemplate(){
+    const tpl = window.__draftTemplate;
+    const nameInput = document.getElementById('tplNameInput');
+    tpl.name = (nameInput ? nameInput.value : tpl.name).trim() || 'Untitled Template';
+    if(tpl.exercises.length === 0){ toast('Add at least one exercise'); return; }
+    if(tpl.id){
+      const existing = templateById(tpl.id);
+      existing.name = tpl.name; existing.exercises = tpl.exercises;
+    } else {
+      STORE.templates.push({id: uid(), name: tpl.name, exercises: tpl.exercises, createdAt: Date.now()});
+    }
+    saveTemplates();
+    closeModal();
+    render();
+  },
+  deleteTemplate(tplId){
+    if(!confirm('Delete this template?')) return;
+    STORE.templates = STORE.templates.filter(t => t.id !== tplId);
+    saveTemplates();
+    render();
+  },
+
+  /* ---- bodyweight ---- */
+  openBodyweightModal(){ bodyweightModal(); },
+  saveBodyweight(){
+    const w = Number(document.getElementById('bwInput').value);
+    const d = document.getElementById('bwDateInput').value || todayISO();
+    if(!w || w <= 0){ toast('Enter a valid weight'); return; }
+    STORE.bodyweight.push({id: uid(), date: d, weight: w});
+    saveBodyweight();
+    closeModal();
+    render();
+    toast('Weight logged');
+  },
+  deleteBodyweight(id){
+    STORE.bodyweight = STORE.bodyweight.filter(b => b.id !== id);
+    saveBodyweight();
+    render();
+  }
+};
+window.App = App;
+
+/* ============ INIT ============ */
+function showFatalError(err){
+  const app = document.getElementById('app');
+  if(!app) return;
+  app.innerHTML = `<div style="padding:40px 20px;color:#ECEDEE;font-family:-apple-system,sans-serif;">
+    <div style="font-size:17px;font-weight:700;margin-bottom:8px;">Iron Log hit an error loading</div>
+    <div style="font-size:13px;color:#9096A0;line-height:1.5;white-space:pre-wrap;">${escapeHtml(err && err.message ? err.message : String(err))}</div>
+  </div>`;
+}
+async function init(){
+  try{
+    await loadAll();
+    window.__timer.duration = (STORE.settings && STORE.settings.defaultRest) || 90;
+    window.__timer.remaining = window.__timer.duration;
+    render();
+  }catch(err){
+    console.error('Iron Log init failed', err);
+    showFatalError(err);
+  }
+}
+window.addEventListener('error', function(e){
+  if(!ready) showFatalError(e.error || e.message || 'Unknown error');
+});
+init();
+
+})();
+</script>
+</body>
+</html>
