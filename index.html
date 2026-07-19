@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0f8f82">
+  <meta name="theme-color" content="#070709">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Workout">
   <meta name="description" content="A private, offline-first workout tracker with automatic GitHub backup.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://api.github.com; img-src 'self' data: blob:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
@@ -14,81 +14,61 @@
   <title>Workout Tracker</title>
   <style>
 :root {
-  color-scheme: light dark;
-  --bg: #f6f3ed;
-  --surface: #ffffff;
-  --surface-2: #f0f4f3;
-  --text: #17211f;
-  --muted: #66736f;
-  --line: #dbe3e0;
-  --accent: #0f8f82;
-  --accent-strong: #08756b;
-  --accent-soft: #d9f2ee;
-  --success: #23865f;
-  --danger: #bd3434;
-  --danger-soft: #fce4e4;
-  --warning: #9a6500;
-  --warning-soft: #fff2cf;
-  --shadow: 0 6px 20px rgba(27, 48, 43, 0.08);
+  color-scheme: dark;
+  --bg: #070709;
+  --surface: #111114;
+  --surface-2: #1a1a1f;
+  --surface-3: #202027;
+  --text: #f7f4f5;
+  --muted: #aaa2a7;
+  --line: #2d2930;
+  --accent: #b3122d;
+  --accent-strong: #e02649;
+  --accent-soft: #2b0d16;
+  --success: #e02649;
+  --success-soft: #35101b;
+  --danger: #ff765c;
+  --danger-soft: #351713;
+  --warning: #d7a13b;
+  --warning-soft: #2d2413;
+  --shadow: 0 14px 34px rgba(0, 0, 0, 0.34);
+  --red-glow: 0 0 0 1px rgba(224, 38, 73, .18), 0 14px 34px rgba(179, 18, 45, .22);
   --radius: 18px;
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-top: env(safe-area-inset-top, 0px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0f1211;
-    --surface: #191d1c;
-    --surface-2: #222826;
-    --text: #f2f5f4;
-    --muted: #a5b0ad;
-    --line: #303735;
-    --accent: #42c4b5;
-    --accent-strong: #72d7cb;
-    --accent-soft: #143c38;
-    --success: #66d4a5;
-    --danger: #ff8585;
-    --danger-soft: #402222;
-    --warning: #f0bc55;
-    --warning-soft: #3c321e;
-    --shadow: none;
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #09090b;
+    --surface: #141417;
+    --surface-2: #1d1d22;
+    --surface-3: #24242a;
+    --text: #faf7f8;
+    --muted: #ada5aa;
+    --line: #302c33;
   }
 }
 
-:root[data-theme="dark"] {
-  --bg: #0f1211;
-  --surface: #191d1c;
-  --surface-2: #222826;
-  --text: #f2f5f4;
-  --muted: #a5b0ad;
-  --line: #303735;
-  --accent: #42c4b5;
-  --accent-strong: #72d7cb;
-  --accent-soft: #143c38;
-  --success: #66d4a5;
-  --danger: #ff8585;
-  --danger-soft: #402222;
-  --warning: #f0bc55;
-  --warning-soft: #3c321e;
-  --shadow: none;
-}
-
+:root[data-theme="dark"],
 :root[data-theme="light"] {
-  --bg: #f6f3ed;
-  --surface: #ffffff;
-  --surface-2: #f0f4f3;
-  --text: #17211f;
-  --muted: #66736f;
-  --line: #dbe3e0;
-  --accent: #0f8f82;
-  --accent-strong: #08756b;
-  --accent-soft: #d9f2ee;
-  --success: #23865f;
-  --danger: #bd3434;
-  --danger-soft: #fce4e4;
-  --warning: #9a6500;
-  --warning-soft: #fff2cf;
-  --shadow: 0 6px 20px rgba(27, 48, 43, 0.08);
+  --bg: #070709;
+  --surface: #111114;
+  --surface-2: #1a1a1f;
+  --surface-3: #202027;
+  --text: #f7f4f5;
+  --muted: #aaa2a7;
+  --line: #2d2930;
+  --accent: #b3122d;
+  --accent-strong: #e02649;
+  --accent-soft: #2b0d16;
+  --success: #e02649;
+  --success-soft: #35101b;
+  --danger: #ff765c;
+  --danger-soft: #351713;
+  --warning: #d7a13b;
+  --warning-soft: #2d2413;
+  --shadow: 0 14px 34px rgba(0, 0, 0, 0.34);
 }
 
 * { box-sizing: border-box; }
@@ -142,8 +122,8 @@ a { color: var(--accent-strong); }
 .primary-button, .secondary-button, .danger-button, .ghost-button, .chip-button {
   min-height: 48px; border-radius: 14px; border: 1px solid transparent; padding: 11px 16px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
 }
-.primary-button { background: var(--accent); color: #fff; }
-.primary-button:hover { background: var(--accent-strong); }
+.primary-button { background: linear-gradient(135deg, #8e0c23, var(--accent)); color: #fff; box-shadow: 0 8px 22px rgba(179,18,45,.22); }
+.primary-button:hover { background: linear-gradient(135deg, #a90f2a, var(--accent-strong)); }
 .secondary-button { background: var(--surface); border-color: var(--line); }
 .danger-button { background: var(--danger); color: #fff; }
 .ghost-button { background: transparent; color: var(--accent-strong); padding-inline: 8px; }
@@ -153,7 +133,7 @@ a { color: var(--accent-strong); }
 .button-row > * { flex: 1 1 130px; }
 .sticky-actions { position: sticky; bottom: calc(76px + var(--safe-bottom)); z-index: 10; margin: 18px 0 0; background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(12px); padding: 10px 0; }
 
-.hero-action { padding: 22px; text-align: left; width: 100%; border: 0; border-radius: 24px; background: var(--accent); color: #fff; box-shadow: 0 10px 30px rgba(15,143,130,.25); }
+.hero-action { padding: 22px; text-align: left; width: 100%; border: 1px solid rgba(255,255,255,.06); border-radius: 24px; background: linear-gradient(135deg, #690817 0%, #a80f2b 54%, #c71a3a 100%); color: #fff; box-shadow: 0 14px 34px rgba(133,8,30,.36); }
 .hero-action .eyebrow { opacity: .85; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
 .hero-action .hero-title { display: block; font-size: 28px; font-weight: 800; margin-top: 5px; letter-spacing: -.03em; }
 .hero-action .hero-sub { display: block; margin-top: 5px; opacity: .9; }
@@ -161,16 +141,17 @@ a { color: var(--accent-strong); }
 .bottom-nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: color-mix(in srgb, var(--surface) 94%, transparent); border-top: 1px solid var(--line); backdrop-filter: blur(18px); padding: 7px max(8px, env(safe-area-inset-left)) calc(7px + var(--safe-bottom)) max(8px, env(safe-area-inset-right)); }
 .bottom-nav-inner { width: min(760px, 100%); margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); }
 .nav-item { border: 0; background: transparent; color: var(--muted); min-height: 54px; border-radius: 13px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 11px; font-weight: 700; position: relative; }
-.nav-item.active { color: var(--accent-strong); background: var(--accent-soft); }
+.nav-item.active { color: #fff; background: linear-gradient(180deg, rgba(179,18,45,.28), rgba(179,18,45,.12)); box-shadow: inset 0 0 0 1px rgba(224,38,73,.18); }
 .nav-dot { position: absolute; top: 5px; right: calc(50% - 18px); width: 8px; height: 8px; border-radius: 50%; background: var(--danger); border: 2px solid var(--surface); }
 
 .status-pill, .badge, .record-badge, .tag { display: inline-flex; align-items: center; gap: 5px; border-radius: 999px; font-size: 12px; font-weight: 700; line-height: 1; padding: 7px 9px; }
 .status-pill { background: var(--surface-2); color: var(--muted); }
-.status-pill.success { color: var(--success); background: color-mix(in srgb, var(--success) 14%, transparent); }
+.status-pill.success { color: #ff9caf; background: rgba(179,18,45,.22); box-shadow: inset 0 0 0 1px rgba(224,38,73,.18); }
 .status-pill.warning { color: var(--warning); background: var(--warning-soft); }
 .status-pill.danger { color: var(--danger); background: var(--danger-soft); }
 .badge, .tag { background: var(--surface-2); }
-.record-badge { background: #fff0b9; color: #715100; }
+.record-badge { background: rgba(179,18,45,.2); color: #ff9caf; box-shadow: inset 0 0 0 1px rgba(224,38,73,.2); }
+.record-badge .icon { width: 14px; height: 14px; }
 
 .progress-bar { height: 10px; background: var(--surface-2); border-radius: 999px; overflow: hidden; }
 .progress-bar > span { display: block; height: 100%; background: var(--accent); border-radius: inherit; transition: width .25s ease; }
@@ -226,7 +207,7 @@ a { color: var(--accent-strong); }
 .exercise-note { margin: 0 14px 12px; font-size: 13px; color: var(--muted); border-left: 3px solid var(--accent); padding-left: 10px; }
 .set-list { padding: 0 12px 12px; display: grid; gap: 9px; }
 .set-row { border: 1px solid var(--line); border-radius: 15px; padding: 10px; background: var(--surface); }
-.set-row.completed { background: color-mix(in srgb, var(--success) 9%, var(--surface)); border-color: color-mix(in srgb, var(--success) 35%, var(--line)); }
+.set-row.completed { background: linear-gradient(135deg, rgba(179,18,45,.15), rgba(17,17,20,.96)); border-color: rgba(224,38,73,.42); box-shadow: inset 3px 0 0 var(--accent); }
 [data-density="compact"] .set-row { padding: 8px; }
 [data-density="compact"] .set-tools { gap: 5px; margin-top: 6px; }
 [data-density="compact"] .set-detail-grid { margin-top: 6px; }
@@ -260,10 +241,48 @@ a { color: var(--accent-strong); }
 .heat-cell.level-2 { background: color-mix(in srgb, var(--accent) 60%, var(--surface)); }
 .heat-cell.level-3 { background: var(--accent); }
 .heat-labels { display: grid; grid-template-columns: repeat(7,1fr); gap: 5px; margin-bottom: 5px; text-align: center; color: var(--muted); font-size: 10px; }
+.inline-icon { display: inline-flex; align-items: center; justify-content: center; vertical-align: -3px; margin-right: 5px; }
+.inline-icon .icon { width: 15px; height: 15px; }
+.list-icon { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; color: var(--accent-strong); background: var(--accent-soft); box-shadow: inset 0 0 0 1px rgba(224,38,73,.14); flex: 0 0 auto; }
+.list-icon .icon { width: 22px; height: 22px; }
+.empty-icon .icon { width: 27px; height: 27px; color: var(--accent-strong); }
+.result-mark { width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent-strong); flex: 0 0 auto; }
+.result-mark .icon { width: 20px; height: 20px; }
+.result-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent-strong); box-shadow: 0 0 0 6px rgba(179,18,45,.13); }
+.goal-card { position: relative; overflow: hidden; background: linear-gradient(145deg, #181319, #121216); border-color: rgba(224,38,73,.2); }
+.goal-card::after { content: ""; position: absolute; width: 170px; height: 170px; right: -85px; top: -105px; border-radius: 50%; background: radial-gradient(circle, rgba(224,38,73,.25), transparent 67%); pointer-events: none; }
+.goal-card.complete { background: linear-gradient(135deg, #3a0a16 0%, #74091f 50%, #a90f2c 100%); border-color: rgba(255,126,151,.45); box-shadow: 0 16px 38px rgba(179,18,45,.32); animation: goal-pop .42s ease both; }
+.goal-card.complete .muted { color: rgba(255,255,255,.78); }
+.goal-card.complete .link-button { color: #fff; text-decoration: underline; text-decoration-color: rgba(255,255,255,.35); text-underline-offset: 3px; }
+.goal-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.goal-count { font-size: clamp(38px, 12vw, 54px); font-weight: 900; line-height: .95; letter-spacing: -.055em; }
+.goal-check { width: 54px; height: 54px; border-radius: 18px; display: grid; place-items: center; background: rgba(255,255,255,.14); color: #fff; border: 1px solid rgba(255,255,255,.2); }
+.goal-check .icon { width: 29px; height: 29px; }
+.goal-card .progress-bar { height: 12px; background: rgba(255,255,255,.08); }
+.goal-card.complete .progress-bar > span { background: linear-gradient(90deg, #ff7d97, #fff); box-shadow: 0 0 18px rgba(255,125,151,.55); }
+.week-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 9px; }
+.week-block { min-height: 82px; border-radius: 15px; border: 1px solid var(--line); background: var(--surface-2); color: var(--muted); padding: 9px 7px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; position: relative; text-align: center; }
+.week-block .week-score { color: var(--text); font-weight: 850; font-size: 15px; }
+.week-block .week-date { font-size: 10px; line-height: 1.15; }
+.week-block .week-status-icon { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.06); }
+.week-block .week-status-icon .icon { width: 15px; height: 15px; }
+.week-block.complete { background: linear-gradient(145deg, #6b091c, #b41230); border-color: #e02649; color: rgba(255,255,255,.78); box-shadow: 0 9px 20px rgba(179,18,45,.2); }
+.week-block.complete .week-score { color: #fff; }
+.week-block.complete .week-status-icon { background: rgba(255,255,255,.16); color: #fff; }
+.week-block.current { outline: 2px solid #ff738d; outline-offset: 2px; }
+.week-block.planned { background: repeating-linear-gradient(135deg, #1e1e23, #1e1e23 7px, #26262d 7px, #26262d 14px); }
+.week-legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 12px; color: var(--muted); font-size: 11px; }
+.legend-square { width: 10px; height: 10px; border-radius: 3px; display: inline-block; margin-right: 5px; vertical-align: -1px; background: var(--surface-2); border: 1px solid var(--line); }
+.legend-square.complete { background: var(--accent); border-color: var(--accent-strong); }
+.legend-square.current { background: transparent; border: 2px solid #ff738d; }
+.progress-actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
+@media (min-width: 520px) { .week-grid { grid-template-columns: repeat(8, minmax(0,1fr)); } .progress-actions { grid-template-columns: repeat(2, 1fr); } }
+@keyframes goal-pop { 0% { transform: scale(.985); opacity: .85; } 65% { transform: scale(1.012); } 100% { transform: scale(1); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .goal-card.complete { animation: none; } }
 
-.toast { position: fixed; left: 50%; bottom: calc(88px + var(--safe-bottom)); transform: translateX(-50%); z-index: 100; width: min(92vw, 520px); padding: 12px 14px; border-radius: 14px; background: #16201e; color: white; box-shadow: 0 10px 30px rgba(0,0,0,.25); display: flex; align-items: center; gap: 12px; animation: toast-in .2s ease; }
+.toast { position: fixed; left: 50%; bottom: calc(88px + var(--safe-bottom)); transform: translateX(-50%); z-index: 100; width: min(92vw, 520px); padding: 12px 14px; border-radius: 14px; background: #1a1014; color: white; box-shadow: 0 10px 30px rgba(0,0,0,.25); display: flex; align-items: center; gap: 12px; animation: toast-in .2s ease; }
 .toast .grow { flex: 1; }
-.toast button { border: 0; color: #80dfd4; background: transparent; font-weight: 800; padding: 8px; }
+.toast button { border: 0; color: #ff8ca1; background: transparent; font-weight: 800; padding: 8px; }
 @keyframes toast-in { from { opacity: 0; transform: translate(-50%, 10px); } }
 
 .modal-backdrop { position: fixed; inset: 0; z-index: 80; background: rgba(0,0,0,.45); display: flex; align-items: flex-end; justify-content: center; padding-top: var(--safe-top); }
@@ -274,7 +293,8 @@ a { color: var(--accent-strong); }
 
 .install-wrap, .setup-wrap { min-height: 100dvh; display: grid; align-items: center; padding: calc(26px + var(--safe-top)) 18px calc(26px + var(--safe-bottom)); }
 .install-card, .setup-card { width: min(560px, 100%); margin: 0 auto; background: var(--surface); border: 1px solid var(--line); border-radius: 28px; padding: 24px; box-shadow: var(--shadow); }
-.app-mark { width: 70px; height: 70px; border-radius: 22px; background: var(--accent); color: white; display: grid; place-items: center; font-size: 33px; margin-bottom: 18px; }
+.app-mark { width: 70px; height: 70px; border-radius: 22px; background: linear-gradient(145deg, #7c091d, #c11939); color: white; display: grid; place-items: center; font-size: 33px; margin-bottom: 18px; box-shadow: var(--red-glow); }
+.app-mark .icon { width: 36px; height: 36px; stroke-width: 2.3; }
 .install-card h1, .setup-card h1 { margin: 0; font-size: 32px; letter-spacing: -.035em; }
 .steps { counter-reset: steps; list-style: none; padding: 0; margin: 20px 0; display: grid; gap: 13px; }
 .steps li { counter-increment: steps; display: grid; grid-template-columns: 34px 1fr; gap: 11px; align-items: start; }
@@ -336,7 +356,10 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
     calendar: '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>',
     star: '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.2 7.5 14 3 9.6l6.2-.9L12 3Z"/></svg>',
     menu: '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
-    close: '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 6 12 12M18 6 6 18"/></svg>'
+    close: '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 6 12 12M18 6 6 18"/></svg>',
+    history: '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></svg>',
+    settings: '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21h-4v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3.1 14H3v-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 10 3.1V3h4v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.5 1h.1v4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>',
+    template: '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M9 9h6M9 13h6M9 17h4"/></svg>'
   };
 
   const DEFAULT_GROUP_NAMES = ['Chest', 'Back', 'Legs', 'Shoulders', 'Arms', 'Core', 'Other'];
@@ -856,6 +879,45 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
     }
     return streak;
   }
+  function weeklyGoalHistory(count = 16) {
+    const currentWeek = startOfWeek(todayLocal());
+    const items = [];
+    for (let offset = count - 1; offset >= 0; offset--) {
+      const weekStart = addDays(currentWeek, -7 * offset);
+      const days = workoutDaysForWeek(weekStart).size;
+      const target = targetForWeek(weekStart);
+      const planned = Boolean(plannedBreakForWeek(weekStart));
+      items.push({ weekStart, days, target, planned, complete: !planned && days >= target, current: weekStart === currentWeek });
+    }
+    return items;
+  }
+  function consistencyCalendarData(monthOffset = 0) {
+    const now = new Date();
+    now.setDate(1);
+    now.setMonth(now.getMonth() + Number(monthOffset));
+    const year = now.getFullYear(), month = now.getMonth();
+    const first = new Date(year, month, 1), last = new Date(year, month + 1, 0);
+    const startDay = data.settings.weekStartsOn === 'monday' ? (first.getDay() + 6) % 7 : first.getDay();
+    const cells = Array.from({ length: startDay }, () => null);
+    const volumesByDate = {};
+    completedWorkouts().forEach(w => { volumesByDate[w.workoutDate] = (volumesByDate[w.workoutDate] || 0) + workoutStats(w).volume; });
+    const maxVol = Math.max(1, ...Object.values(volumesByDate));
+    for (let day = 1; day <= last.getDate(); day++) {
+      const date = localDateFromDate(new Date(year, month, day));
+      const volume = volumesByDate[date] || 0;
+      const level = volume ? Math.max(1, Math.ceil(volume / maxVol * 3)) : 0;
+      cells.push({ date, day, level, volume });
+    }
+    return {
+      now,
+      cells,
+      labels: data.settings.weekStartsOn === 'monday' ? ['M','T','W','T','F','S','S'] : ['S','M','T','W','T','F','S']
+    };
+  }
+  function renderDailyConsistencyCalendar(monthOffset = 0, action = 'change-progress-month') {
+    const calendar = consistencyCalendarData(monthOffset);
+    return `<section class="card"><div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px"><button class="icon-button small" data-action="${action}" data-offset="${monthOffset-1}" aria-label="Previous month">${ICONS.back}</button><h3>${new Intl.DateTimeFormat('en-GB',{month:'long',year:'numeric'}).format(calendar.now)}</h3><button class="icon-button small" data-action="${action}" data-offset="${monthOffset+1}" aria-label="Next month"><span style="transform:rotate(180deg);display:flex">${ICONS.back}</span></button></div><div class="heat-labels">${calendar.labels.map(x=>`<span>${x}</span>`).join('')}</div><div class="heatmap">${calendar.cells.map(c => c ? `<button class="heat-cell level-${c.level}" title="${c.date}: ${formatNumber(c.volume)} kg volume" data-action="heat-day" data-date="${c.date}"><span class="sr-only">${c.date}${c.volume ? `, ${formatNumber(c.volume)} kg volume` : ', no workout'}</span></button>` : '<span></span>').join('')}</div></section>`;
+  }
   function latestBodyweight() { return visibleBodyweights().at(-1) || null; }
   function bodyweightRollingAverage(entries, date) {
     const start = addDays(date, -6);
@@ -882,7 +944,7 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
 
   function renderScreen() {
     switch (currentScreen.name) {
-      case 'loading': return `<div class="install-wrap"><div class="install-card"><div class="app-mark">🏋️</div><h1>Opening Workout Tracker</h1><p class="muted">Loading your saved data…</p></div></div>`;
+      case 'loading': return `<div class="install-wrap"><div class="install-card"><div class="app-mark">${ICONS.workout}</div><h1>Opening Workout Tracker</h1><p class="muted">Loading your saved data…</p></div></div>`;
       case 'install': return renderInstall();
       case 'setup': return renderSetup();
       case 'githubSetup': return renderGithubSetup();
@@ -893,7 +955,7 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
       case 'activeWorkout': currentTab = 'workout'; return renderActiveWorkout(currentScreen.params.workoutId);
       case 'finishReview': return renderFinishReview(currentScreen.params.workoutId);
       case 'workoutSummary': return renderWorkoutSummary(currentScreen.params.workoutId);
-      case 'progress': currentTab = 'progress'; return renderProgress();
+      case 'progress': currentTab = 'progress'; return renderProgress(currentScreen.params.monthOffset || 0);
       case 'history': return renderHistory();
       case 'workoutDetail': return renderWorkoutDetail(currentScreen.params.workoutId, currentScreen.params.editing);
       case 'exerciseProgress': return renderExerciseProgress(currentScreen.params.exerciseId, currentScreen.params.range || data.settings.defaultChartRange);
@@ -913,7 +975,7 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
 
   function renderInstall() {
     return `<main class="install-wrap"><section class="install-card">
-      <div class="app-mark">🏋️</div><h1>Install Workout Tracker</h1>
+      <div class="app-mark">${ICONS.workout}</div><h1>Install Workout Tracker</h1>
       <p class="muted">Install it before setup so your saved data and GitHub connection live in the Home Screen app.</p>
       <ol class="steps"><li>Tap the Safari <strong>Share</strong> button.</li><li>Choose <strong>Add to Home Screen</strong>.</li><li>Turn on <strong>Open as Web App</strong>, then tap Add.</li><li>Open Workout Tracker from the new Home Screen icon.</li></ol>
       <div class="card warning flat"><strong>Do not set up GitHub in this Safari tab.</strong><p class="small">Open the installed app first.</p></div>
@@ -945,7 +1007,7 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
 
   function renderSetup() {
     return `<main class="setup-wrap"><section class="setup-card">
-      <div class="app-mark">🏋️</div><h1>Set up your tracker</h1><p class="muted">A few defaults, then you can start logging.</p>
+      <div class="app-mark">${ICONS.workout}</div><h1>Set up your tracker</h1><p class="muted">A few defaults, then you can start logging.</p>
       <div class="field"><label for="setup-target">Workout days per week</label><input class="input" id="setup-target" type="number" inputmode="numeric" min="1" max="7" value="${data.settings.weeklyTarget}"></div>
       <div class="field"><label for="setup-week">Week starts on</label><select class="select" id="setup-week"><option value="monday" ${data.settings.weekStartsOn === 'monday' ? 'selected' : ''}>Monday</option><option value="sunday" ${data.settings.weekStartsOn === 'sunday' ? 'selected' : ''}>Sunday</option></select></div>
       <label class="toggle-row"><span><strong>Add a starter exercise list</strong><br><span class="small muted">You can edit or remove everything later.</span></span><span class="switch"><input id="setup-starters" type="checkbox"><span></span></span></label>
@@ -958,7 +1020,7 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
     const gh = config.github;
     return `<main class="setup-wrap"><section class="setup-card">
       <button class="back-button" data-action="back" aria-label="Back">${ICONS.back}</button>
-      <div style="height:14px"></div><div class="app-mark">☁️</div><h1>Connect GitHub</h1>
+      <div style="height:14px"></div><div class="app-mark">${ICONS.cloud}</div><h1>Connect GitHub</h1>
       <p class="muted">This lets the app automatically back up <code class="inline">data/workout-data.json</code> in this repository.</p>
       <div class="field"><label for="gh-user">GitHub username</label><input class="input" id="gh-user" autocomplete="username" value="${escapeHtml(gh.username)}"></div>
       <div class="field"><label for="gh-repo">Repository</label><input class="input" id="gh-repo" value="${escapeHtml(gh.repo || 'workout-tracker')}"></div>
@@ -974,7 +1036,7 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
     if (!pending) return renderGithubSetup();
     const completed = pending.remoteData.workouts.filter(w => w.status === 'completed').length;
     return `<main class="setup-wrap"><section class="setup-card">
-      <div class="app-mark">☁️</div><h1>Existing GitHub backup found</h1>
+      <div class="app-mark">${ICONS.cloud}</div><h1>Existing GitHub backup found</h1>
       <p class="muted">GitHub contains ${completed} completed workout${completed === 1 ? '' : 's'}. Choose exactly what should happen. Nothing will be overwritten until you choose.</p>
       <div class="card flat"><strong>Recommended</strong><p class="small muted">Restore the GitHub backup to this phone. An untouched starter exercise list will be replaced by the backup.</p></div>
       <button class="primary-button full-width" data-action="github-restore-choice" data-choice="restore">Restore GitHub data</button>
@@ -1006,13 +1068,13 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
       <div style="margin-top:10px">${statusPill()}</div>
 
       <div class="section-title"><h2>Quick start</h2><button class="link-button" data-action="open-start-workout">See all</button></div>
-      ${templates.length ? `<div class="chips">${templates.map(t => `<button class="chip-button" data-action="start-template" data-id="${t.id}">${t.isFavourite ? '★ ' : ''}${escapeHtml(t.name)}</button>`).join('')}<button class="chip-button" data-action="start-blank">+ Blank workout</button></div>` : `<div class="card flat"><p class="muted">No templates yet.</p><button class="secondary-button" data-action="start-blank">Start blank workout</button></div>`}
+      ${templates.length ? `<div class="chips">${templates.map(t => `<button class="chip-button" data-action="start-template" data-id="${t.id}">${t.isFavourite ? `<span class="inline-icon">${ICONS.star}</span>` : ''}${escapeHtml(t.name)}</button>`).join('')}<button class="chip-button" data-action="start-blank">+ Blank workout</button></div>` : `<div class="card flat"><p class="muted">No templates yet.</p><button class="secondary-button" data-action="start-blank">Start blank workout</button></div>`}
 
-      <div class="section-title"><h2>This week</h2><button class="link-button" data-action="open-consistency">Details</button></div>
+      <div class="section-title"><h2>This week</h2><button class="link-button" data-action="switch-tab" data-tab="progress">Progress</button></div>
       <section class="card"><div style="display:flex;align-items:end;justify-content:space-between;gap:12px"><div><div class="metric-value">${days} of ${target}</div><div class="muted small">distinct workout days</div></div><div class="status-pill ${days >= target ? 'success' : ''}">${currentStreak()}-week streak</div></div><div class="progress-bar" style="margin-top:14px"><span style="width:${Math.min(100, days/target*100)}%"></span></div></section>
 
       <div class="section-title"><h2>Latest workout</h2><button class="link-button" data-action="open-history">History</button></div>
-      ${latest ? renderWorkoutListCard(latest) : `<div class="empty-state"><div class="empty-icon">🏋️</div><h3>No completed workouts</h3><p>Your first completed session will appear here.</p></div>`}
+      ${latest ? renderWorkoutListCard(latest) : `<div class="empty-state"><div class="empty-icon">${ICONS.workout}</div><h3>No completed workouts</h3><p>Your first completed session will appear here.</p></div>`}
 
       <div class="section-title"><h2>Bodyweight</h2><button class="link-button" data-action="log-bodyweight">Log</button></div>
       <button class="list-item" data-action="open-bodyweight"><div class="grow">${bw ? `<div class="metric-value">${formatNumber(bw.weightKg)} kg</div><div class="list-item-sub">${dateToLocalString(bw.date)}${trend ? ` · ${escapeHtml(trend.label)}` : ''}</div>` : `<div class="list-item-title">No bodyweight logged</div><div class="list-item-sub">Add your first entry</div>`}</div><span class="chevron">${ICONS.chevron}</span></button>
@@ -1023,7 +1085,7 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
     const stats = workoutStats(workout);
     const records = getWorkoutRecords(workout).filter(x => !x.baseline);
     const searchText = `${workout.name} ${getTemplate(workout.templateId)?.name || ''}`.toLowerCase();
-    return `<button class="list-item ${hidden ? 'hidden' : ''}" data-action="open-workout-detail" data-id="${workout.id}" ${searchable ? `data-history-item data-search-text="${escapeHtml(searchText)}"` : ''}><div class="grow"><div class="list-item-title">${escapeHtml(workout.name)}</div><div class="list-item-sub">${dateToLocalString(workout.workoutDate)} · ${stats.exercises} exercises · ${stats.workingSets} working sets</div>${records.length ? `<div style="margin-top:7px"><span class="record-badge">★ ${records.length} record${records.length === 1 ? '' : 's'}</span></div>` : ''}</div><span class="chevron">${ICONS.chevron}</span></button>`;
+    return `<button class="list-item ${hidden ? 'hidden' : ''}" data-action="open-workout-detail" data-id="${workout.id}" ${searchable ? `data-history-item data-search-text="${escapeHtml(searchText)}"` : ''}><div class="grow"><div class="list-item-title">${escapeHtml(workout.name)}</div><div class="list-item-sub">${dateToLocalString(workout.workoutDate)} · ${stats.exercises} exercises · ${stats.workingSets} working sets</div>${records.length ? `<div style="margin-top:7px"><span class="record-badge">${ICONS.star}${records.length} record${records.length === 1 ? '' : 's'}</span></div>` : ''}</div><span class="chevron">${ICONS.chevron}</span></button>`;
   }
 
   function renderStartWorkout() {
@@ -1034,7 +1096,7 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
     return `<main class="page">${pageHeader('Start Workout', 'Choose how you want to begin')}
       <button class="hero-action" data-action="start-blank"><span class="eyebrow">Flexible session</span><span class="hero-title">Blank Workout</span><span class="hero-sub">Add exercises as you go</span></button>
       <div class="section-title"><h2>Templates</h2><button class="link-button" data-action="open-templates">Manage</button></div>
-      ${templates.length ? `<div class="list">${templates.map(t => `<button class="list-item" data-action="start-template" data-id="${t.id}"><div class="grow"><div class="list-item-title">${t.isFavourite ? '★ ' : ''}${escapeHtml(t.name)}</div><div class="list-item-sub">${t.exercises.length} exercises</div></div>${ICONS.chevron}</button>`).join('')}</div>` : `<div class="empty-state"><h3>No templates yet</h3><p>Start blank, then save the completed workout as a template.</p></div>`}
+      ${templates.length ? `<div class="list">${templates.map(t => `<button class="list-item" data-action="start-template" data-id="${t.id}"><div class="grow"><div class="list-item-title">${t.isFavourite ? `<span class="inline-icon">${ICONS.star}</span>` : ''}${escapeHtml(t.name)}</div><div class="list-item-sub">${t.exercises.length} exercises</div></div>${ICONS.chevron}</button>`).join('')}</div>` : `<div class="empty-state"><h3>No templates yet</h3><p>Start blank, then save the completed workout as a template.</p></div>`}
       <div class="section-title"><h2>Repeat a workout</h2><button class="link-button" data-action="open-history">All history</button></div>
       ${recent.length ? `<div class="list">${recent.map(w => `<button class="list-item" data-action="copy-workout" data-id="${w.id}"><div class="grow"><div class="list-item-title">${escapeHtml(w.name)}</div><div class="list-item-sub">${dateToLocalString(w.workoutDate)} · ${workoutStats(w).workingSets} sets</div></div>${ICONS.chevron}</button>`).join('')}</div>` : `<p class="muted">Completed workouts will appear here.</p>`}
     </main>`;
@@ -1141,29 +1203,40 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
     const comparison = previousSameTemplate ? workoutStats(previousSameTemplate) : null;
     return `<main class="page no-tabs">${pageHeader('Workout Complete', dateToLocalString(workout.workoutDate))}
       <section class="card accent"><h2>${escapeHtml(workout.name)}</h2><div class="metric-grid" style="margin-top:14px"><div class="metric"><div class="metric-value">${stats.exercises}</div><div class="metric-label">Exercises</div></div><div class="metric"><div class="metric-value">${stats.workingSets}</div><div class="metric-label">Working sets</div></div><div class="metric"><div class="metric-value">${stats.reps}</div><div class="metric-label">Repetitions</div></div><div class="metric"><div class="metric-value">${formatNumber(stats.volume)}</div><div class="metric-label">kg volume</div></div></div></section>
-      ${records.length ? `<div class="section-title"><h2>Results</h2></div><div class="list">${records.map(r => `<div class="list-item"><span style="font-size:22px">${r.baseline ? '●' : '★'}</span><div class="grow"><div class="list-item-title">${escapeHtml(r.exercise)}</div><div class="list-item-sub">${escapeHtml(r.label)}</div></div></div>`).join('')}</div>` : ''}
+      ${records.length ? `<div class="section-title"><h2>Results</h2></div><div class="list">${records.map(r => `<div class="list-item"><span class="result-mark">${r.baseline ? '<span class="result-dot"></span>' : ICONS.star}</span><div class="grow"><div class="list-item-title">${escapeHtml(r.exercise)}</div><div class="list-item-sub">${escapeHtml(r.label)}</div></div></div>`).join('')}</div>` : ''}
       ${comparison ? `<section class="card"><h3>Compared with previous ${escapeHtml(getTemplate(workout.templateId)?.name || 'template')} workout</h3><p class="muted">${stats.volume === comparison.volume ? 'Same exercise volume' : `${formatNumber(Math.abs(stats.volume - comparison.volume))} kg ${stats.volume > comparison.volume ? 'more' : 'less'} volume`} · ${stats.workingSets - comparison.workingSets >= 0 ? '+' : ''}${stats.workingSets-comparison.workingSets} working sets</p></section>` : ''}
       ${workout.note ? `<section class="card"><h3>Workout note</h3><p class="pre-wrap">${escapeHtml(workout.note)}</p></section>` : ''}
       <div class="button-row"><button class="secondary-button" data-action="save-workout-template" data-id="${workout.id}">Save as Template</button>${workout.templateId ? `<button class="secondary-button" data-action="update-template-from-workout" data-id="${workout.id}">Update Template</button>` : ''}</div>
       <div class="sticky-actions"><button class="primary-button full-width" data-action="summary-home">Return Home</button></div>
     </main>`;
   }
-  function renderProgress() {
-    const recent = completedWorkouts().slice(0,4);
-    const exerciseCount = data.exercises.filter(x => !x.isArchived).length;
-    const totalWorkouts = completedWorkouts().length;
-    const latest = completedWorkouts()[0];
-    return `<main class="page">${pageHeader('Progress', 'History, records and consistency')}
-      <div class="metric-grid"><div class="metric"><div class="metric-value">${totalWorkouts}</div><div class="metric-label">Workouts</div></div><div class="metric"><div class="metric-value">${exerciseCount}</div><div class="metric-label">Exercises</div></div><div class="metric"><div class="metric-value">${currentStreak()}</div><div class="metric-label">Week streak</div></div><div class="metric"><div class="metric-value">${latest ? formatNumber(workoutStats(latest).volume) : '0'}</div><div class="metric-label">Latest kg volume</div></div></div>
-      <div class="section-title"><h2>Explore</h2></div>
-      <div class="list">
-        <button class="list-item" data-action="open-history"><span style="font-size:24px">📚</span><div class="grow"><div class="list-item-title">Workout History</div><div class="list-item-sub">Review and edit completed sessions</div></div>${ICONS.chevron}</button>
-        <button class="list-item" data-action="choose-exercise-progress"><span style="font-size:24px">📈</span><div class="grow"><div class="list-item-title">Exercise Progress</div><div class="list-item-sub">Volume, weight, reps and records</div></div>${ICONS.chevron}</button>
-        <button class="list-item" data-action="open-consistency"><span style="font-size:24px">🗓️</span><div class="grow"><div class="list-item-title">Consistency</div><div class="list-item-sub">Weekly goal, streak and heatmap</div></div>${ICONS.chevron}</button>
-        <button class="list-item" data-action="open-bodyweight"><span style="font-size:24px">⚖️</span><div class="grow"><div class="list-item-title">Bodyweight</div><div class="list-item-sub">Entries and seven-day average</div></div>${ICONS.chevron}</button>
+  function renderProgress(monthOffset = 0) {
+    const week = startOfWeek(todayLocal());
+    const days = workoutDaysForWeek(week).size;
+    const target = targetForWeek(week);
+    const complete = days >= target;
+    const weekly = weeklyGoalHistory(16);
+    const streak = currentStreak();
+    return `<main class="page">${pageHeader('Progress', 'Consistency first. Your training details are below.')}
+      <section class="card goal-card ${complete ? 'complete' : ''}">
+        <div class="goal-top"><div><div class="goal-count">${days} of ${target}</div><div class="muted">workout days this week</div></div>${complete ? `<div class="goal-check" aria-label="Weekly goal completed">${ICONS.check}</div>` : `<span class="status-pill">${streak}-week streak</span>`}</div>
+        <div class="progress-bar" style="margin-top:18px"><span style="width:${Math.min(100, days/target*100)}%"></span></div>
+        <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:12px"><span class="small ${complete ? '' : 'muted'}">${complete ? 'Weekly goal complete' : `${Math.max(0,target-days)} workout day${Math.max(0,target-days)===1?'':'s'} to go`}</span><button class="link-button" data-action="open-consistency">Manage goal</button></div>
+      </section>
+
+      <div class="section-title"><h2>Weekly calendar</h2><span class="muted small">Last 16 weeks</span></div>
+      <section class="card"><div class="week-grid">${weekly.map(item => `<button class="week-block ${item.complete?'complete':''} ${item.current?'current':''} ${item.planned?'planned':''}" data-action="week-summary" data-week-start="${item.weekStart}" aria-label="Week starting ${dateToLocalString(item.weekStart)}: ${item.planned?'planned break':`${item.days} of ${item.target} workout days${item.complete?', goal complete':''}`}"><span class="week-status-icon">${item.complete?ICONS.check:item.planned?'<span aria-hidden="true">—</span>':`<span aria-hidden="true">${item.days}</span>`}</span><span class="week-score">${item.days}/${item.target}</span><span class="week-date">${dateToLocalString(item.weekStart,{year:false})}</span></button>`).join('')}</div><div class="week-legend"><span><i class="legend-square complete"></i>Goal complete</span><span><i class="legend-square current"></i>Current week</span><span><i class="legend-square"></i>Not complete</span></div></section>
+
+      <div class="section-title"><h2>Training days</h2><span class="muted small">Daily activity</span></div>
+      ${renderDailyConsistencyCalendar(monthOffset, 'change-progress-month')}
+
+      <div class="section-title"><h2>More progress</h2></div>
+      <div class="progress-actions">
+        <button class="list-item" data-action="choose-exercise-progress"><span class="list-icon">${ICONS.progress}</span><div class="grow"><div class="list-item-title">Exercise Progress</div><div class="list-item-sub">Volume, weight, reps and records</div></div>${ICONS.chevron}</button>
+        <button class="list-item" data-action="open-bodyweight"><span class="list-icon">${ICONS.scale}</span><div class="grow"><div class="list-item-title">Bodyweight</div><div class="list-item-sub">Entries and seven-day average</div></div>${ICONS.chevron}</button>
+        <button class="list-item" data-action="open-history"><span class="list-icon">${ICONS.history}</span><div class="grow"><div class="list-item-title">Workout History</div><div class="list-item-sub">Review and edit completed sessions</div></div>${ICONS.chevron}</button>
+        <button class="list-item" data-action="open-consistency"><span class="list-icon">${ICONS.calendar}</span><div class="grow"><div class="list-item-title">Goal Settings</div><div class="list-item-sub">Weekly target and planned breaks</div></div>${ICONS.chevron}</button>
       </div>
-      <div class="section-title"><h2>Recent workouts</h2><button class="link-button" data-action="open-history">See all</button></div>
-      ${recent.length ? `<div class="list">${recent.map(renderWorkoutListCard).join('')}</div>` : `<div class="empty-state"><h3>No progress yet</h3><p>Complete a workout to begin building your history.</p></div>`}
     </main>`;
   }
 
@@ -1188,7 +1261,7 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
     const stats = workoutStats(workout);
     const records = getWorkoutRecords(workout).filter(x => !x.baseline);
     return `<main class="page">${pageHeader(workout.name, dateToLocalString(workout.workoutDate), { back: true, action: `<button class="icon-button" data-action="workout-detail-menu" data-id="${workout.id}" aria-label="Workout options">${ICONS.menu}</button>` })}
-      <section class="card"><div class="metric-grid"><div class="metric"><div class="metric-value">${stats.exercises}</div><div class="metric-label">Exercises</div></div><div class="metric"><div class="metric-value">${stats.workingSets}</div><div class="metric-label">Working sets</div></div><div class="metric"><div class="metric-value">${stats.reps}</div><div class="metric-label">Reps</div></div><div class="metric"><div class="metric-value">${formatNumber(stats.volume)}</div><div class="metric-label">kg volume</div></div></div>${records.length ? `<div style="margin-top:12px"><span class="record-badge">★ ${records.length} personal record${records.length === 1 ? '' : 's'}</span></div>` : ''}</section>
+      <section class="card"><div class="metric-grid"><div class="metric"><div class="metric-value">${stats.exercises}</div><div class="metric-label">Exercises</div></div><div class="metric"><div class="metric-value">${stats.workingSets}</div><div class="metric-label">Working sets</div></div><div class="metric"><div class="metric-value">${stats.reps}</div><div class="metric-label">Reps</div></div><div class="metric"><div class="metric-value">${formatNumber(stats.volume)}</div><div class="metric-label">kg volume</div></div></div>${records.length ? `<div style="margin-top:12px"><span class="record-badge">${ICONS.star}${records.length} personal record${records.length === 1 ? '' : 's'}</span></div>` : ''}</section>
       ${workout.note ? `<section class="card"><h3>Workout note</h3><p class="pre-wrap">${escapeHtml(workout.note)}</p></section>` : ''}
       ${workout.exercises.sort((a,b)=>a.position-b.position).map(we => {
         const ex = getExercise(we.exerciseId);
@@ -1231,28 +1304,13 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
   }
 
   function renderConsistency(monthOffset = 0) {
-    const now = new Date(); now.setMonth(now.getMonth() + Number(monthOffset));
-    const year = now.getFullYear(), month = now.getMonth();
-    const first = new Date(year, month, 1), last = new Date(year, month + 1, 0);
-    const startDay = data.settings.weekStartsOn === 'monday' ? (first.getDay()+6)%7 : first.getDay();
-    const cells = [];
-    for (let i=0;i<startDay;i++) cells.push(null);
-    const volumesByDate = {};
-    completedWorkouts().forEach(w => { volumesByDate[w.workoutDate] = (volumesByDate[w.workoutDate]||0)+workoutStats(w).volume; });
-    const maxVol = Math.max(1, ...Object.values(volumesByDate));
-    for (let day=1; day<=last.getDate(); day++) {
-      const d = localDateFromDate(new Date(year, month, day));
-      const vol = volumesByDate[d] || 0;
-      const level = vol ? Math.max(1, Math.ceil(vol/maxVol*3)) : 0;
-      cells.push({ date:d, day, level, volume:vol });
-    }
     const week = startOfWeek(todayLocal());
     const days = workoutDaysForWeek(week).size;
     const weekTarget = targetForWeek(week);
-    const labels = data.settings.weekStartsOn === 'monday' ? ['M','T','W','T','F','S','S'] : ['S','M','T','W','T','F','S'];
-    return `<main class="page">${pageHeader('Consistency', 'Weekly goal and training calendar', { back: true })}
-      <section class="card accent"><div class="metric-value">${days} of ${weekTarget}</div><div class="muted">workout days this week</div><div class="progress-bar" style="margin-top:14px"><span style="width:${Math.min(100, days/weekTarget*100)}%"></span></div><p class="strong">Current streak: ${currentStreak()} completed week${currentStreak()===1?'':'s'}</p><button class="secondary-button full-width" data-action="edit-week-target" style="margin-top:10px">Set this week's target</button></section>
-      <section class="card"><div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px"><button class="icon-button small" data-action="change-consistency-month" data-offset="${monthOffset-1}" aria-label="Previous month">${ICONS.back}</button><h3>${new Intl.DateTimeFormat('en-GB',{month:'long',year:'numeric'}).format(now)}</h3><button class="icon-button small" data-action="change-consistency-month" data-offset="${monthOffset+1}" aria-label="Next month"><span style="transform:rotate(180deg);display:flex">${ICONS.back}</span></button></div><div class="heat-labels">${labels.map(x=>`<span>${x}</span>`).join('')}</div><div class="heatmap">${cells.map(c => c ? `<button class="heat-cell level-${c.level}" title="${c.date}: ${formatNumber(c.volume)} kg volume" data-action="heat-day" data-date="${c.date}"><span class="sr-only">${c.date}</span></button>` : '<span></span>').join('')}</div></section>
+    const complete = days >= weekTarget;
+    return `<main class="page">${pageHeader('Goal Settings', 'Weekly target, streak and planned breaks', { back: true })}
+      <section class="card goal-card ${complete?'complete':''}"><div class="goal-top"><div><div class="goal-count">${days} of ${weekTarget}</div><div class="muted">workout days this week</div></div>${complete?`<div class="goal-check">${ICONS.check}</div>`:`<span class="status-pill">${currentStreak()}-week streak</span>`}</div><div class="progress-bar" style="margin-top:18px"><span style="width:${Math.min(100, days/weekTarget*100)}%"></span></div><button class="secondary-button full-width" data-action="edit-week-target" style="margin-top:14px">Set this week's target</button></section>
+      ${renderDailyConsistencyCalendar(monthOffset, 'change-consistency-month')}
       <section class="card"><h3>Planned break</h3><p class="muted small">A planned-break week remains visible but does not break your streak.</p><button class="secondary-button full-width" data-action="manage-planned-break">Mark or edit this week</button></section>
     </main>`;
   }
@@ -1275,11 +1333,11 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
   function renderMore() {
     return `<main class="page">${pageHeader('More', 'Exercises, templates and settings')}
       <div class="list">
-        <button class="list-item" data-action="open-exercise-library"><span style="font-size:24px">🏋️</span><div class="grow"><div class="list-item-title">Exercise Library</div><div class="list-item-sub">${data.exercises.filter(x=>!x.isArchived).length} active exercises</div></div>${ICONS.chevron}</button>
-        <button class="list-item" data-action="open-templates"><span style="font-size:24px">📝</span><div class="grow"><div class="list-item-title">Workout Templates</div><div class="list-item-sub">${visibleTemplates().length} active templates</div></div>${ICONS.chevron}</button>
-        <button class="list-item" data-action="open-settings"><span style="font-size:24px">⚙️</span><div class="grow"><div class="list-item-title">Settings</div><div class="list-item-sub">Preferences and GitHub connection</div></div>${ICONS.chevron}</button>
-        <button class="list-item" data-action="open-backup"><span style="font-size:24px">☁️</span><div class="grow"><div class="list-item-title">Backup and Restore</div><div class="list-item-sub">${statusInfo().label}</div></div>${ICONS.chevron}</button>
-        <button class="list-item" data-action="open-deleted"><span style="font-size:24px">🗑️</span><div class="grow"><div class="list-item-title">Recently Deleted</div><div class="list-item-sub">Recover deleted workouts, templates and weigh-ins</div></div>${ICONS.chevron}</button>
+        <button class="list-item" data-action="open-exercise-library"><span class="list-icon">${ICONS.workout}</span><div class="grow"><div class="list-item-title">Exercise Library</div><div class="list-item-sub">${data.exercises.filter(x=>!x.isArchived).length} active exercises</div></div>${ICONS.chevron}</button>
+        <button class="list-item" data-action="open-templates"><span class="list-icon">${ICONS.template}</span><div class="grow"><div class="list-item-title">Workout Templates</div><div class="list-item-sub">${visibleTemplates().length} active templates</div></div>${ICONS.chevron}</button>
+        <button class="list-item" data-action="open-settings"><span class="list-icon">${ICONS.settings}</span><div class="grow"><div class="list-item-title">Settings</div><div class="list-item-sub">Preferences and GitHub connection</div></div>${ICONS.chevron}</button>
+        <button class="list-item" data-action="open-backup"><span class="list-icon">${ICONS.cloud}</span><div class="grow"><div class="list-item-title">Backup and Restore</div><div class="list-item-sub">${statusInfo().label}</div></div>${ICONS.chevron}</button>
+        <button class="list-item" data-action="open-deleted"><span class="list-icon">${ICONS.trash}</span><div class="grow"><div class="list-item-title">Recently Deleted</div><div class="list-item-sub">Recover deleted workouts, templates and weigh-ins</div></div>${ICONS.chevron}</button>
       </div>
       <section class="card" style="margin-top:22px"><h3>Data revision</h3><p class="muted small">Local data revision ${data.dataRevision}. Last updated ${dateTimeString(data.updatedAt)}.</p>${statusPill()}</section>
     </main>`;
@@ -1306,7 +1364,7 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
     const active = visibleTemplates().sort((a,b)=>Number(b.isFavourite)-Number(a.isFavourite) || a.name.localeCompare(b.name));
     const archived = data.templates.filter(x=>x.isArchived && !x.deletedAt);
     return `<main class="page">${pageHeader('Templates', `${active.length} active`, { back: true, action: `<button class="icon-button" data-action="new-template" aria-label="Add template">${ICONS.plus}</button>` })}
-      ${active.length ? `<div class="list">${active.map(t=>`<button class="list-item" data-action="edit-template" data-id="${t.id}"><span style="font-size:21px">${t.isFavourite?'★':'○'}</span><div class="grow"><div class="list-item-title">${escapeHtml(t.name)}</div><div class="list-item-sub">${t.exercises.length} exercises</div></div>${ICONS.chevron}</button>`).join('')}</div>` : `<div class="empty-state"><h3>No templates yet</h3><p>Create one now, or save a completed workout as a template.</p><button class="primary-button" data-action="new-template">Create Template</button></div>`}
+      ${active.length ? `<div class="list">${active.map(t=>`<button class="list-item" data-action="edit-template" data-id="${t.id}"><span class="list-icon">${t.isFavourite?ICONS.star:ICONS.template}</span><div class="grow"><div class="list-item-title">${escapeHtml(t.name)}</div><div class="list-item-sub">${t.exercises.length} exercises</div></div>${ICONS.chevron}</button>`).join('')}</div>` : `<div class="empty-state"><h3>No templates yet</h3><p>Create one now, or save a completed workout as a template.</p><button class="primary-button" data-action="new-template">Create Template</button></div>`}
       ${archived.length ? `<div class="section-title"><h2>Archived</h2></div><div class="list">${archived.map(t=>`<button class="list-item" data-action="edit-template" data-id="${t.id}"><div class="grow"><div class="list-item-title">${escapeHtml(t.name)}</div><div class="list-item-sub">Archived</div></div>${ICONS.chevron}</button>`).join('')}</div>`:''}
     </main>`;
   }
@@ -1338,7 +1396,7 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
         <label class="toggle-row"><span><strong>Show RIR field</strong></span><span class="switch"><input type="checkbox" data-field="setting-show-rir" ${s.showRir?'checked':''}><span></span></span></label>
         <div class="field" style="margin-top:14px"><label>Default set type</label><select class="select" data-field="setting-set-type"><option value="working" ${s.defaultSetType==='working'?'selected':''}>Working</option><option value="warm_up" ${s.defaultSetType==='warm_up'?'selected':''}>Warm-up</option></select></div>
       </section>
-      <div class="section-title"><h2>Display</h2></div><section class="card"><div class="field"><label>Appearance</label><select class="select" data-field="setting-appearance"><option value="system" ${s.appearance==='system'?'selected':''}>Follow iPhone</option><option value="light" ${s.appearance==='light'?'selected':''}>Light</option><option value="dark" ${s.appearance==='dark'?'selected':''}>Dark</option></select></div><div class="field"><label>Set row spacing</label><select class="select" data-field="setting-density"><option value="comfortable" ${s.setRowDensity==='comfortable'?'selected':''}>Comfortable</option><option value="compact" ${s.setRowDensity==='compact'?'selected':''}>Compact</option></select></div><div class="field"><label>Default chart range</label><select class="select" data-field="setting-chart-range"><option value="1_month" ${s.defaultChartRange==='1_month'?'selected':''}>1 month</option><option value="3_months" ${s.defaultChartRange==='3_months'?'selected':''}>3 months</option><option value="6_months" ${s.defaultChartRange==='6_months'?'selected':''}>6 months</option><option value="1_year" ${s.defaultChartRange==='1_year'?'selected':''}>1 year</option><option value="all" ${s.defaultChartRange==='all'?'selected':''}>All time</option></select></div></section>
+      <div class="section-title"><h2>Display</h2></div><section class="card"><div class="field"><label>Theme</label><div class="input" style="display:flex;align-items:center;justify-content:space-between"><span>Black and red</span><span class="status-pill success">Active</span></div></div><div class="field"><label>Set row spacing</label><select class="select" data-field="setting-density"><option value="comfortable" ${s.setRowDensity==='comfortable'?'selected':''}>Comfortable</option><option value="compact" ${s.setRowDensity==='compact'?'selected':''}>Compact</option></select></div><div class="field"><label>Default chart range</label><select class="select" data-field="setting-chart-range"><option value="1_month" ${s.defaultChartRange==='1_month'?'selected':''}>1 month</option><option value="3_months" ${s.defaultChartRange==='3_months'?'selected':''}>3 months</option><option value="6_months" ${s.defaultChartRange==='6_months'?'selected':''}>6 months</option><option value="1_year" ${s.defaultChartRange==='1_year'?'selected':''}>1 year</option><option value="all" ${s.defaultChartRange==='all'?'selected':''}>All time</option></select></div></section>
       <div class="section-title"><h2>GitHub</h2></div><section class="card"><div style="display:flex;align-items:center;justify-content:space-between;gap:10px"><div><strong>${gh.connected ? `${escapeHtml(gh.username)}/${escapeHtml(gh.repo)}` : 'Not connected'}</strong><div class="muted small">${gh.connected ? `${escapeHtml(gh.branch)} · ${escapeHtml(gh.path)}` : 'Workout data is currently local only.'}</div></div>${statusPill()}</div><p class="small muted">Last backup: ${dateTimeString(gh.lastSyncedAt)}</p><div class="button-row">${gh.connected ? `<button class="secondary-button" data-action="sync-now">Back up now</button><button class="secondary-button" data-action="open-github-setup">Reconnect</button><button class="danger-button" data-action="disconnect-github">Disconnect</button>` : `<button class="primary-button" data-action="open-github-setup">Connect GitHub</button>`}</div></section>
     </main>`;
   }
@@ -1356,7 +1414,7 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
     const templates=data.templates.filter(x=>x.deletedAt);
     const weights=data.bodyweightEntries.filter(x=>x.deletedAt);
     const items=[...workouts.map(x=>({type:'workout',id:x.id,title:x.name,sub:`Workout · deleted ${dateToLocalString(x.deletedAt)}`})),...templates.map(x=>({type:'template',id:x.id,title:x.name,sub:`Template · deleted ${dateToLocalString(x.deletedAt)}`})),...weights.map(x=>({type:'bodyweight',id:x.id,title:`${formatNumber(x.weightKg)} kg`,sub:`Bodyweight · ${dateToLocalString(x.date)}`}))];
-    return `<main class="page">${pageHeader('Recently Deleted', 'Items are kept for at least 30 days and removed after a successful backup', {back:true})}${items.length?`<div class="list">${items.map(x=>`<div class="list-item"><div class="grow"><div class="list-item-title">${escapeHtml(x.title)}</div><div class="list-item-sub">${escapeHtml(x.sub)}</div></div><button class="mini-button" data-action="restore-deleted" data-type="${x.type}" data-id="${x.id}">Restore</button><button class="mini-button danger" data-action="permanent-delete" data-type="${x.type}" data-id="${x.id}">Delete</button></div>`).join('')}</div>`:`<div class="empty-state"><div class="empty-icon">✓</div><h3>Nothing deleted</h3><p>Recoverable items will appear here.</p></div>`}</main>`;
+    return `<main class="page">${pageHeader('Recently Deleted', 'Items are kept for at least 30 days and removed after a successful backup', {back:true})}${items.length?`<div class="list">${items.map(x=>`<div class="list-item"><div class="grow"><div class="list-item-title">${escapeHtml(x.title)}</div><div class="list-item-sub">${escapeHtml(x.sub)}</div></div><button class="mini-button" data-action="restore-deleted" data-type="${x.type}" data-id="${x.id}">Restore</button><button class="mini-button danger" data-action="permanent-delete" data-type="${x.type}" data-id="${x.id}">Delete</button></div>`).join('')}</div>`:`<div class="empty-state"><div class="empty-icon">${ICONS.check}</div><h3>Nothing deleted</h3><p>Recoverable items will appear here.</p></div>`}</main>`;
   }
 
   function renderConflict() {
@@ -1512,7 +1570,7 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
       if(maxW>previousHeaviest)newLabels.push('new heaviest weight');
       if(setVolume(updated)>previousSetVolume)newLabels.push('new set-volume record');
       updated.segments.forEach(seg=>{if(Number(seg.weightKg)>(previousByReps[Number(seg.reps)]||0))newLabels.push(`best ${seg.reps}-rep weight`);});
-      if(newLabels.length) showToast(`★ ${newLabels[0]}`);
+      if(newLabels.length) showToast(`New record: ${newLabels[0]}`);
     }
   }
 
@@ -1614,6 +1672,8 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
         else navigate('bodyweight',{range:target.dataset.value},false);return;
       }
       if(action==='change-consistency-month'){navigate('consistency',{monthOffset:Number(target.dataset.offset)},false);return;}
+      if(action==='change-progress-month'){navigate('progress',{monthOffset:Number(target.dataset.offset)},false);return;}
+      if(action==='week-summary'){const ws=target.dataset.weekStart;const count=workoutDaysForWeek(ws).size;const goal=targetForWeek(ws);const planned=plannedBreakForWeek(ws);showToast(planned?`Week of ${dateToLocalString(ws)} is marked as a planned break.`:`Week of ${dateToLocalString(ws)}: ${count} of ${goal} workout days${count>=goal?' - goal complete':''}.`);return;}
       if(action==='heat-day'){const ws=completedWorkouts().filter(w=>w.workoutDate===target.dataset.date);if(ws.length===1)navigate('workoutDetail',{workoutId:ws[0].id});else if(ws.length>1)showToast(`${ws.length} workouts completed on this day.`);return;}
       if(action==='edit-week-target'){openModal('weeklyTarget',{weekStart:startOfWeek(todayLocal())});return;}
       if(action==='save-week-target')return saveWeekTarget();
