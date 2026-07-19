@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 9,
+  "dataRevision": 12,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-07-19T21:01:51.551Z",
+  "updatedAt": "2026-07-19T21:03:44.382Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -142,6 +142,33 @@
       "isArchived": false,
       "createdAt": "2026-07-19T21:01:51.551Z",
       "updatedAt": "2026-07-19T21:01:51.551Z"
+    },
+    {
+      "id": "97152353-b119-4e7f-9a3e-89cc8477dcd9",
+      "name": "Leg Curls",
+      "muscleGroupId": "94b5aeed-d55e-421d-b6ff-94c84aa76eac",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-07-19T21:02:50.391Z",
+      "updatedAt": "2026-07-19T21:02:50.391Z"
+    },
+    {
+      "id": "35999398-51bf-4d7c-a8b1-c57a498cac21",
+      "name": "Dumbbell Shoulder Press",
+      "muscleGroupId": "d048ddd6-7c9e-43bf-8527-5f30f78da724",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-07-19T21:03:17.792Z",
+      "updatedAt": "2026-07-19T21:03:17.792Z"
+    },
+    {
+      "id": "61fd12a7-8c19-4ecb-9ab4-7e317e35077c",
+      "name": "Cable Lat Raise",
+      "muscleGroupId": "d048ddd6-7c9e-43bf-8527-5f30f78da724",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-07-19T21:03:44.382Z",
+      "updatedAt": "2026-07-19T21:03:44.382Z"
     }
   ],
   "templates": [],
