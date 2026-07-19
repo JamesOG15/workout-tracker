@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 12,
+  "dataRevision": 13,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-07-19T21:03:44.382Z",
+  "updatedAt": "2026-07-19T21:39:20.014Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -169,6 +169,15 @@
       "isArchived": false,
       "createdAt": "2026-07-19T21:03:44.382Z",
       "updatedAt": "2026-07-19T21:03:44.382Z"
+    },
+    {
+      "id": "064c46c0-f197-4810-9143-5a05b69c0a25",
+      "name": "RDLs",
+      "muscleGroupId": "94b5aeed-d55e-421d-b6ff-94c84aa76eac",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-07-19T21:39:20.014Z",
+      "updatedAt": "2026-07-19T21:39:20.014Z"
     }
   ],
   "templates": [],
