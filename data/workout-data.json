@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 8,
+  "dataRevision": 9,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-07-19T20:59:06.003Z",
+  "updatedAt": "2026-07-19T21:01:51.551Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -133,6 +133,15 @@
       "isArchived": false,
       "createdAt": "2026-07-19T20:59:06.003Z",
       "updatedAt": "2026-07-19T20:59:06.003Z"
+    },
+    {
+      "id": "a1dbb91b-1ebf-4b42-a02f-c50b2e24e74f",
+      "name": "Single Leg Extensions",
+      "muscleGroupId": "94b5aeed-d55e-421d-b6ff-94c84aa76eac",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-07-19T21:01:51.551Z",
+      "updatedAt": "2026-07-19T21:01:51.551Z"
     }
   ],
   "templates": [],
