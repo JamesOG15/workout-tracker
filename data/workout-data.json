@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 5,
+  "dataRevision": 8,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-07-19T20:57:37.630Z",
+  "updatedAt": "2026-07-19T20:59:06.003Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -106,6 +106,33 @@
       "isArchived": false,
       "createdAt": "2026-07-19T20:57:37.630Z",
       "updatedAt": "2026-07-19T20:57:37.630Z"
+    },
+    {
+      "id": "fa28aa8e-dc79-4701-a533-8ced71f4c364",
+      "name": "Preacher Curls",
+      "muscleGroupId": "32db2fc0-eb85-4e7a-8e69-28e35c787960",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-07-19T20:58:28.587Z",
+      "updatedAt": "2026-07-19T20:58:28.587Z"
+    },
+    {
+      "id": "8dc90a71-a928-486c-8fd6-6eb786d4ebc7",
+      "name": "Incline Curls",
+      "muscleGroupId": "32db2fc0-eb85-4e7a-8e69-28e35c787960",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-07-19T20:58:49.500Z",
+      "updatedAt": "2026-07-19T20:58:49.500Z"
+    },
+    {
+      "id": "70d8d623-3a2a-4611-a808-cf66651e090d",
+      "name": "Tricep Pushdowns",
+      "muscleGroupId": "32db2fc0-eb85-4e7a-8e69-28e35c787960",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-07-19T20:59:06.003Z",
+      "updatedAt": "2026-07-19T20:59:06.003Z"
     }
   ],
   "templates": [],
