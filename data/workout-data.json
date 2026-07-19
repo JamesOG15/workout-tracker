@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1,
+  "dataRevision": 5,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-07-19T20:47:13.480Z",
+  "updatedAt": "2026-07-19T20:57:37.630Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -70,7 +70,44 @@
       "updatedAt": "2026-07-19T20:46:48.193Z"
     }
   ],
-  "exercises": [],
+  "exercises": [
+    {
+      "id": "bef5aded-717e-4ac6-a811-09dd82415da8",
+      "name": "Dumbbell Bench",
+      "muscleGroupId": "35134dec-908b-4b12-9d0a-7f4fbf95cb75",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-07-19T20:56:19.389Z",
+      "updatedAt": "2026-07-19T20:56:19.389Z"
+    },
+    {
+      "id": "fc093936-05c7-43ba-b8d5-3f4d8504f53f",
+      "name": "Pec Deck",
+      "muscleGroupId": "35134dec-908b-4b12-9d0a-7f4fbf95cb75",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-07-19T20:56:49.197Z",
+      "updatedAt": "2026-07-19T20:56:49.197Z"
+    },
+    {
+      "id": "59658ff2-8bf3-43ef-9bc0-4b326f436931",
+      "name": "Wide Grip Machine Rows",
+      "muscleGroupId": "7c75e2d5-6f54-47ac-a8a6-5b8aaa21ea85",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-07-19T20:57:18.208Z",
+      "updatedAt": "2026-07-19T20:57:18.208Z"
+    },
+    {
+      "id": "fbb5c1a1-56b5-4a93-92e9-8593fafb80b1",
+      "name": "Lat Pulldown",
+      "muscleGroupId": "7c75e2d5-6f54-47ac-a8a6-5b8aaa21ea85",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-07-19T20:57:37.630Z",
+      "updatedAt": "2026-07-19T20:57:37.630Z"
+    }
+  ],
   "templates": [],
   "workouts": [],
   "bodyweightEntries": [],
