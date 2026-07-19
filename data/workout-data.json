@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "dataRevision": 1,
+  "createdAt": "2026-07-19T20:46:48.193Z",
+  "updatedAt": "2026-07-19T20:47:13.480Z",
+  "settings": {
+    "weeklyTarget": 3,
+    "weekStartsOn": "monday",
+    "showRir": false,
+    "defaultSetType": "working",
+    "appearance": "system",
+    "setRowDensity": "comfortable",
+    "defaultChartRange": "3_months"
+  },
+  "muscleGroups": [
+    {
+      "id": "35134dec-908b-4b12-9d0a-7f4fbf95cb75",
+      "name": "Chest",
+      "position": 0,
+      "isDefault": true,
+      "createdAt": "2026-07-19T20:46:48.193Z",
+      "updatedAt": "2026-07-19T20:46:48.193Z"
+    },
+    {
+      "id": "7c75e2d5-6f54-47ac-a8a6-5b8aaa21ea85",
+      "name": "Back",
+      "position": 1,
+      "isDefault": true,
+      "createdAt": "2026-07-19T20:46:48.193Z",
+      "updatedAt": "2026-07-19T20:46:48.193Z"
+    },
+    {
+      "id": "94b5aeed-d55e-421d-b6ff-94c84aa76eac",
+      "name": "Legs",
+      "position": 2,
+      "isDefault": true,
+      "createdAt": "2026-07-19T20:46:48.193Z",
+      "updatedAt": "2026-07-19T20:46:48.193Z"
+    },
+    {
+      "id": "d048ddd6-7c9e-43bf-8527-5f30f78da724",
+      "name": "Shoulders",
+      "position": 3,
+      "isDefault": true,
+      "createdAt": "2026-07-19T20:46:48.193Z",
+      "updatedAt": "2026-07-19T20:46:48.193Z"
+    },
+    {
+      "id": "32db2fc0-eb85-4e7a-8e69-28e35c787960",
+      "name": "Arms",
+      "position": 4,
+      "isDefault": true,
+      "createdAt": "2026-07-19T20:46:48.193Z",
+      "updatedAt": "2026-07-19T20:46:48.193Z"
+    },
+    {
+      "id": "63692d55-e5b7-43d1-9af0-422e26fa989f",
+      "name": "Core",
+      "position": 5,
+      "isDefault": true,
+      "createdAt": "2026-07-19T20:46:48.193Z",
+      "updatedAt": "2026-07-19T20:46:48.193Z"
+    },
+    {
+      "id": "c09a4836-8a08-4bdd-8817-023d0b4af570",
+      "name": "Other",
+      "position": 6,
+      "isDefault": true,
+      "createdAt": "2026-07-19T20:46:48.193Z",
+      "updatedAt": "2026-07-19T20:46:48.193Z"
+    }
+  ],
+  "exercises": [],
+  "templates": [],
+  "workouts": [],
+  "bodyweightEntries": [],
+  "plannedBreakWeeks": [],
+  "weeklyTargets": []
+}
