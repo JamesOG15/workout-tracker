@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 13,
+  "dataRevision": 21,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-07-19T21:39:20.014Z",
+  "updatedAt": "2026-07-21T17:35:59.246Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -178,10 +178,81 @@
       "isArchived": false,
       "createdAt": "2026-07-19T21:39:20.014Z",
       "updatedAt": "2026-07-19T21:39:20.014Z"
+    },
+    {
+      "id": "18a4cbc1-d911-4d51-88fb-e5f9698271d8",
+      "name": "Barbell Shoulder Press",
+      "muscleGroupId": "d048ddd6-7c9e-43bf-8527-5f30f78da724",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-07-21T17:35:16.688Z",
+      "updatedAt": "2026-07-21T17:35:16.688Z"
     }
   ],
   "templates": [],
-  "workouts": [],
+  "workouts": [
+    {
+      "id": "271826ab-db76-4d40-9ec5-ed83b499f77e",
+      "name": "Workout",
+      "workoutDate": "2026-07-21",
+      "status": "in_progress",
+      "templateId": null,
+      "note": null,
+      "exercises": [
+        {
+          "id": "f32a5a04-af97-4c9c-a0f8-100ddeec65fb",
+          "exerciseId": "18a4cbc1-d911-4d51-88fb-e5f9698271d8",
+          "position": 0,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "1c0b6e6c-3d8f-478d-95e6-696432fa814e",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "ff9f25f1-4f44-4763-9e25-7d8982605df4",
+                  "position": 0,
+                  "weightKg": 40,
+                  "reps": 7
+                }
+              ],
+              "createdAt": "2026-07-21T17:35:42.875Z",
+              "updatedAt": "2026-07-21T17:35:50.361Z"
+            },
+            {
+              "id": "46a30332-8583-4dd0-8dba-938234f8e73b",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "f590a870-23e0-43a5-99f2-20684032a7df",
+                  "position": 0,
+                  "weightKg": 40,
+                  "reps": 7
+                }
+              ],
+              "createdAt": "2026-07-21T17:35:59.246Z",
+              "updatedAt": "2026-07-21T17:35:59.246Z"
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-07-21T17:35:26.307Z",
+      "updatedAt": "2026-07-21T17:35:59.246Z",
+      "completedAt": null,
+      "deletedAt": null
+    }
+  ],
   "bodyweightEntries": [],
   "plannedBreakWeeks": [],
   "weeklyTargets": []
