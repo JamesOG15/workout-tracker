@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 30,
+  "dataRevision": 40,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-07-21T17:37:55.755Z",
+  "updatedAt": "2026-07-21T20:10:14.173Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -195,7 +195,7 @@
       "id": "271826ab-db76-4d40-9ec5-ed83b499f77e",
       "name": "Workout",
       "workoutDate": "2026-07-21",
-      "status": "in_progress",
+      "status": "completed",
       "templateId": null,
       "note": null,
       "exercises": [
@@ -212,7 +212,7 @@
               "id": "1c0b6e6c-3d8f-478d-95e6-696432fa814e",
               "position": 0,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
@@ -224,13 +224,13 @@
                 }
               ],
               "createdAt": "2026-07-21T17:35:42.875Z",
-              "updatedAt": "2026-07-21T17:35:50.361Z"
+              "updatedAt": "2026-07-21T20:10:09.775Z"
             },
             {
               "id": "46a30332-8583-4dd0-8dba-938234f8e73b",
               "position": 1,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
@@ -242,18 +242,45 @@
                 }
               ],
               "createdAt": "2026-07-21T17:35:59.246Z",
-              "updatedAt": "2026-07-21T17:37:55.755Z"
+              "updatedAt": "2026-07-21T20:10:10.775Z"
+            },
+            {
+              "id": "d25a7f8c-76b6-4f6a-934a-4b41ca4ea0c2",
+              "position": 2,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "737c232f-f327-48a8-88e0-13df3d2df127",
+                  "position": 0,
+                  "weightKg": 30,
+                  "reps": 7
+                }
+              ],
+              "createdAt": "2026-07-21T20:09:38.711Z",
+              "updatedAt": "2026-07-21T20:10:11.921Z"
             }
           ]
         }
       ],
       "createdAt": "2026-07-21T17:35:26.307Z",
-      "updatedAt": "2026-07-21T17:35:59.246Z",
-      "completedAt": null,
+      "updatedAt": "2026-07-21T20:10:14.173Z",
+      "completedAt": "2026-07-21T20:10:14.173Z",
       "deletedAt": null
     }
   ],
   "bodyweightEntries": [],
   "plannedBreakWeeks": [],
-  "weeklyTargets": []
+  "weeklyTargets": [
+    {
+      "id": "weekly-2026-07-20",
+      "weekStartDate": "2026-07-20",
+      "target": 3,
+      "kind": "snapshot",
+      "createdAt": "2026-07-21T20:10:14.173Z",
+      "updatedAt": "2026-07-21T20:10:14.173Z"
+    }
+  ]
 }
