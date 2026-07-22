@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 41,
+  "dataRevision": 42,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-07-21T20:10:14.180Z",
+  "updatedAt": "2026-07-22T06:43:26.297Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -271,7 +271,17 @@
       "deletedAt": null
     }
   ],
-  "bodyweightEntries": [],
+  "bodyweightEntries": [
+    {
+      "id": "24c0a8d5-d45d-4971-82bc-682aa73fce61",
+      "date": "2026-07-22",
+      "weightKg": 82.4,
+      "note": null,
+      "createdAt": "2026-07-22T06:43:26.297Z",
+      "updatedAt": "2026-07-22T06:43:26.297Z",
+      "deletedAt": null
+    }
+  ],
   "plannedBreakWeeks": [],
   "weeklyTargets": [
     {
