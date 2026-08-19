@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 112,
+  "dataRevision": 115,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-19T18:34:01.353Z",
+  "updatedAt": "2026-08-19T18:38:06.682Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -187,6 +187,15 @@
       "isArchived": false,
       "createdAt": "2026-07-21T17:35:16.688Z",
       "updatedAt": "2026-07-21T17:35:16.688Z"
+    },
+    {
+      "id": "96f7ae95-2462-4df8-8949-ae810355aeed",
+      "name": "1 Arm Tricep Overhead",
+      "muscleGroupId": "32db2fc0-eb85-4e7a-8e69-28e35c787960",
+      "permanentNote": "Cable",
+      "isArchived": false,
+      "createdAt": "2026-08-19T18:37:58.831Z",
+      "updatedAt": "2026-08-19T18:37:58.831Z"
     }
   ],
   "templates": [],
@@ -450,10 +459,39 @@
               "updatedAt": "2026-08-19T18:34:01.353Z"
             }
           ]
+        },
+        {
+          "id": "3d8b946a-a51c-4079-9ac9-4da79cf35f49",
+          "exerciseId": "96f7ae95-2462-4df8-8949-ae810355aeed",
+          "position": 2,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "9da190ad-5fc8-44eb-89ad-5b6067915487",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "cbf9cf14-53a1-4383-94b4-f8ce5dc2352e",
+                  "position": 0,
+                  "weightKg": "",
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-08-19T18:38:06.682Z",
+              "updatedAt": "2026-08-19T18:38:06.682Z"
+            }
+          ]
         }
       ],
       "createdAt": "2026-08-19T18:17:34.313Z",
-      "updatedAt": "2026-08-19T18:34:01.353Z",
+      "updatedAt": "2026-08-19T18:38:06.682Z",
       "completedAt": null,
       "deletedAt": null
     }
