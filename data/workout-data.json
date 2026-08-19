@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 50,
+  "dataRevision": 51,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-08T12:51:44.134Z",
+  "updatedAt": "2026-08-19T18:17:26.062Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -274,7 +274,7 @@
       "id": "f63f4cb7-6dec-4434-8cbf-d0f7adf56676",
       "name": "Workout",
       "workoutDate": "2026-08-08",
-      "status": "in_progress",
+      "status": "completed",
       "templateId": null,
       "note": null,
       "exercises": [
@@ -309,8 +309,8 @@
         }
       ],
       "createdAt": "2026-08-08T12:51:20.611Z",
-      "updatedAt": "2026-08-08T12:51:44.134Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-19T18:17:26.062Z",
+      "completedAt": "2026-08-19T18:17:26.062Z",
       "deletedAt": null
     }
   ],
@@ -334,6 +334,14 @@
       "kind": "snapshot",
       "createdAt": "2026-07-21T20:10:14.173Z",
       "updatedAt": "2026-07-21T20:10:14.173Z"
+    },
+    {
+      "id": "weekly-2026-08-03",
+      "weekStartDate": "2026-08-03",
+      "target": 3,
+      "kind": "snapshot",
+      "createdAt": "2026-08-19T18:17:26.062Z",
+      "updatedAt": "2026-08-19T18:17:26.062Z"
     }
   ]
 }
