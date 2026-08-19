@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 51,
+  "dataRevision": 59,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-19T18:17:26.062Z",
+  "updatedAt": "2026-08-19T18:18:00.770Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -309,8 +309,69 @@
         }
       ],
       "createdAt": "2026-08-08T12:51:20.611Z",
-      "updatedAt": "2026-08-19T18:17:26.062Z",
-      "completedAt": "2026-08-19T18:17:26.062Z",
+      "updatedAt": "2026-08-19T18:17:26.072Z",
+      "completedAt": "2026-08-19T18:17:26.072Z",
+      "deletedAt": null
+    },
+    {
+      "id": "4cd3a603-bce2-4a8b-b183-05e302252e69",
+      "name": "Workout",
+      "workoutDate": "2026-08-19",
+      "status": "in_progress",
+      "templateId": null,
+      "note": null,
+      "exercises": [
+        {
+          "id": "a3f8bd77-3536-4d70-9dd9-c0c0ccf16156",
+          "exerciseId": "bef5aded-717e-4ac6-a811-09dd82415da8",
+          "position": 0,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "3025f471-7cef-42f5-85e1-3b2253fe192f",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "140ff511-2da3-429c-a676-26770b121e93",
+                  "position": 0,
+                  "weightKg": 24,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-08-19T18:17:46.861Z",
+              "updatedAt": "2026-08-19T18:17:58.407Z"
+            },
+            {
+              "id": "d7c0f909-6dc9-497d-b0b1-21cebc47b19c",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "daac1096-a25f-492f-b6eb-79926c6871eb",
+                  "position": 0,
+                  "weightKg": 24,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-08-19T18:18:00.770Z",
+              "updatedAt": "2026-08-19T18:18:00.770Z"
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-08-19T18:17:34.313Z",
+      "updatedAt": "2026-08-19T18:18:00.770Z",
+      "completedAt": null,
       "deletedAt": null
     }
   ],
