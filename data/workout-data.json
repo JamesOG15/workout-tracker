@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 64,
+  "dataRevision": 91,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-19T18:20:28.365Z",
+  "updatedAt": "2026-08-19T18:23:27.365Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -370,25 +370,54 @@
               "id": "09c14c38-76c3-4119-be76-20d98da68efc",
               "position": 2,
               "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": "Right after boomtown",
+              "segments": [
+                {
+                  "id": "063452e3-9801-4d67-aa9c-a42960725c51",
+                  "position": 0,
+                  "weightKg": 22,
+                  "reps": 5
+                }
+              ],
+              "createdAt": "2026-08-19T18:20:28.365Z",
+              "updatedAt": "2026-08-19T18:23:08.597Z"
+            }
+          ]
+        },
+        {
+          "id": "f0eb10a1-4c6f-4903-84aa-8863a87a4c29",
+          "exerciseId": "8dc90a71-a928-486c-8fd6-6eb786d4ebc7",
+          "position": 1,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "54fdf8b1-9581-4346-abab-af490f0fb893",
+              "position": 0,
+              "setType": "working",
               "isCompleted": false,
               "rir": null,
               "note": null,
               "segments": [
                 {
-                  "id": "063452e3-9801-4d67-aa9c-a42960725c51",
+                  "id": "1ec90dbe-2c09-4277-bc8a-b48ee50bdc24",
                   "position": 0,
-                  "weightKg": 24,
-                  "reps": 8
+                  "weightKg": "",
+                  "reps": ""
                 }
               ],
-              "createdAt": "2026-08-19T18:20:28.365Z",
-              "updatedAt": "2026-08-19T18:20:28.365Z"
+              "createdAt": "2026-08-19T18:23:27.365Z",
+              "updatedAt": "2026-08-19T18:23:27.365Z"
             }
           ]
         }
       ],
       "createdAt": "2026-08-19T18:17:34.313Z",
-      "updatedAt": "2026-08-19T18:20:28.365Z",
+      "updatedAt": "2026-08-19T18:23:27.365Z",
       "completedAt": null,
       "deletedAt": null
     }
