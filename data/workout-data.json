@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 215,
+  "dataRevision": 217,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-21T17:45:16.242Z",
+  "updatedAt": "2026-08-21T17:47:04.332Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -695,10 +695,39 @@
               "updatedAt": "2026-08-21T17:45:16.242Z"
             }
           ]
+        },
+        {
+          "id": "35c023a6-f570-4b27-a934-d4cc02b5d036",
+          "exerciseId": "96f7ae95-2462-4df8-8949-ae810355aeed",
+          "position": 1,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "5e777ac6-dda5-4317-8b74-7731e949577f",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "f3164a0f-e617-44c3-88c3-ed0a8630e10b",
+                  "position": 0,
+                  "weightKg": 6.8,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-08-21T17:47:04.332Z",
+              "updatedAt": "2026-08-21T17:47:04.332Z"
+            }
+          ]
         }
       ],
       "createdAt": "2026-08-21T17:36:47.014Z",
-      "updatedAt": "2026-08-21T17:45:16.242Z",
+      "updatedAt": "2026-08-21T17:47:04.332Z",
       "completedAt": null,
       "deletedAt": null
     }
