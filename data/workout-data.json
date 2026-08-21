@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 276,
+  "dataRevision": 282,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-21T18:23:03.881Z",
+  "updatedAt": "2026-08-21T18:24:31.270Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -210,10 +210,10 @@
       "id": "882beb33-cfae-458e-8405-400898584a1e",
       "name": "Sit-ups",
       "muscleGroupId": "63692d55-e5b7-43d1-9af0-422e26fa989f",
-      "permanentNote": "On the slanted bench",
+      "permanentNote": "On the slanted bench, set on 9",
       "isArchived": false,
       "createdAt": "2026-08-21T18:22:48.362Z",
-      "updatedAt": "2026-08-21T18:22:48.362Z"
+      "updatedAt": "2026-08-21T18:24:31.270Z"
     }
   ],
   "templates": [],
@@ -913,25 +913,43 @@
               "id": "ba7242d8-fa3d-4c7f-a1fd-f025c37cf9f5",
               "position": 0,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
                 {
                   "id": "8b39d3cb-7112-4d18-b914-68ff43803ff3",
                   "position": 0,
-                  "weightKg": "",
-                  "reps": ""
+                  "weightKg": 0,
+                  "reps": 12
                 }
               ],
               "createdAt": "2026-08-21T18:23:03.881Z",
-              "updatedAt": "2026-08-21T18:23:03.881Z"
+              "updatedAt": "2026-08-21T18:24:09.634Z"
+            },
+            {
+              "id": "08561865-617c-4633-988f-6fcc3f400645",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "fda9df12-044c-4a00-b7eb-b2a49eaf3822",
+                  "position": 0,
+                  "weightKg": 0,
+                  "reps": 12
+                }
+              ],
+              "createdAt": "2026-08-21T18:24:08.648Z",
+              "updatedAt": "2026-08-21T18:24:08.648Z"
             }
           ]
         }
       ],
       "createdAt": "2026-08-21T17:36:47.014Z",
-      "updatedAt": "2026-08-21T18:23:03.881Z",
+      "updatedAt": "2026-08-21T18:24:09.634Z",
       "completedAt": null,
       "deletedAt": null
     }
