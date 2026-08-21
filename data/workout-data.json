@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 273,
+  "dataRevision": 276,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-21T18:21:55.906Z",
+  "updatedAt": "2026-08-21T18:23:03.881Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -205,6 +205,15 @@
       "isArchived": false,
       "createdAt": "2026-08-21T17:37:15.755Z",
       "updatedAt": "2026-08-21T17:37:15.755Z"
+    },
+    {
+      "id": "882beb33-cfae-458e-8405-400898584a1e",
+      "name": "Sit-ups",
+      "muscleGroupId": "63692d55-e5b7-43d1-9af0-422e26fa989f",
+      "permanentNote": "On the slanted bench",
+      "isArchived": false,
+      "createdAt": "2026-08-21T18:22:48.362Z",
+      "updatedAt": "2026-08-21T18:22:48.362Z"
     }
   ],
   "templates": [],
@@ -890,10 +899,39 @@
               "updatedAt": "2026-08-21T18:21:55.906Z"
             }
           ]
+        },
+        {
+          "id": "7a35ef1d-3940-4047-b276-6400e0e0ac8d",
+          "exerciseId": "882beb33-cfae-458e-8405-400898584a1e",
+          "position": 4,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "ba7242d8-fa3d-4c7f-a1fd-f025c37cf9f5",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "8b39d3cb-7112-4d18-b914-68ff43803ff3",
+                  "position": 0,
+                  "weightKg": "",
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-08-21T18:23:03.881Z",
+              "updatedAt": "2026-08-21T18:23:03.881Z"
+            }
+          ]
         }
       ],
       "createdAt": "2026-08-21T17:36:47.014Z",
-      "updatedAt": "2026-08-21T18:21:55.906Z",
+      "updatedAt": "2026-08-21T18:23:03.881Z",
       "completedAt": null,
       "deletedAt": null
     }
