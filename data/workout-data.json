@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 257,
+  "dataRevision": 261,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-21T18:07:52.053Z",
+  "updatedAt": "2026-08-21T18:08:46.370Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -111,10 +111,10 @@
       "id": "fa28aa8e-dc79-4701-a533-8ced71f4c364",
       "name": "Preacher Curls",
       "muscleGroupId": "32db2fc0-eb85-4e7a-8e69-28e35c787960",
-      "permanentNote": null,
+      "permanentNote": "1 arm",
       "isArchived": false,
       "createdAt": "2026-07-19T20:58:28.587Z",
-      "updatedAt": "2026-07-19T20:58:28.587Z"
+      "updatedAt": "2026-08-21T18:08:30.465Z"
     },
     {
       "id": "8dc90a71-a928-486c-8fd6-6eb786d4ebc7",
@@ -834,11 +834,30 @@
           "targetRepMin": null,
           "targetRepMax": null,
           "warmUpGuidance": null,
-          "sets": []
+          "sets": [
+            {
+              "id": "70c46a79-09c1-4c33-9159-13550df89bd4",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "c3b48d94-add3-464c-bd1e-e6bcf77d8fe2",
+                  "position": 0,
+                  "weightKg": 10,
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-08-21T18:08:43.621Z",
+              "updatedAt": "2026-08-21T18:08:46.370Z"
+            }
+          ]
         }
       ],
       "createdAt": "2026-08-21T17:36:47.014Z",
-      "updatedAt": "2026-08-21T18:07:52.053Z",
+      "updatedAt": "2026-08-21T18:08:43.621Z",
       "completedAt": null,
       "deletedAt": null
     }
