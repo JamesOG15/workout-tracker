@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 174,
+  "dataRevision": 177,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-19T18:54:52.640Z",
+  "updatedAt": "2026-08-21T17:37:15.763Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -196,6 +196,15 @@
       "isArchived": false,
       "createdAt": "2026-08-19T18:37:58.831Z",
       "updatedAt": "2026-08-19T18:37:58.831Z"
+    },
+    {
+      "id": "d5cd4102-332f-4ac7-92ca-501f20ff1f2a",
+      "name": "Assisted Pull-ups",
+      "muscleGroupId": "7c75e2d5-6f54-47ac-a8a6-5b8aaa21ea85",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-08-21T17:37:15.755Z",
+      "updatedAt": "2026-08-21T17:37:15.755Z"
     }
   ],
   "templates": [],
@@ -606,6 +615,30 @@
       "createdAt": "2026-08-19T18:17:34.313Z",
       "updatedAt": "2026-08-19T18:54:52.640Z",
       "completedAt": "2026-08-19T18:54:52.640Z",
+      "deletedAt": null
+    },
+    {
+      "id": "0ab8b478-310d-45af-8569-290d6c2baabe",
+      "name": "Back and arms",
+      "workoutDate": "2026-08-21",
+      "status": "in_progress",
+      "templateId": null,
+      "note": null,
+      "exercises": [
+        {
+          "id": "b4ffda12-4fe9-45c0-a594-34435604e1ef",
+          "exerciseId": "d5cd4102-332f-4ac7-92ca-501f20ff1f2a",
+          "position": 0,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": []
+        }
+      ],
+      "createdAt": "2026-08-21T17:36:47.014Z",
+      "updatedAt": "2026-08-21T17:37:15.763Z",
+      "completedAt": null,
       "deletedAt": null
     }
   ],
