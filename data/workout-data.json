@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 351,
+  "dataRevision": 353,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-22T11:50:02.072Z",
+  "updatedAt": "2026-08-22T11:54:26.256Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -1011,7 +1011,7 @@
       "id": "367f0f99-025e-44d1-9313-f3eadbb7b75a",
       "name": "Legs - first after boomtown",
       "workoutDate": "2026-08-22",
-      "status": "in_progress",
+      "status": "completed",
       "templateId": null,
       "note": null,
       "exercises": [
@@ -1223,7 +1223,7 @@
               "id": "19ceb56d-6b4e-48e1-8c29-a72642edbe4f",
               "position": 1,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
@@ -1235,14 +1235,14 @@
                 }
               ],
               "createdAt": "2026-08-22T11:50:02.072Z",
-              "updatedAt": "2026-08-22T11:50:02.072Z"
+              "updatedAt": "2026-08-22T11:54:18.734Z"
             }
           ]
         }
       ],
       "createdAt": "2026-08-22T11:24:56.917Z",
-      "updatedAt": "2026-08-22T11:50:02.072Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-22T11:54:26.255Z",
+      "completedAt": "2026-08-22T11:54:26.255Z",
       "deletedAt": null
     }
   ],
