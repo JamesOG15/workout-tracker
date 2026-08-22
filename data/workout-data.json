@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 290,
+  "dataRevision": 305,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-22T11:24:56.918Z",
+  "updatedAt": "2026-08-22T11:26:22.186Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -214,6 +214,15 @@
       "isArchived": false,
       "createdAt": "2026-08-21T18:22:48.362Z",
       "updatedAt": "2026-08-21T18:24:31.270Z"
+    },
+    {
+      "id": "fb309c9d-aa1c-456a-8348-08a1bbec420c",
+      "name": "Machine Leg Press",
+      "muscleGroupId": "35134dec-908b-4b12-9d0a-7f4fbf95cb75",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-08-22T11:25:47.726Z",
+      "updatedAt": "2026-08-22T11:25:47.726Z"
     }
   ],
   "templates": [],
@@ -978,9 +987,75 @@
       "status": "in_progress",
       "templateId": null,
       "note": null,
-      "exercises": [],
+      "exercises": [
+        {
+          "id": "ed5e250c-f8b7-4507-9a7d-5da429c57530",
+          "exerciseId": "fb309c9d-aa1c-456a-8348-08a1bbec420c",
+          "position": 0,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "c90ae47e-207a-48c2-8414-84f911453537",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "7fb732dc-6e57-4408-be8a-c964f2b2a0d5",
+                  "position": 0,
+                  "weightKg": 59,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-08-22T11:26:00.047Z",
+              "updatedAt": "2026-08-22T11:26:08.009Z"
+            },
+            {
+              "id": "fb3ecdaf-16b3-4768-a8e0-175562a1f293",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "17aa7dae-802c-4001-91cd-e164d6002d0e",
+                  "position": 0,
+                  "weightKg": 66,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-08-22T11:26:09.328Z",
+              "updatedAt": "2026-08-22T11:26:21.655Z"
+            },
+            {
+              "id": "5e417bdd-b6f2-4c0a-9d80-88b37a849a84",
+              "position": 2,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "739f58c4-1005-45cc-bed5-94f77499ff4e",
+                  "position": 0,
+                  "weightKg": 66,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-08-22T11:26:22.186Z",
+              "updatedAt": "2026-08-22T11:26:22.186Z"
+            }
+          ]
+        }
+      ],
       "createdAt": "2026-08-22T11:24:56.917Z",
-      "updatedAt": "2026-08-22T11:24:56.917Z",
+      "updatedAt": "2026-08-22T11:26:22.186Z",
       "completedAt": null,
       "deletedAt": null
     }
