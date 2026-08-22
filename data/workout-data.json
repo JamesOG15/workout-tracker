@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 342,
+  "dataRevision": 345,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-22T11:47:49.346Z",
+  "updatedAt": "2026-08-22T11:48:44.319Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -241,6 +241,15 @@
       "isArchived": false,
       "createdAt": "2026-08-22T11:38:57.969Z",
       "updatedAt": "2026-08-22T11:38:57.969Z"
+    },
+    {
+      "id": "03029283-3c7e-4bdb-9f5e-4616e456ded2",
+      "name": "Seated Calf Machine",
+      "muscleGroupId": "94b5aeed-d55e-421d-b6ff-94c84aa76eac",
+      "permanentNote": "Calf Press Machine",
+      "isArchived": false,
+      "createdAt": "2026-08-22T11:48:32.010Z",
+      "updatedAt": "2026-08-22T11:48:32.010Z"
     }
   ],
   "templates": [],
@@ -1182,10 +1191,39 @@
               "updatedAt": "2026-08-22T11:47:49.346Z"
             }
           ]
+        },
+        {
+          "id": "e4385a0a-48e5-4435-bc92-c0ac2671ec0f",
+          "exerciseId": "03029283-3c7e-4bdb-9f5e-4616e456ded2",
+          "position": 3,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "dd1edbca-fd08-4e59-a678-c1fd06967d25",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "76982425-07f3-4113-bf7d-9fb164bbe539",
+                  "position": 0,
+                  "weightKg": "",
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-08-22T11:48:44.319Z",
+              "updatedAt": "2026-08-22T11:48:44.319Z"
+            }
+          ]
         }
       ],
       "createdAt": "2026-08-22T11:24:56.917Z",
-      "updatedAt": "2026-08-22T11:47:49.346Z",
+      "updatedAt": "2026-08-22T11:48:44.319Z",
       "completedAt": null,
       "deletedAt": null
     }
