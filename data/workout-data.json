@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 322,
+  "dataRevision": 324,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-22T11:38:07.016Z",
+  "updatedAt": "2026-08-22T11:39:17.121Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -232,6 +232,15 @@
       "isArchived": false,
       "createdAt": "2026-08-22T11:31:08.522Z",
       "updatedAt": "2026-08-22T11:31:08.522Z"
+    },
+    {
+      "id": "fa1f0bf9-8e5b-476e-96b3-59ae86751f94",
+      "name": "Outward Sus Machine",
+      "muscleGroupId": "94b5aeed-d55e-421d-b6ff-94c84aa76eac",
+      "permanentNote": "Hip Abduction",
+      "isArchived": false,
+      "createdAt": "2026-08-22T11:38:57.969Z",
+      "updatedAt": "2026-08-22T11:38:57.969Z"
     }
   ],
   "templates": [],
@@ -1108,10 +1117,20 @@
               "updatedAt": "2026-08-22T11:38:07.016Z"
             }
           ]
+        },
+        {
+          "id": "472e6b93-c999-4156-a1e7-93f624089729",
+          "exerciseId": "fa1f0bf9-8e5b-476e-96b3-59ae86751f94",
+          "position": 2,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": []
         }
       ],
       "createdAt": "2026-08-22T11:24:56.917Z",
-      "updatedAt": "2026-08-22T11:38:07.016Z",
+      "updatedAt": "2026-08-22T11:39:17.121Z",
       "completedAt": null,
       "deletedAt": null
     }
