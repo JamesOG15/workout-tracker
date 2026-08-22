@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 287,
+  "dataRevision": 288,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-21T18:30:30.034Z",
+  "updatedAt": "2026-08-22T11:24:35.074Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -630,7 +630,7 @@
       "id": "0ab8b478-310d-45af-8569-290d6c2baabe",
       "name": "Back and arms",
       "workoutDate": "2026-08-21",
-      "status": "in_progress",
+      "status": "completed",
       "templateId": null,
       "note": null,
       "exercises": [
@@ -967,8 +967,8 @@
         }
       ],
       "createdAt": "2026-08-21T17:36:47.014Z",
-      "updatedAt": "2026-08-21T18:30:30.034Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-22T11:24:35.074Z",
+      "completedAt": "2026-08-22T11:24:35.074Z",
       "deletedAt": null
     }
   ],
