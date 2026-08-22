@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 312,
+  "dataRevision": 314,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-22T11:28:08.106Z",
+  "updatedAt": "2026-08-22T11:31:14.726Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -223,6 +223,15 @@
       "isArchived": false,
       "createdAt": "2026-08-22T11:25:47.726Z",
       "updatedAt": "2026-08-22T11:25:47.726Z"
+    },
+    {
+      "id": "c8f43cdd-8481-479e-8e60-2c4a985b4560",
+      "name": "Prone Leg Curl",
+      "muscleGroupId": "94b5aeed-d55e-421d-b6ff-94c84aa76eac",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-08-22T11:31:08.522Z",
+      "updatedAt": "2026-08-22T11:31:08.522Z"
     }
   ],
   "templates": [],
@@ -1052,10 +1061,20 @@
               "updatedAt": "2026-08-22T11:28:08.106Z"
             }
           ]
+        },
+        {
+          "id": "9752fe81-d39c-4ff2-a93f-ab10da8031c4",
+          "exerciseId": "c8f43cdd-8481-479e-8e60-2c4a985b4560",
+          "position": 1,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": []
         }
       ],
       "createdAt": "2026-08-22T11:24:56.917Z",
-      "updatedAt": "2026-08-22T11:28:08.106Z",
+      "updatedAt": "2026-08-22T11:31:14.725Z",
       "completedAt": null,
       "deletedAt": null
     }
