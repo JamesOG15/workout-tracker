@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 434,
+  "dataRevision": 447,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-31T13:39:57.159Z",
+  "updatedAt": "2026-08-31T13:41:49.996Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -1414,7 +1414,7 @@
               "id": "77910599-08bc-41ef-9f4a-3e46397b5410",
               "position": 1,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
@@ -1422,17 +1422,41 @@
                   "id": "cb724cd9-f5a6-4fd6-bc62-3ad9bca8c05a",
                   "position": 0,
                   "weightKg": 9,
+                  "reps": 3
+                },
+                {
+                  "id": "86e19c87-f1ca-42a0-afbd-84171d7afcf4",
+                  "position": 1,
+                  "weightKg": 4.5,
                   "reps": 7
                 }
               ],
               "createdAt": "2026-08-31T13:39:55.861Z",
-              "updatedAt": "2026-08-31T13:39:55.861Z"
+              "updatedAt": "2026-08-31T13:41:49.377Z"
+            },
+            {
+              "id": "8c6805fa-2c36-4670-b4cd-8dcaa42f7e74",
+              "position": 2,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "10792a54-83e7-418c-b776-cedfe7fbd391",
+                  "position": 0,
+                  "weightKg": 9,
+                  "reps": 3
+                }
+              ],
+              "createdAt": "2026-08-31T13:41:49.996Z",
+              "updatedAt": "2026-08-31T13:41:49.996Z"
             }
           ]
         }
       ],
       "createdAt": "2026-08-31T13:16:53.281Z",
-      "updatedAt": "2026-08-31T13:39:57.159Z",
+      "updatedAt": "2026-08-31T13:41:49.996Z",
       "completedAt": null,
       "deletedAt": null
     }
