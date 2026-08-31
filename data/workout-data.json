@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 371,
+  "dataRevision": 379,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-31T13:24:18.201Z",
+  "updatedAt": "2026-08-31T13:31:22.046Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -1331,25 +1331,61 @@
               "id": "bc6e107a-f1ea-4ff2-9871-42d6012e679c",
               "position": 0,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
                 {
                   "id": "555de13e-a1ed-44b7-8d5f-5efd64639603",
                   "position": 0,
-                  "weightKg": "",
-                  "reps": ""
+                  "weightKg": 45,
+                  "reps": 10
                 }
               ],
               "createdAt": "2026-08-31T13:24:18.201Z",
-              "updatedAt": "2026-08-31T13:24:18.201Z"
+              "updatedAt": "2026-08-31T13:31:17.448Z"
+            },
+            {
+              "id": "15ad9914-1378-4a7e-b740-f096eb74dfa8",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "702bcc90-0433-49df-afe9-b7d1939121ff",
+                  "position": 0,
+                  "weightKg": 45,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-08-31T13:31:18.479Z",
+              "updatedAt": "2026-08-31T13:31:19.945Z"
+            },
+            {
+              "id": "67f31e98-f3e5-4646-a19c-aebc96337ab3",
+              "position": 2,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "e734b00f-7f70-4db2-a8cd-4befd69307f0",
+                  "position": 0,
+                  "weightKg": 45,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-08-31T13:31:22.046Z",
+              "updatedAt": "2026-08-31T13:31:22.046Z"
             }
           ]
         }
       ],
       "createdAt": "2026-08-31T13:16:53.281Z",
-      "updatedAt": "2026-08-31T13:24:18.201Z",
+      "updatedAt": "2026-08-31T13:31:22.046Z",
       "completedAt": null,
       "deletedAt": null
     }
