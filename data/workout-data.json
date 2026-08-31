@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 619,
+  "dataRevision": 621,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-31T14:20:30.625Z",
+  "updatedAt": "2026-08-31T14:22:50.240Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -250,6 +250,15 @@
       "isArchived": false,
       "createdAt": "2026-08-22T11:48:32.010Z",
       "updatedAt": "2026-08-22T11:48:32.010Z"
+    },
+    {
+      "id": "9f094209-0d70-4b80-93d1-8ed2d6c7e8fc",
+      "name": "Upper chest cable flies",
+      "muscleGroupId": "35134dec-908b-4b12-9d0a-7f4fbf95cb75",
+      "permanentNote": "8/9 on the height",
+      "isArchived": false,
+      "createdAt": "2026-08-31T14:22:47.870Z",
+      "updatedAt": "2026-08-31T14:22:47.870Z"
     }
   ],
   "templates": [],
@@ -1249,7 +1258,7 @@
       "id": "98c7678e-7e48-4f21-8973-5b030f785922",
       "name": "Chest post depression",
       "workoutDate": "2026-08-31",
-      "status": "in_progress",
+      "status": "completed",
       "templateId": null,
       "note": null,
       "exercises": [
@@ -1604,8 +1613,8 @@
         }
       ],
       "createdAt": "2026-08-31T13:16:53.281Z",
-      "updatedAt": "2026-08-31T14:20:30.625Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-31T14:22:50.239Z",
+      "completedAt": "2026-08-31T14:22:50.239Z",
       "deletedAt": null
     }
   ],
@@ -1645,6 +1654,14 @@
       "kind": "snapshot",
       "createdAt": "2026-08-19T18:54:52.630Z",
       "updatedAt": "2026-08-19T18:54:52.630Z"
+    },
+    {
+      "id": "weekly-2026-08-31",
+      "weekStartDate": "2026-08-31",
+      "target": 3,
+      "kind": "snapshot",
+      "createdAt": "2026-08-31T14:22:50.240Z",
+      "updatedAt": "2026-08-31T14:22:50.240Z"
     }
   ]
 }
