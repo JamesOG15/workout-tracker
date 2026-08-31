@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 387,
+  "dataRevision": 409,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-31T13:36:17.860Z",
+  "updatedAt": "2026-08-31T13:37:58.450Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -1398,17 +1398,17 @@
               "setType": "working",
               "isCompleted": false,
               "rir": null,
-              "note": null,
+              "note": "Weird weights",
               "segments": [
                 {
                   "id": "4edc31f3-fab9-4d1f-bdd1-fc13f97b8476",
                   "position": 0,
-                  "weightKg": 5.7,
+                  "weightKg": "",
                   "reps": 12
                 }
               ],
               "createdAt": "2026-08-31T13:36:17.860Z",
-              "updatedAt": "2026-08-31T13:36:17.860Z"
+              "updatedAt": "2026-08-31T13:37:58.450Z"
             }
           ]
         }
