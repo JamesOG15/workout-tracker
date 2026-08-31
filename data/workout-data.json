@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 561,
+  "dataRevision": 592,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-31T13:53:21.110Z",
+  "updatedAt": "2026-08-31T13:58:05.168Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -1485,25 +1485,49 @@
               "id": "91736d52-a11b-4eaa-afc1-5a24578f6612",
               "position": 1,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
-              "note": null,
+              "note": "Right much stronger",
               "segments": [
                 {
                   "id": "6ecaf793-d091-414c-a26f-c23e0bd4cc41",
                   "position": 0,
                   "weightKg": 14,
-                  "reps": 9
+                  "reps": 7
+                },
+                {
+                  "id": "6b869489-8481-4f92-88c6-01d69b9dd260",
+                  "position": 1,
+                  "weightKg": 9,
+                  "reps": 4
                 }
               ],
               "createdAt": "2026-08-31T13:53:20.641Z",
-              "updatedAt": "2026-08-31T13:53:20.641Z"
+              "updatedAt": "2026-08-31T13:58:02.438Z"
+            },
+            {
+              "id": "1fba44e9-5e46-44c2-bfa8-e20ab6e52d8c",
+              "position": 2,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "678aa9ea-8842-4efc-87d2-46e495546a68",
+                  "position": 0,
+                  "weightKg": 14,
+                  "reps": 7
+                }
+              ],
+              "createdAt": "2026-08-31T13:58:05.168Z",
+              "updatedAt": "2026-08-31T13:58:05.168Z"
             }
           ]
         }
       ],
       "createdAt": "2026-08-31T13:16:53.281Z",
-      "updatedAt": "2026-08-31T13:53:21.110Z",
+      "updatedAt": "2026-08-31T13:58:05.168Z",
       "completedAt": null,
       "deletedAt": null
     }
