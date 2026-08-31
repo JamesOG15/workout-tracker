@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 354,
+  "dataRevision": 359,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-08-22T11:54:26.269Z",
+  "updatedAt": "2026-08-31T13:17:08.631Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -1243,6 +1243,67 @@
       "createdAt": "2026-08-22T11:24:56.917Z",
       "updatedAt": "2026-08-22T11:54:26.269Z",
       "completedAt": "2026-08-22T11:54:26.269Z",
+      "deletedAt": null
+    },
+    {
+      "id": "98c7678e-7e48-4f21-8973-5b030f785922",
+      "name": "Chest post depression",
+      "workoutDate": "2026-08-31",
+      "status": "in_progress",
+      "templateId": null,
+      "note": null,
+      "exercises": [
+        {
+          "id": "d1f1714a-9821-4074-af91-8106c1633aca",
+          "exerciseId": "bef5aded-717e-4ac6-a811-09dd82415da8",
+          "position": 0,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "d4fde21e-7085-45fc-b9e5-4ffc35691f90",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "191d0562-56c7-4ba0-bf7b-cec8d770e22e",
+                  "position": 0,
+                  "weightKg": 24,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-08-31T13:17:04.485Z",
+              "updatedAt": "2026-08-31T13:17:06.843Z"
+            },
+            {
+              "id": "689560d7-4c91-426b-80ad-5a16d4331e44",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "26ee5165-baa9-4b56-b289-a16a9cdff590",
+                  "position": 0,
+                  "weightKg": 24,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-08-31T13:17:08.630Z",
+              "updatedAt": "2026-08-31T13:17:08.631Z"
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-08-31T13:16:53.281Z",
+      "updatedAt": "2026-08-31T13:17:08.631Z",
+      "completedAt": null,
       "deletedAt": null
     }
   ],
