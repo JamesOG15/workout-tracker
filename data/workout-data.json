@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 696,
+  "dataRevision": 707,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-05T14:02:38.249Z",
+  "updatedAt": "2026-09-05T14:05:45.870Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -268,6 +268,15 @@
       "isArchived": false,
       "createdAt": "2026-09-05T12:52:24.894Z",
       "updatedAt": "2026-09-05T12:52:24.894Z"
+    },
+    {
+      "id": "af4eb2a3-fbba-4210-bc79-1fe8418268b8",
+      "name": "Bar Tricep Pushdowns",
+      "muscleGroupId": "32db2fc0-eb85-4e7a-8e69-28e35c787960",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-09-05T14:05:24.351Z",
+      "updatedAt": "2026-09-05T14:05:24.351Z"
     }
   ],
   "templates": [],
@@ -1910,10 +1919,57 @@
               "updatedAt": "2026-09-05T14:02:38.249Z"
             }
           ]
+        },
+        {
+          "id": "637705e6-06ca-4ac5-a8cf-aa1724fcf3d7",
+          "exerciseId": "af4eb2a3-fbba-4210-bc79-1fe8418268b8",
+          "position": 4,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "6f00c44a-b62f-4f4b-b4da-828ab47b477e",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "d7882546-40df-4f98-9627-5696cf1693a7",
+                  "position": 0,
+                  "weightKg": 21.6,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-09-05T14:05:32.015Z",
+              "updatedAt": "2026-09-05T14:05:44.765Z"
+            },
+            {
+              "id": "d190769e-677f-4970-877f-127c73757f8c",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "86bb6676-758d-4938-9d5d-0d787a47be83",
+                  "position": 0,
+                  "weightKg": 21.6,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-09-05T14:05:45.870Z",
+              "updatedAt": "2026-09-05T14:05:45.870Z"
+            }
+          ]
         }
       ],
       "createdAt": "2026-09-05T12:51:05.849Z",
-      "updatedAt": "2026-09-05T14:02:38.249Z",
+      "updatedAt": "2026-09-05T14:05:45.870Z",
       "completedAt": null,
       "deletedAt": null
     }
