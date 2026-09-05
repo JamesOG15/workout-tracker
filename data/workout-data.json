@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 638,
+  "dataRevision": 640,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-05T12:51:05.850Z",
+  "updatedAt": "2026-09-05T12:52:28.744Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -259,6 +259,15 @@
       "isArchived": false,
       "createdAt": "2026-08-31T14:22:47.870Z",
       "updatedAt": "2026-08-31T14:22:47.870Z"
+    },
+    {
+      "id": "460882c8-62f5-4f19-8172-15aa33bc4a1b",
+      "name": "Barbell Bench",
+      "muscleGroupId": "35134dec-908b-4b12-9d0a-7f4fbf95cb75",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-09-05T12:52:24.894Z",
+      "updatedAt": "2026-09-05T12:52:24.894Z"
     }
   ],
   "templates": [],
@@ -1671,9 +1680,20 @@
       "status": "in_progress",
       "templateId": null,
       "note": null,
-      "exercises": [],
+      "exercises": [
+        {
+          "id": "75023191-839a-45fe-a88f-6c15cb441539",
+          "exerciseId": "460882c8-62f5-4f19-8172-15aa33bc4a1b",
+          "position": 0,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": []
+        }
+      ],
       "createdAt": "2026-09-05T12:51:05.849Z",
-      "updatedAt": "2026-09-05T12:51:05.849Z",
+      "updatedAt": "2026-09-05T12:52:28.744Z",
       "completedAt": null,
       "deletedAt": null
     }
