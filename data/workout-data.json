@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 641,
+  "dataRevision": 654,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-05T12:54:41.306Z",
+  "updatedAt": "2026-09-05T13:21:42.882Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -1694,25 +1694,71 @@
               "id": "8465e798-fecf-4705-9971-2ce170ce8b73",
               "position": 0,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
                 {
                   "id": "74ed6b6e-f7ac-4f20-a0e6-52233d2a7379",
                   "position": 0,
-                  "weightKg": "",
-                  "reps": ""
+                  "weightKg": 70,
+                  "reps": 5
                 }
               ],
               "createdAt": "2026-09-05T12:54:41.306Z",
-              "updatedAt": "2026-09-05T12:54:41.306Z"
+              "updatedAt": "2026-09-05T13:21:00.078Z"
+            },
+            {
+              "id": "418e280a-68a7-41cd-92d4-9b1cebfacf94",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "e24a5c54-9042-438a-971f-a17f2a7e1332",
+                  "position": 0,
+                  "weightKg": 70,
+                  "reps": 5
+                }
+              ],
+              "createdAt": "2026-09-05T13:21:03.349Z",
+              "updatedAt": "2026-09-05T13:21:11.079Z"
+            },
+            {
+              "id": "88398cd6-723c-4694-9561-ec3cb3f83a74",
+              "position": 2,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "1198d395-852f-4bcd-9e07-ca0c431d0565",
+                  "position": 0,
+                  "weightKg": 70,
+                  "reps": 5
+                }
+              ],
+              "createdAt": "2026-09-05T13:21:12.066Z",
+              "updatedAt": "2026-09-05T13:21:13.141Z"
             }
           ]
+        },
+        {
+          "id": "311b2319-7859-45c2-a420-bc775a07c6f2",
+          "exerciseId": "59658ff2-8bf3-43ef-9bc0-4b326f436931",
+          "position": 1,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": []
         }
       ],
       "createdAt": "2026-09-05T12:51:05.849Z",
-      "updatedAt": "2026-09-05T12:54:41.306Z",
+      "updatedAt": "2026-09-05T13:21:42.882Z",
       "completedAt": null,
       "deletedAt": null
     }
