@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 666,
+  "dataRevision": 674,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-05T13:38:53.361Z",
+  "updatedAt": "2026-09-05T13:39:35.420Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -1795,7 +1795,7 @@
               "id": "a33b3a05-27bc-4f26-bae0-ceb3f077ed4e",
               "position": 2,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
@@ -1804,16 +1804,22 @@
                   "position": 0,
                   "weightKg": 52,
                   "reps": 7
+                },
+                {
+                  "id": "1ca8502d-d855-40e4-bee3-6d4a32554d6f",
+                  "position": 1,
+                  "weightKg": 41,
+                  "reps": 4
                 }
               ],
               "createdAt": "2026-09-05T13:34:03.087Z",
-              "updatedAt": "2026-09-05T13:38:53.361Z"
+              "updatedAt": "2026-09-05T13:39:35.420Z"
             }
           ]
         }
       ],
       "createdAt": "2026-09-05T12:51:05.849Z",
-      "updatedAt": "2026-09-05T13:34:03.087Z",
+      "updatedAt": "2026-09-05T13:39:35.420Z",
       "completedAt": null,
       "deletedAt": null
     }
