@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 783,
+  "dataRevision": 790,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-08T18:07:06.788Z",
+  "updatedAt": "2026-09-08T18:57:21.371Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -2029,7 +2029,7 @@
       "id": "b7594762-7a2f-4da7-a168-f991bae6f11f",
       "name": "Abs and legs",
       "workoutDate": "2026-09-08",
-      "status": "in_progress",
+      "status": "completed",
       "templateId": null,
       "note": null,
       "exercises": [
@@ -2176,26 +2176,44 @@
               "id": "5b5cff79-cfc0-4817-bec6-a6ca1afa73dd",
               "position": 0,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
                 {
                   "id": "e1f3aae8-bb01-405b-ba8d-0bf5735dcceb",
                   "position": 0,
-                  "weightKg": "",
-                  "reps": ""
+                  "weightKg": 60,
+                  "reps": 8
                 }
               ],
               "createdAt": "2026-09-08T18:07:06.788Z",
-              "updatedAt": "2026-09-08T18:07:06.788Z"
+              "updatedAt": "2026-09-08T18:57:18.302Z"
+            },
+            {
+              "id": "6e6aea2e-1423-437f-9723-602b6a76662f",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "d96deb63-157b-4029-8b0a-4ee643415b3d",
+                  "position": 0,
+                  "weightKg": 60,
+                  "reps": 8
+                }
+              ],
+              "createdAt": "2026-09-08T18:57:18.979Z",
+              "updatedAt": "2026-09-08T18:57:19.711Z"
             }
           ]
         }
       ],
       "createdAt": "2026-09-08T17:45:32.052Z",
-      "updatedAt": "2026-09-08T18:07:06.788Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-08T18:57:21.371Z",
+      "completedAt": "2026-09-08T18:57:21.371Z",
       "deletedAt": null
     }
   ],
@@ -2243,6 +2261,14 @@
       "kind": "snapshot",
       "createdAt": "2026-08-31T14:22:50.240Z",
       "updatedAt": "2026-08-31T14:22:50.240Z"
+    },
+    {
+      "id": "weekly-2026-09-07",
+      "weekStartDate": "2026-09-07",
+      "target": 3,
+      "kind": "snapshot",
+      "createdAt": "2026-09-08T18:57:21.371Z",
+      "updatedAt": "2026-09-08T18:57:21.371Z"
     }
   ]
 }
