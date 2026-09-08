@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 743,
+  "dataRevision": 749,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-08T17:45:46.127Z",
+  "updatedAt": "2026-09-08T17:47:41.408Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -282,10 +282,10 @@
       "id": "99f5e985-67aa-4316-92ff-2b67647c0084",
       "name": "Bench leg raises",
       "muscleGroupId": "63692d55-e5b7-43d1-9af0-422e26fa989f",
-      "permanentNote": null,
+      "permanentNote": "Bring hips up at the top",
       "isArchived": false,
       "createdAt": "2026-09-08T17:45:22.342Z",
-      "updatedAt": "2026-09-08T17:45:22.342Z"
+      "updatedAt": "2026-09-08T17:47:31.320Z"
     }
   ],
   "templates": [],
@@ -2037,25 +2037,43 @@
               "id": "7b45fab7-146b-4f25-8b45-54fa392a72de",
               "position": 0,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
                 {
                   "id": "82afb048-14e9-4e9c-a370-3d58b1a0280d",
                   "position": 0,
-                  "weightKg": "",
-                  "reps": ""
+                  "weightKg": 0,
+                  "reps": 10
                 }
               ],
               "createdAt": "2026-09-08T17:45:46.127Z",
-              "updatedAt": "2026-09-08T17:45:46.127Z"
+              "updatedAt": "2026-09-08T17:47:40.525Z"
+            },
+            {
+              "id": "80fef4f2-f196-453c-9130-f1ddfbe68461",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "85395530-da90-40f4-9e7b-417e82b5360f",
+                  "position": 0,
+                  "weightKg": 0,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-09-08T17:47:41.408Z",
+              "updatedAt": "2026-09-08T17:47:41.408Z"
             }
           ]
         }
       ],
       "createdAt": "2026-09-08T17:45:32.052Z",
-      "updatedAt": "2026-09-08T17:45:46.127Z",
+      "updatedAt": "2026-09-08T17:47:41.408Z",
       "completedAt": null,
       "deletedAt": null
     }
