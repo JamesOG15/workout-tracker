@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 761,
+  "dataRevision": 783,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-08T18:02:06.531Z",
+  "updatedAt": "2026-09-08T18:07:06.788Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -2113,7 +2113,7 @@
               "setType": "working",
               "isCompleted": true,
               "rir": null,
-              "note": null,
+              "note": "Still feels so ass",
               "segments": [
                 {
                   "id": "25a387d5-8f23-4657-ab8b-7a47f02d643f",
@@ -2123,7 +2123,7 @@
                 }
               ],
               "createdAt": "2026-09-08T17:58:47.191Z",
-              "updatedAt": "2026-09-08T17:59:50.059Z"
+              "updatedAt": "2026-09-08T18:06:53.299Z"
             },
             {
               "id": "6d5c867b-98aa-4a2f-b87e-25ea9c751537",
@@ -2142,12 +2142,59 @@
               ],
               "createdAt": "2026-09-08T17:59:49.558Z",
               "updatedAt": "2026-09-08T18:02:06.531Z"
+            },
+            {
+              "id": "a6bdebfe-b3db-4791-8601-6268416f95b6",
+              "position": 2,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "8f61d7f7-b156-40d6-aad0-2158cbd8b0eb",
+                  "position": 0,
+                  "weightKg": 60,
+                  "reps": 5
+                }
+              ],
+              "createdAt": "2026-09-08T18:06:42.690Z",
+              "updatedAt": "2026-09-08T18:06:43.589Z"
+            }
+          ]
+        },
+        {
+          "id": "cdc423d0-dc52-443e-8b9a-297e990a04e2",
+          "exerciseId": "064c46c0-f197-4810-9143-5a05b69c0a25",
+          "position": 2,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "5b5cff79-cfc0-4817-bec6-a6ca1afa73dd",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "e1f3aae8-bb01-405b-ba8d-0bf5735dcceb",
+                  "position": 0,
+                  "weightKg": "",
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-09-08T18:07:06.788Z",
+              "updatedAt": "2026-09-08T18:07:06.788Z"
             }
           ]
         }
       ],
       "createdAt": "2026-09-08T17:45:32.052Z",
-      "updatedAt": "2026-09-08T18:02:06.531Z",
+      "updatedAt": "2026-09-08T18:07:06.788Z",
       "completedAt": null,
       "deletedAt": null
     }
