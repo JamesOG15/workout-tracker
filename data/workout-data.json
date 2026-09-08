@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 739,
+  "dataRevision": 743,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-06T20:37:27.318Z",
+  "updatedAt": "2026-09-08T17:45:46.127Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -277,6 +277,15 @@
       "isArchived": false,
       "createdAt": "2026-09-05T14:05:24.351Z",
       "updatedAt": "2026-09-05T14:05:24.351Z"
+    },
+    {
+      "id": "99f5e985-67aa-4316-92ff-2b67647c0084",
+      "name": "Bench leg raises",
+      "muscleGroupId": "63692d55-e5b7-43d1-9af0-422e26fa989f",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-09-08T17:45:22.342Z",
+      "updatedAt": "2026-09-08T17:45:22.342Z"
     }
   ],
   "templates": [],
@@ -2005,6 +2014,49 @@
       "createdAt": "2026-09-05T12:51:05.849Z",
       "updatedAt": "2026-09-06T20:37:27.318Z",
       "completedAt": "2026-09-06T20:37:27.318Z",
+      "deletedAt": null
+    },
+    {
+      "id": "b7594762-7a2f-4da7-a168-f991bae6f11f",
+      "name": "Abs and legs",
+      "workoutDate": "2026-09-08",
+      "status": "in_progress",
+      "templateId": null,
+      "note": null,
+      "exercises": [
+        {
+          "id": "a96c0daa-ed77-4113-8b5c-648940884e2b",
+          "exerciseId": "99f5e985-67aa-4316-92ff-2b67647c0084",
+          "position": 0,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "7b45fab7-146b-4f25-8b45-54fa392a72de",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "82afb048-14e9-4e9c-a370-3d58b1a0280d",
+                  "position": 0,
+                  "weightKg": "",
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-09-08T17:45:46.127Z",
+              "updatedAt": "2026-09-08T17:45:46.127Z"
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-09-08T17:45:32.052Z",
+      "updatedAt": "2026-09-08T17:45:46.127Z",
+      "completedAt": null,
       "deletedAt": null
     }
   ],
