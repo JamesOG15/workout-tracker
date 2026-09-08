@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 751,
+  "dataRevision": 755,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-08T17:50:26.857Z",
+  "updatedAt": "2026-09-08T17:58:47.191Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -286,6 +286,15 @@
       "isArchived": false,
       "createdAt": "2026-09-08T17:45:22.342Z",
       "updatedAt": "2026-09-08T17:47:31.320Z"
+    },
+    {
+      "id": "944bc2ae-87a7-4ad6-bdb9-e70132f3b566",
+      "name": "Squats",
+      "muscleGroupId": "94b5aeed-d55e-421d-b6ff-94c84aa76eac",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-09-08T17:58:29.425Z",
+      "updatedAt": "2026-09-08T17:58:29.425Z"
     }
   ],
   "templates": [],
@@ -2073,7 +2082,7 @@
               "id": "b5a0dbeb-054e-44cc-9e31-add20e8d66a4",
               "position": 2,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
@@ -2085,13 +2094,42 @@
                 }
               ],
               "createdAt": "2026-09-08T17:50:26.857Z",
-              "updatedAt": "2026-09-08T17:50:26.857Z"
+              "updatedAt": "2026-09-08T17:58:03.630Z"
+            }
+          ]
+        },
+        {
+          "id": "79618b1e-0407-4323-8947-070a630889fd",
+          "exerciseId": "944bc2ae-87a7-4ad6-bdb9-e70132f3b566",
+          "position": 1,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "092f7f6f-2a4a-4d6a-823f-038e1e649ff2",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "25a387d5-8f23-4657-ab8b-7a47f02d643f",
+                  "position": 0,
+                  "weightKg": "",
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-09-08T17:58:47.191Z",
+              "updatedAt": "2026-09-08T17:58:47.191Z"
             }
           ]
         }
       ],
       "createdAt": "2026-09-08T17:45:32.052Z",
-      "updatedAt": "2026-09-08T17:50:26.857Z",
+      "updatedAt": "2026-09-08T17:58:47.191Z",
       "completedAt": null,
       "deletedAt": null
     }
