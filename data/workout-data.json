@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 927,
+  "dataRevision": 948,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-09T18:15:16.312Z",
+  "updatedAt": "2026-09-09T18:15:54.319Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -2562,7 +2562,7 @@
               "setType": "working",
               "isCompleted": false,
               "rir": null,
-              "note": null,
+              "note": "Putting on 10 height",
               "segments": [
                 {
                   "id": "3821cc72-fdb7-4ba9-a544-6e56d751b0f9",
@@ -2572,7 +2572,7 @@
                 }
               ],
               "createdAt": "2026-09-09T17:47:44.319Z",
-              "updatedAt": "2026-09-09T17:47:44.319Z"
+              "updatedAt": "2026-09-09T18:15:54.319Z"
             },
             {
               "id": "bc92412b-f423-4c2b-b557-e11594cfb578",
