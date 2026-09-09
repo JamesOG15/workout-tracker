@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 801,
+  "dataRevision": 825,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-09T17:47:54.566Z",
+  "updatedAt": "2026-09-09T17:48:31.273Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -2361,7 +2361,7 @@
               "setType": "working",
               "isCompleted": true,
               "rir": null,
-              "note": null,
+              "note": "Chest still a bit sore",
               "segments": [
                 {
                   "id": "041d99d1-c990-419b-b46e-e4866799a11d",
@@ -2371,7 +2371,7 @@
                 }
               ],
               "createdAt": "2026-09-09T17:47:44.318Z",
-              "updatedAt": "2026-09-09T17:47:54.566Z"
+              "updatedAt": "2026-09-09T17:48:31.273Z"
             },
             {
               "id": "9678941a-a876-4098-ba7b-4821059e7d23",
