@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 837,
+  "dataRevision": 889,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-09T18:02:17.115Z",
+  "updatedAt": "2026-09-09T18:11:05.300Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -2442,37 +2442,43 @@
               "id": "33cd9989-115c-4d8a-9b6f-ae0b2039d253",
               "position": 1,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
                 {
                   "id": "29d98e69-83f9-460d-87ae-256ea4c94d0b",
                   "position": 0,
-                  "weightKg": "",
-                  "reps": ""
+                  "weightKg": 10,
+                  "reps": 8
                 }
               ],
               "createdAt": "2026-09-09T17:47:44.319Z",
-              "updatedAt": "2026-09-09T17:47:44.319Z"
+              "updatedAt": "2026-09-09T18:10:47.179Z"
             },
             {
               "id": "eeead9a0-d9f3-46b1-8ef1-85c6de69e6f2",
               "position": 2,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
-              "note": null,
+              "note": "Not doing the 3rd set with right arm",
               "segments": [
                 {
                   "id": "20972ac1-5554-43c2-a5c6-7e4aaab20007",
                   "position": 0,
-                  "weightKg": "",
-                  "reps": ""
+                  "weightKg": 10,
+                  "reps": 5
+                },
+                {
+                  "id": "4f0a71ba-023d-476e-9a26-844823642af6",
+                  "position": 1,
+                  "weightKg": 6,
+                  "reps": 5
                 }
               ],
               "createdAt": "2026-09-09T17:47:44.319Z",
-              "updatedAt": "2026-09-09T17:47:44.319Z"
+              "updatedAt": "2026-09-09T18:11:05.300Z"
             }
           ]
         },
@@ -2608,7 +2614,7 @@
         }
       ],
       "createdAt": "2026-09-09T17:47:44.318Z",
-      "updatedAt": "2026-09-09T18:02:17.115Z",
+      "updatedAt": "2026-09-09T18:10:57.045Z",
       "completedAt": null,
       "deletedAt": null
     }
