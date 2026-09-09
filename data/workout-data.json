@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 987,
+  "dataRevision": 1008,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-09T18:29:58.294Z",
+  "updatedAt": "2026-09-09T18:35:14.443Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -2342,7 +2342,7 @@
       "id": "08f25b0b-24e6-4323-91ce-6eaf76a96c59",
       "name": "Chest and Arms",
       "workoutDate": "2026-09-09",
-      "status": "in_progress",
+      "status": "completed",
       "templateId": "f8a85d70-fc4b-4ee6-9f6d-96eba17b0277",
       "note": null,
       "exercises": [
@@ -2608,26 +2608,32 @@
               "id": "ad3b1248-8c2d-4240-bafe-fafc0d64ea10",
               "position": 2,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
                 {
                   "id": "f3b23332-2a35-40a6-863b-df523bc5989d",
                   "position": 0,
-                  "weightKg": "",
-                  "reps": ""
+                  "weightKg": 6.8,
+                  "reps": 6
+                },
+                {
+                  "id": "76d49ff0-3d60-477c-b3ce-a0cf8a767eee",
+                  "position": 1,
+                  "weightKg": 4.5,
+                  "reps": 2
                 }
               ],
               "createdAt": "2026-09-09T17:47:44.319Z",
-              "updatedAt": "2026-09-09T17:47:44.319Z"
+              "updatedAt": "2026-09-09T18:35:06.835Z"
             }
           ]
         }
       ],
       "createdAt": "2026-09-09T17:47:44.318Z",
-      "updatedAt": "2026-09-09T18:29:58.294Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-09T18:35:14.443Z",
+      "completedAt": "2026-09-09T18:35:14.443Z",
       "deletedAt": null
     }
   ],
