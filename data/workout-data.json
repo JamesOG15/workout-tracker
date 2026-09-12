@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1012,
+  "dataRevision": 1014,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-12T12:58:02.828Z",
+  "updatedAt": "2026-09-12T12:59:07.386Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -295,6 +295,15 @@
       "isArchived": false,
       "createdAt": "2026-09-08T17:58:29.425Z",
       "updatedAt": "2026-09-08T17:58:29.425Z"
+    },
+    {
+      "id": "c8d516b6-2258-4e54-835f-f71c5a4c378c",
+      "name": "Incline Dumbbell Bench",
+      "muscleGroupId": "35134dec-908b-4b12-9d0a-7f4fbf95cb75",
+      "permanentNote": "On the 4 height setting",
+      "isArchived": false,
+      "createdAt": "2026-09-12T12:58:51.537Z",
+      "updatedAt": "2026-09-12T12:58:51.537Z"
     }
   ],
   "templates": [
@@ -2643,9 +2652,20 @@
       "status": "in_progress",
       "templateId": null,
       "note": null,
-      "exercises": [],
+      "exercises": [
+        {
+          "id": "fecdd00a-ae28-41d4-b540-5ac05b3a4594",
+          "exerciseId": "c8d516b6-2258-4e54-835f-f71c5a4c378c",
+          "position": 0,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": []
+        }
+      ],
       "createdAt": "2026-09-12T12:58:02.827Z",
-      "updatedAt": "2026-09-12T12:58:02.827Z",
+      "updatedAt": "2026-09-12T12:59:07.386Z",
       "completedAt": null,
       "deletedAt": null
     }
