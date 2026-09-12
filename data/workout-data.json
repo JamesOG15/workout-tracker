@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1010,
+  "dataRevision": 1011,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-10T06:47:05.687Z",
+  "updatedAt": "2026-09-12T09:37:18.280Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -2663,6 +2663,15 @@
       "note": null,
       "createdAt": "2026-09-10T06:47:05.687Z",
       "updatedAt": "2026-09-10T06:47:05.687Z",
+      "deletedAt": null
+    },
+    {
+      "id": "5ad93ef1-6a01-44cd-83a6-ad7bedf4508a",
+      "date": "2026-09-12",
+      "weightKg": 81.3,
+      "note": null,
+      "createdAt": "2026-09-12T09:37:18.280Z",
+      "updatedAt": "2026-09-12T09:37:18.280Z",
       "deletedAt": null
     }
   ],
