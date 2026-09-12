@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1059,
+  "dataRevision": 1060,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-12T13:27:54.264Z",
+  "updatedAt": "2026-09-12T14:06:13.334Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -2649,7 +2649,7 @@
       "id": "90b3cc0a-5e27-4023-b07d-7b96254a2c51",
       "name": "Full body",
       "workoutDate": "2026-09-12",
-      "status": "in_progress",
+      "status": "completed",
       "templateId": null,
       "note": null,
       "exercises": [
@@ -2801,8 +2801,8 @@
         }
       ],
       "createdAt": "2026-09-12T12:58:02.827Z",
-      "updatedAt": "2026-09-12T13:27:54.264Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-12T14:06:13.334Z",
+      "completedAt": "2026-09-12T14:06:13.334Z",
       "deletedAt": null
     }
   ],
