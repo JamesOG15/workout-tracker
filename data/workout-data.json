@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1014,
+  "dataRevision": 1039,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-12T12:59:07.386Z",
+  "updatedAt": "2026-09-12T13:12:48.690Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -2661,11 +2661,72 @@
           "targetRepMin": null,
           "targetRepMax": null,
           "warmUpGuidance": null,
-          "sets": []
+          "sets": [
+            {
+              "id": "574f8a50-893e-4936-b60e-e2ca5cec7475",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": "Easy",
+              "segments": [
+                {
+                  "id": "7f81bed8-fe3a-44bc-a558-3941397af72d",
+                  "position": 0,
+                  "weightKg": 22,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-09-12T13:03:56.859Z",
+              "updatedAt": "2026-09-12T13:04:13.158Z"
+            },
+            {
+              "id": "264d396b-44cc-458e-a1b3-2f3cbd0ea10c",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "69652408-8ce3-48ad-98ca-db5f5429bad6",
+                  "position": 0,
+                  "weightKg": 24,
+                  "reps": 9
+                }
+              ],
+              "createdAt": "2026-09-12T13:04:13.790Z",
+              "updatedAt": "2026-09-12T13:04:19.305Z"
+            },
+            {
+              "id": "2d8eb41a-51b4-41fe-9b1f-2487162d3414",
+              "position": 2,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "b7cea842-45ec-4815-9894-88c30f100e79",
+                  "position": 0,
+                  "weightKg": 24,
+                  "reps": 8
+                },
+                {
+                  "id": "b266a7ca-8591-4272-84bf-ff457a635e42",
+                  "position": 1,
+                  "weightKg": 22,
+                  "reps": 8
+                }
+              ],
+              "createdAt": "2026-09-12T13:04:20.884Z",
+              "updatedAt": "2026-09-12T13:12:48.690Z"
+            }
+          ]
         }
       ],
       "createdAt": "2026-09-12T12:58:02.827Z",
-      "updatedAt": "2026-09-12T12:59:07.386Z",
+      "updatedAt": "2026-09-12T13:12:45.802Z",
       "completedAt": null,
       "deletedAt": null
     }
