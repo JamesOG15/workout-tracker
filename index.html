@@ -283,6 +283,7 @@ a { color: var(--accent-strong); }
 .toast { position: fixed; left: 50%; bottom: calc(88px + var(--safe-bottom)); transform: translateX(-50%); z-index: 100; width: min(92vw, 520px); padding: 12px 14px; border-radius: 14px; background: #1a1014; color: white; box-shadow: 0 10px 30px rgba(0,0,0,.25); display: flex; align-items: center; gap: 12px; animation: toast-in .2s ease; }
 .toast .grow { flex: 1; }
 .toast button { border: 0; color: #ff8ca1; background: transparent; font-weight: 800; padding: 8px; }
+.toast.toast-pr { background: #2a1f00; border: 1px solid rgba(255,195,0,.35); box-shadow: 0 10px 30px rgba(0,0,0,.25), 0 0 0 1px rgba(255,195,0,.15); }
 @keyframes toast-in { from { opacity: 0; transform: translate(-50%, 10px); } }
 
 .modal-backdrop { position: fixed; inset: 0; z-index: 80; background: rgba(0,0,0,.45); display: flex; align-items: flex-end; justify-content: center; padding-top: var(--safe-top); }
@@ -681,12 +682,12 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
   function openModal(type, params = {}) { modal = { type, params }; render(); }
   function closeModal() { modal = null; render(); }
 
-  function showToast(message, actionLabel = null, action = null, duration = 4200) {
+  function showToast(message, actionLabel = null, action = null, duration = 4200, extraClass = '') {
     clearTimeout(toastTimer);
     const existing = document.querySelector('.toast');
     if (existing) existing.remove();
     const el = document.createElement('div');
-    el.className = 'toast';
+    el.className = extraClass ? `toast ${extraClass}` : 'toast';
     el.innerHTML = `<div class="grow">${escapeHtml(message)}</div>${actionLabel ? `<button type="button">${escapeHtml(actionLabel)}</button>` : ''}`;
     if (actionLabel) el.querySelector('button').onclick = () => { el.remove(); action?.(); };
     document.body.appendChild(el);
@@ -905,7 +906,7 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
     for (let day = 1; day <= last.getDate(); day++) {
       const date = localDateFromDate(new Date(year, month, day));
       const volume = volumesByDate[date] || 0;
-      const level = volume ? Math.max(1, Math.ceil(volume / maxVol * 3)) : 0;
+      const level = volume ? 3 : 0;
       cells.push({ date, day, level, volume });
     }
     return {
@@ -1289,7 +1290,7 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
     const bestReps = Object.entries(records.byReps).sort((a,b)=>Number(a[0])-Number(b[0]));
     return `<main class="page">${pageHeader(ex.name, 'Exercise progress', { back: true, action: `<button class="icon-button" data-action="choose-exercise-progress" aria-label="Choose exercise">${ICONS.menu}</button>` })}
       ${rangeSelector('exercise-range', range, { exerciseId })}
-      <section class="card chart-card"><h3>Total working-set volume</h3>${filtered.length ? `<canvas id="exercise-volume-chart" aria-label="Exercise volume chart"></canvas><div class="chart-legend"><span><i class="legend-dot"></i> Volume in kg</span></div>` : `<div class="empty-state"><p>No completed working sets in this period.</p></div>`}</section>
+      <section class="card chart-card"><h3>Best weight at 8+ reps</h3>${filtered.length ? `<canvas id="exercise-volume-chart" aria-label="Exercise volume chart"></canvas><div class="chart-legend"><span><i class="legend-dot"></i> Weight (kg)</span></div>` : `<div class="empty-state"><p>No completed working sets in this period.</p></div>`}</section>
       <div class="metric-grid"><div class="metric"><div class="metric-value">${records.heaviest ? `${formatNumber(records.heaviest.value)} kg` : '—'}</div><div class="metric-label">Heaviest weight</div></div><div class="metric"><div class="metric-value">${records.highestSet ? formatNumber(records.highestSet.value) : '—'}</div><div class="metric-label">Highest set volume</div></div><div class="metric"><div class="metric-value">${records.highestSession ? formatNumber(records.highestSession.value) : '—'}</div><div class="metric-label">Highest session volume</div></div><div class="metric"><div class="metric-value">${sessions.length}</div><div class="metric-label">Sessions</div></div></div>
       <div class="section-title"><h2>Best weight by reps</h2></div>
       ${bestReps.length ? `<div class="list">${bestReps.map(([reps, record]) => `<div class="list-item"><div class="grow"><div class="list-item-title">${reps} reps</div><div class="list-item-sub">${dateToLocalString(record.date)}</div></div><div class="metric-value" style="font-size:20px">${formatNumber(record.value)} kg</div></div>`).join('')}</div>` : `<p class="muted">No records yet.</p>`}
@@ -1435,8 +1436,9 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
     }
     if (type === 'exercisePicker') {
       const selected = new Set(p.selectedIds || []);
-      const exercises = data.exercises.filter(x=>!x.isArchived && !selected.has(x.id)).sort((a,b)=>a.name.localeCompare(b.name));
-      return `<div class="modal-header"><h2>Add Exercise</h2><button class="icon-button small" data-action="close-modal" aria-label="Close">${ICONS.close}</button></div><div class="search-bar"><input class="search-input" placeholder="Search exercises" data-field="picker-search"></div><div id="picker-list" class="list">${exercises.map(ex=>`<button class="list-item picker-item" data-name="${escapeHtml(ex.name.toLowerCase())}" data-action="pick-exercise" data-id="${ex.id}" data-context="${escapeHtml(p.context)}" data-parent-id="${escapeHtml(p.parentId||'')}"><div class="grow"><div class="list-item-title">${escapeHtml(ex.name)}</div><div class="list-item-sub">${escapeHtml(getGroup(ex.muscleGroupId)?.name||'Other')}</div></div>${ICONS.plus}</button>`).join('')}</div><button class="secondary-button full-width" data-action="new-exercise" data-return-context="${escapeHtml(p.context)}" data-parent-id="${escapeHtml(p.parentId||'')}">Create New Exercise</button>`;
+      const groupId = p.groupId || '';
+      const exercises = data.exercises.filter(x=>!x.isArchived && !selected.has(x.id) && (!groupId || x.muscleGroupId === groupId)).sort((a,b)=>a.name.localeCompare(b.name));
+      return `<div class="modal-header"><h2>Add Exercise</h2><button class="icon-button small" data-action="close-modal" aria-label="Close">${ICONS.close}</button></div><div class="chips" style="padding:0 0 8px;overflow-x:auto;flex-wrap:nowrap;display:flex;gap:6px"><button class="chip-button ${!groupId?'active':''}" data-action="filter-picker-group" data-id="">All</button>${data.muscleGroups.sort((a,b)=>a.position-b.position).map(g=>`<button class="chip-button ${groupId===g.id?'active':''}" data-action="filter-picker-group" data-id="${g.id}">${escapeHtml(g.name)}</button>`).join('')}</div><div class="search-bar"><input class="search-input" placeholder="Search exercises" data-field="picker-search"></div><div id="picker-list" class="list">${exercises.map(ex=>`<button class="list-item picker-item" data-name="${escapeHtml(ex.name.toLowerCase())}" data-action="pick-exercise" data-id="${ex.id}" data-context="${escapeHtml(p.context)}" data-parent-id="${escapeHtml(p.parentId||'')}"><div class="grow"><div class="list-item-title">${escapeHtml(ex.name)}</div><div class="list-item-sub">${escapeHtml(getGroup(ex.muscleGroupId)?.name||'Other')}</div></div>${ICONS.plus}</button>`).join('')}</div><button class="secondary-button full-width" data-action="new-exercise" data-return-context="${escapeHtml(p.context)}" data-parent-id="${escapeHtml(p.parentId||'')}">Create New Exercise</button>`;
     }
     if (type === 'exerciseEditor') {
       const ex=p.exerciseId?getExercise(p.exerciseId):null;
@@ -1567,10 +1569,10 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
     if(updated.isCompleted&&updated.setType==='working'&&historical.heaviest){
       const newLabels=[];
       const maxW=Math.max(...updated.segments.map(s=>Number(s.weightKg)));
-      if(maxW>previousHeaviest)newLabels.push('new heaviest weight');
-      if(setVolume(updated)>previousSetVolume)newLabels.push('new set-volume record');
+      if(maxW>previousHeaviest)newLabels.push('heaviest weight');
+      if(setVolume(updated)>previousSetVolume)newLabels.push('best set volume');
       updated.segments.forEach(seg=>{if(Number(seg.weightKg)>(previousByReps[Number(seg.reps)]||0))newLabels.push(`best ${seg.reps}-rep weight`);});
-      if(newLabels.length) showToast(`New record: ${newLabels[0]}`);
+      if(newLabels.length){const exName=getExercise(we.exerciseId)?.name||'Exercise';showToast(`🏆 PR on ${exName} — ${newLabels.join(', ')}`,null,null,5000,'toast-pr');}
     }
   }
 
@@ -1683,6 +1685,7 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
       if(action==='remove-planned-break')return removePlannedBreak();
       if(action==='open-exercise-library')return navigate('exerciseLibrary',{});
       if(action==='filter-exercise-group'){currentScreen.params.groupId=target.dataset.id;render();return;}
+      if(action==='filter-picker-group'){modal.params.groupId=target.dataset.id;render();return;}
       if(action==='manage-groups'){openModal('groups',{});return;}
       if(action==='add-group'){await commitData(d=>d.muscleGroups.push({id:uuid(),name:'New Group',position:d.muscleGroups.length,isDefault:false,createdAt:nowIso(),updatedAt:nowIso()}));openModal('groups',{});return;}
       if(action==='move-group')return moveGroup(target.dataset.id,target.dataset.direction);
@@ -1790,7 +1793,7 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
 
   async function removeWorkoutExercise(workoutId,weId){
     const w=getWorkout(workoutId),idx=w.exercises.findIndex(x=>x.id===weId);if(idx<0)return;const removed=deepClone(w.exercises[idx]);
-    await commitData(d=>{const ww=d.workouts.find(x=>x.id===workoutId);ww.exercises.splice(idx,1);normalisePositions(ww.exercises);ww.updatedAt=nowIso();});closeModal();
+    closeModal();await commitData(d=>{const ww=d.workouts.find(x=>x.id===workoutId);ww.exercises.splice(idx,1);normalisePositions(ww.exercises);ww.updatedAt=nowIso();});
     setUndo('Exercise removed',async()=>{await commitData(d=>{const ww=d.workouts.find(x=>x.id===workoutId);ww.exercises.splice(idx,0,removed);normalisePositions(ww.exercises);});});
   }
 
@@ -2020,7 +2023,7 @@ code.inline { background: var(--surface-2); border-radius: 6px; padding: 2px 5px
     ctx.clearRect(0,0,width,height);ctx.strokeStyle=c.line;ctx.fillStyle=c.text;ctx.font='11px -apple-system, sans-serif';ctx.textAlign='right';for(let i=0;i<=4;i++){const val=min+(max-min)*(4-i)/4;const yy=pad.t+i*(height-pad.t-pad.b)/4;ctx.beginPath();ctx.moveTo(pad.l,yy);ctx.lineTo(width-pad.r,yy);ctx.stroke();ctx.fillText(formatter(val),pad.l-7,yy+4);}ctx.textAlign='center';const step=Math.max(1,Math.ceil(labels.length/4));labels.forEach((lab,i)=>{if(i%step===0||i===labels.length-1)ctx.fillText(lab,x(i),height-12);});
     seriesList.forEach((series,si)=>{ctx.strokeStyle=series.color||c.accent;ctx.globalAlpha=series.alpha??1;ctx.lineWidth=series.width||2.5;ctx.beginPath();series.values.forEach((v,i)=>{if(!Number.isFinite(v))return;const xx=x(i),yy=y(v);if(i===0||!Number.isFinite(series.values[i-1]))ctx.moveTo(xx,yy);else ctx.lineTo(xx,yy);});ctx.stroke();series.values.forEach((v,i)=>{if(!Number.isFinite(v))return;ctx.fillStyle=series.color||c.accent;ctx.beginPath();ctx.arc(x(i),y(v),3,0,Math.PI*2);ctx.fill();});ctx.globalAlpha=1;});
   }
-  function drawExerciseChart(){const canvas=document.getElementById('exercise-volume-chart');if(!canvas)return;const id=currentScreen.params.exerciseId,range=currentScreen.params.range||data.settings.defaultChartRange;const sessions=filterByRange(completedWorkouts().map(w=>({date:w.workoutDate,value:exerciseStatsInWorkout(w,id).volume})).filter(x=>x.value>0),'date',range);drawLineChart(canvas,[{values:sessions.map(x=>x.value)}],sessions.map(x=>dateToLocalString(x.date,{year:false})),v=>formatNumber(v));}
+  function drawExerciseChart(){const canvas=document.getElementById('exercise-volume-chart');if(!canvas)return;const id=currentScreen.params.exerciseId,range=currentScreen.params.range||data.settings.defaultChartRange;const sessions=filterByRange(completedWorkouts().map(w=>{const we=w.exercises.find(x=>x.exerciseId===id);const best=Math.max(0,...(we?.sets||[]).filter(s=>s.isCompleted&&s.setType==='working'&&s.segments.some(seg=>Number(seg.reps)>=8)).flatMap(s=>s.segments.filter(seg=>Number(seg.reps)>=8).map(seg=>Number(seg.weightKg)||0)));return{date:w.workoutDate,value:best||null};}).filter(x=>x.value),'date',range);drawLineChart(canvas,[{values:sessions.map(x=>x.value)}],sessions.map(x=>dateToLocalString(x.date,{year:false})),v=>formatNumber(v));}
   function drawBodyweightChart(){const canvas=document.getElementById('bodyweight-chart');if(!canvas)return;const range=currentScreen.params.range||data.settings.defaultChartRange,entries=filterByRange(visibleBodyweights(),'date',range);const averages=entries.map(x=>bodyweightRollingAverage(visibleBodyweights(),x.date));drawLineChart(canvas,[{values:entries.map(x=>Number(x.weightKg))},{values:averages,alpha:.45,width:3}],entries.map(x=>dateToLocalString(x.date,{year:false})),v=>formatNumber(v,1));}
 
   initialise();
