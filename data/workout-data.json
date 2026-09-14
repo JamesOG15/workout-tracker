@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1187,
+  "dataRevision": 1189,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-14T17:58:16.663Z",
+  "updatedAt": "2026-09-14T17:59:27.274Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -2809,7 +2809,7 @@
       "id": "7a0cde1a-f75a-4573-84d9-1e4df5b32eef",
       "name": "Chest and Arms",
       "workoutDate": "2026-09-14",
-      "status": "in_progress",
+      "status": "completed",
       "templateId": "f8a85d70-fc4b-4ee6-9f6d-96eba17b0277",
       "note": null,
       "exercises": [
@@ -2962,80 +2962,9 @@
           ]
         },
         {
-          "id": "20ef1632-eb01-49c8-a07b-b97df2128cda",
-          "exerciseId": "61fd12a7-8c19-4ecb-9ab4-7e317e35077c",
-          "position": 2,
-          "note": null,
-          "targetRepMin": null,
-          "targetRepMax": null,
-          "warmUpGuidance": null,
-          "sets": [
-            {
-              "id": "e5eeca78-9b78-45e2-9b68-7c25b29daef1",
-              "position": 0,
-              "setType": "working",
-              "isCompleted": true,
-              "rir": null,
-              "note": null,
-              "segments": [
-                {
-                  "id": "cdd055c6-1828-4409-9def-360df9a07432",
-                  "position": 0,
-                  "weightKg": 4.5,
-                  "reps": 10
-                }
-              ],
-              "createdAt": "2026-09-14T17:14:19.296Z",
-              "updatedAt": "2026-09-14T17:51:57.156Z"
-            },
-            {
-              "id": "624f9837-b8ea-485a-bce2-de272b0248d1",
-              "position": 1,
-              "setType": "working",
-              "isCompleted": true,
-              "rir": null,
-              "note": null,
-              "segments": [
-                {
-                  "id": "e0d70668-d904-45be-b777-ba0a97555c89",
-                  "position": 0,
-                  "weightKg": 4.5,
-                  "reps": 10
-                }
-              ],
-              "createdAt": "2026-09-14T17:14:19.296Z",
-              "updatedAt": "2026-09-14T17:51:57.653Z"
-            },
-            {
-              "id": "7f28f9e4-a87a-4fd4-827a-6bc9aa94f997",
-              "position": 2,
-              "setType": "working",
-              "isCompleted": true,
-              "rir": null,
-              "note": "Right arm officially weaker",
-              "segments": [
-                {
-                  "id": "78fe2d3f-4871-4bf4-8713-c7af63b59a52",
-                  "position": 0,
-                  "weightKg": 4.5,
-                  "reps": 7
-                },
-                {
-                  "id": "7f8445c2-3d91-4e2c-9b7b-208457f27573",
-                  "position": 1,
-                  "weightKg": 2.3,
-                  "reps": 4
-                }
-              ],
-              "createdAt": "2026-09-14T17:14:19.296Z",
-              "updatedAt": "2026-09-14T17:58:16.663Z"
-            }
-          ]
-        },
-        {
           "id": "bf53e299-eff2-4572-bf57-88627c13ca0f",
           "exerciseId": "96f7ae95-2462-4df8-8949-ae810355aeed",
-          "position": 3,
+          "position": 2,
           "note": null,
           "targetRepMin": null,
           "targetRepMax": null,
@@ -3102,11 +3031,82 @@
               "updatedAt": "2026-09-14T17:54:39.687Z"
             }
           ]
+        },
+        {
+          "id": "20ef1632-eb01-49c8-a07b-b97df2128cda",
+          "exerciseId": "61fd12a7-8c19-4ecb-9ab4-7e317e35077c",
+          "position": 3,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "e5eeca78-9b78-45e2-9b68-7c25b29daef1",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "cdd055c6-1828-4409-9def-360df9a07432",
+                  "position": 0,
+                  "weightKg": 4.5,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-09-14T17:14:19.296Z",
+              "updatedAt": "2026-09-14T17:51:57.156Z"
+            },
+            {
+              "id": "624f9837-b8ea-485a-bce2-de272b0248d1",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "e0d70668-d904-45be-b777-ba0a97555c89",
+                  "position": 0,
+                  "weightKg": 4.5,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-09-14T17:14:19.296Z",
+              "updatedAt": "2026-09-14T17:51:57.653Z"
+            },
+            {
+              "id": "7f28f9e4-a87a-4fd4-827a-6bc9aa94f997",
+              "position": 2,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": "Right arm officially weaker",
+              "segments": [
+                {
+                  "id": "78fe2d3f-4871-4bf4-8713-c7af63b59a52",
+                  "position": 0,
+                  "weightKg": 4.5,
+                  "reps": 7
+                },
+                {
+                  "id": "7f8445c2-3d91-4e2c-9b7b-208457f27573",
+                  "position": 1,
+                  "weightKg": 2.3,
+                  "reps": 4
+                }
+              ],
+              "createdAt": "2026-09-14T17:14:19.296Z",
+              "updatedAt": "2026-09-14T17:58:16.663Z"
+            }
+          ]
         }
       ],
       "createdAt": "2026-09-14T17:14:19.295Z",
-      "updatedAt": "2026-09-14T17:58:16.663Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-14T17:59:27.274Z",
+      "completedAt": "2026-09-14T17:59:27.274Z",
       "deletedAt": null
     }
   ],
@@ -3198,6 +3198,14 @@
       "kind": "snapshot",
       "createdAt": "2026-09-08T18:57:21.371Z",
       "updatedAt": "2026-09-08T18:57:21.371Z"
+    },
+    {
+      "id": "weekly-2026-09-14",
+      "weekStartDate": "2026-09-14",
+      "target": 3,
+      "kind": "snapshot",
+      "createdAt": "2026-09-14T17:59:27.274Z",
+      "updatedAt": "2026-09-14T17:59:27.274Z"
     }
   ]
 }
