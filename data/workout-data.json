@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1062,
+  "dataRevision": 1063,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-14T07:46:31.147Z",
+  "updatedAt": "2026-09-14T17:14:19.297Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -2803,6 +2803,280 @@
       "createdAt": "2026-09-12T12:58:02.827Z",
       "updatedAt": "2026-09-12T14:06:13.347Z",
       "completedAt": "2026-09-12T14:06:13.347Z",
+      "deletedAt": null
+    },
+    {
+      "id": "7a0cde1a-f75a-4573-84d9-1e4df5b32eef",
+      "name": "Chest and Arms",
+      "workoutDate": "2026-09-14",
+      "status": "in_progress",
+      "templateId": "f8a85d70-fc4b-4ee6-9f6d-96eba17b0277",
+      "note": null,
+      "exercises": [
+        {
+          "id": "edc67ad2-088a-497d-b088-953fbaa06e92",
+          "exerciseId": "bef5aded-717e-4ac6-a811-09dd82415da8",
+          "position": 0,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "35095279-98a2-43a4-a5ec-8cedd8f458d5",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "0c04ac17-ddae-45dd-ac54-9b5c08efd0ac",
+                  "position": 0,
+                  "weightKg": "",
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-09-14T17:14:19.296Z",
+              "updatedAt": "2026-09-14T17:14:19.296Z"
+            },
+            {
+              "id": "aaefc455-aa26-4dd1-88aa-b3eec97f0e66",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "d77191a7-dfe0-4eb8-818f-b00a7f089397",
+                  "position": 0,
+                  "weightKg": "",
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-09-14T17:14:19.296Z",
+              "updatedAt": "2026-09-14T17:14:19.296Z"
+            },
+            {
+              "id": "ac8c4838-a2a8-4c5b-8f52-64365cda872b",
+              "position": 2,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "2aecfa6d-9611-4f94-a20b-30cd8dd1be23",
+                  "position": 0,
+                  "weightKg": "",
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-09-14T17:14:19.296Z",
+              "updatedAt": "2026-09-14T17:14:19.296Z"
+            }
+          ]
+        },
+        {
+          "id": "6db308a9-a5d4-402d-8c94-4e4e11757681",
+          "exerciseId": "fa28aa8e-dc79-4701-a533-8ced71f4c364",
+          "position": 1,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "84ea9a34-f99e-47d9-8bbe-f1d49dea1a10",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "0d59d7ac-e61c-4779-817e-a7c314064079",
+                  "position": 0,
+                  "weightKg": "",
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-09-14T17:14:19.296Z",
+              "updatedAt": "2026-09-14T17:14:19.296Z"
+            },
+            {
+              "id": "6eba138e-8ba1-4233-b3e7-f298ae85bc01",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "22002041-4945-4505-97a7-53723ede5b0d",
+                  "position": 0,
+                  "weightKg": "",
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-09-14T17:14:19.296Z",
+              "updatedAt": "2026-09-14T17:14:19.296Z"
+            },
+            {
+              "id": "65c3e6d4-9446-421b-a51e-8436c1b14499",
+              "position": 2,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "1bdc366a-d541-4f5c-9412-bad72c2b7e0e",
+                  "position": 0,
+                  "weightKg": "",
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-09-14T17:14:19.296Z",
+              "updatedAt": "2026-09-14T17:14:19.296Z"
+            }
+          ]
+        },
+        {
+          "id": "20ef1632-eb01-49c8-a07b-b97df2128cda",
+          "exerciseId": "61fd12a7-8c19-4ecb-9ab4-7e317e35077c",
+          "position": 2,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "e5eeca78-9b78-45e2-9b68-7c25b29daef1",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "cdd055c6-1828-4409-9def-360df9a07432",
+                  "position": 0,
+                  "weightKg": "",
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-09-14T17:14:19.296Z",
+              "updatedAt": "2026-09-14T17:14:19.296Z"
+            },
+            {
+              "id": "624f9837-b8ea-485a-bce2-de272b0248d1",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "e0d70668-d904-45be-b777-ba0a97555c89",
+                  "position": 0,
+                  "weightKg": "",
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-09-14T17:14:19.296Z",
+              "updatedAt": "2026-09-14T17:14:19.296Z"
+            },
+            {
+              "id": "7f28f9e4-a87a-4fd4-827a-6bc9aa94f997",
+              "position": 2,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "78fe2d3f-4871-4bf4-8713-c7af63b59a52",
+                  "position": 0,
+                  "weightKg": "",
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-09-14T17:14:19.296Z",
+              "updatedAt": "2026-09-14T17:14:19.296Z"
+            }
+          ]
+        },
+        {
+          "id": "bf53e299-eff2-4572-bf57-88627c13ca0f",
+          "exerciseId": "96f7ae95-2462-4df8-8949-ae810355aeed",
+          "position": 3,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "b7dc30e0-0935-4619-99b8-5e855d472a03",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "c445794d-77cb-4564-923f-05bea47bc732",
+                  "position": 0,
+                  "weightKg": "",
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-09-14T17:14:19.296Z",
+              "updatedAt": "2026-09-14T17:14:19.296Z"
+            },
+            {
+              "id": "254852bb-ebc0-42cb-bc69-7c7b9fe64b86",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "b5a06387-5fc4-40f1-af91-21e0d199d6d1",
+                  "position": 0,
+                  "weightKg": "",
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-09-14T17:14:19.296Z",
+              "updatedAt": "2026-09-14T17:14:19.296Z"
+            },
+            {
+              "id": "6ffde025-8e21-45ec-b172-6ce9d178b955",
+              "position": 2,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "5618de7a-21bf-4d72-aa5d-7069c02a826a",
+                  "position": 0,
+                  "weightKg": "",
+                  "reps": ""
+                }
+              ],
+              "createdAt": "2026-09-14T17:14:19.296Z",
+              "updatedAt": "2026-09-14T17:14:19.296Z"
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-09-14T17:14:19.295Z",
+      "updatedAt": "2026-09-14T17:14:19.295Z",
+      "completedAt": null,
       "deletedAt": null
     }
   ],
