@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1146,
+  "dataRevision": 1187,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-14T17:54:39.687Z",
+  "updatedAt": "2026-09-14T17:58:16.663Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -3010,19 +3010,25 @@
               "id": "7f28f9e4-a87a-4fd4-827a-6bc9aa94f997",
               "position": 2,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
-              "note": null,
+              "note": "Right arm officially weaker",
               "segments": [
                 {
                   "id": "78fe2d3f-4871-4bf4-8713-c7af63b59a52",
                   "position": 0,
-                  "weightKg": "",
-                  "reps": ""
+                  "weightKg": 4.5,
+                  "reps": 7
+                },
+                {
+                  "id": "7f8445c2-3d91-4e2c-9b7b-208457f27573",
+                  "position": 1,
+                  "weightKg": 2.3,
+                  "reps": 4
                 }
               ],
               "createdAt": "2026-09-14T17:14:19.296Z",
-              "updatedAt": "2026-09-14T17:14:19.296Z"
+              "updatedAt": "2026-09-14T17:58:16.663Z"
             }
           ]
         },
@@ -3099,7 +3105,7 @@
         }
       ],
       "createdAt": "2026-09-14T17:14:19.295Z",
-      "updatedAt": "2026-09-14T17:54:39.687Z",
+      "updatedAt": "2026-09-14T17:58:16.663Z",
       "completedAt": null,
       "deletedAt": null
     }
