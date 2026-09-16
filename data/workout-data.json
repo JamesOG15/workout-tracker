@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1192,
+  "dataRevision": 1194,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-16T06:46:48.078Z",
+  "updatedAt": "2026-09-16T17:35:04.888Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -3107,6 +3107,30 @@
       "createdAt": "2026-09-14T17:14:19.295Z",
       "updatedAt": "2026-09-14T17:59:27.290Z",
       "completedAt": "2026-09-14T17:59:27.290Z",
+      "deletedAt": null
+    },
+    {
+      "id": "6a36cab4-e58a-4fc3-aea3-b8dabbcaa23e",
+      "name": "Legs",
+      "workoutDate": "2026-09-16",
+      "status": "in_progress",
+      "templateId": null,
+      "note": null,
+      "exercises": [
+        {
+          "id": "1c881cbb-3075-4480-bbf1-ee9d07f8304b",
+          "exerciseId": "fb309c9d-aa1c-456a-8348-08a1bbec420c",
+          "position": 0,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": []
+        }
+      ],
+      "createdAt": "2026-09-16T17:34:58.371Z",
+      "updatedAt": "2026-09-16T17:35:04.888Z",
+      "completedAt": null,
       "deletedAt": null
     }
   ],
