@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1194,
+  "dataRevision": 1195,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-16T17:35:04.888Z",
+  "updatedAt": "2026-09-16T17:36:29.849Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -218,11 +218,11 @@
     {
       "id": "fb309c9d-aa1c-456a-8348-08a1bbec420c",
       "name": "Machine Leg Press",
-      "muscleGroupId": "35134dec-908b-4b12-9d0a-7f4fbf95cb75",
-      "permanentNote": null,
+      "muscleGroupId": "94b5aeed-d55e-421d-b6ff-94c84aa76eac",
+      "permanentNote": "On the 5 setting",
       "isArchived": false,
       "createdAt": "2026-08-22T11:25:47.726Z",
-      "updatedAt": "2026-08-22T11:25:47.726Z"
+      "updatedAt": "2026-09-16T17:36:29.849Z"
     },
     {
       "id": "c8f43cdd-8481-479e-8e60-2c4a985b4560",
