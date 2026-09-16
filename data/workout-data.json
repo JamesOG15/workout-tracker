@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1238,
+  "dataRevision": 1240,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-16T17:57:57.561Z",
+  "updatedAt": "2026-09-16T18:01:27.048Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -3113,7 +3113,7 @@
       "id": "6a36cab4-e58a-4fc3-aea3-b8dabbcaa23e",
       "name": "Legs & back",
       "workoutDate": "2026-09-16",
-      "status": "in_progress",
+      "status": "completed",
       "templateId": null,
       "note": null,
       "exercises": [
@@ -3296,8 +3296,8 @@
         }
       ],
       "createdAt": "2026-09-16T17:34:58.371Z",
-      "updatedAt": "2026-09-16T17:57:57.561Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-16T18:01:27.048Z",
+      "completedAt": "2026-09-16T18:01:27.048Z",
       "deletedAt": null
     }
   ],
