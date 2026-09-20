@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1256,
+  "dataRevision": 1257,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-18T21:39:25.881Z",
+  "updatedAt": "2026-09-19T09:27:04.647Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -3478,10 +3478,10 @@
     {
       "id": "weekly-2026-09-14",
       "weekStartDate": "2026-09-14",
-      "target": 3,
-      "kind": "snapshot",
+      "target": 2,
+      "kind": "override",
       "createdAt": "2026-09-14T17:59:27.274Z",
-      "updatedAt": "2026-09-14T17:59:27.274Z"
+      "updatedAt": "2026-09-19T09:27:04.647Z"
     }
   ]
 }
