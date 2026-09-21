@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1276,
+  "dataRevision": 1309,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-21T12:05:15.330Z",
+  "updatedAt": "2026-09-21T12:09:09.482Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -3518,19 +3518,25 @@
               "id": "601f57d0-dd8b-4090-bf5a-2113faa6a14f",
               "position": 0,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
-              "note": null,
+              "note": "Right shoulder sore",
               "segments": [
                 {
                   "id": "f3460eaa-a3c8-4c6d-988d-787e5189bdb0",
                   "position": 0,
-                  "weightKg": "",
-                  "reps": ""
+                  "weightKg": 5.7,
+                  "reps": 4
+                },
+                {
+                  "id": "98bc0e2a-5528-4711-a972-edfeef081745",
+                  "position": 1,
+                  "weightKg": 3.4,
+                  "reps": 6
                 }
               ],
               "createdAt": "2026-09-21T11:49:29.525Z",
-              "updatedAt": "2026-09-21T11:49:29.525Z"
+              "updatedAt": "2026-09-21T12:09:09.482Z"
             },
             {
               "id": "0fa4f074-dbc8-4fab-ae65-c3b29e9f7f91",
@@ -3637,7 +3643,7 @@
         }
       ],
       "createdAt": "2026-09-21T11:49:29.523Z",
-      "updatedAt": "2026-09-21T12:05:15.330Z",
+      "updatedAt": "2026-09-21T12:09:09.482Z",
       "completedAt": null,
       "deletedAt": null
     }
