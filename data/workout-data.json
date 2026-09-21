@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1366,
+  "dataRevision": 1372,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-21T12:26:46.685Z",
+  "updatedAt": "2026-09-21T12:30:35.257Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -3371,7 +3371,7 @@
       "id": "3999bb77-5d74-4069-acba-b1e554f8fed0",
       "name": "Chest and Arms",
       "workoutDate": "2026-09-21",
-      "status": "in_progress",
+      "status": "completed",
       "templateId": "f8a85d70-fc4b-4ee6-9f6d-96eba17b0277",
       "note": null,
       "exercises": [
@@ -3637,26 +3637,26 @@
               "id": "d13b1a2d-b239-4634-b95e-98d36dbc4873",
               "position": 2,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
                 {
                   "id": "82f95218-30eb-4181-bdf6-a65ca869dd96",
                   "position": 0,
-                  "weightKg": 12,
-                  "reps": 6
+                  "weightKg": 10,
+                  "reps": 5
                 }
               ],
               "createdAt": "2026-09-21T12:26:46.685Z",
-              "updatedAt": "2026-09-21T12:26:46.685Z"
+              "updatedAt": "2026-09-21T12:30:30.233Z"
             }
           ]
         }
       ],
       "createdAt": "2026-09-21T11:49:29.523Z",
-      "updatedAt": "2026-09-21T12:26:46.685Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-21T12:30:35.257Z",
+      "completedAt": "2026-09-21T12:30:35.257Z",
       "deletedAt": null
     }
   ],
@@ -3783,6 +3783,14 @@
       "kind": "override",
       "createdAt": "2026-09-14T17:59:27.274Z",
       "updatedAt": "2026-09-19T09:27:04.647Z"
+    },
+    {
+      "id": "weekly-2026-09-21",
+      "weekStartDate": "2026-09-21",
+      "target": 3,
+      "kind": "snapshot",
+      "createdAt": "2026-09-21T12:30:35.257Z",
+      "updatedAt": "2026-09-21T12:30:35.257Z"
     }
   ]
 }
