@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1356,
+  "dataRevision": 1366,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-21T12:22:46.601Z",
+  "updatedAt": "2026-09-21T12:26:46.685Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -3613,7 +3613,7 @@
               "id": "a97ed6e6-6aee-481f-a7fe-6ae3eb43bc68",
               "position": 1,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
@@ -3621,17 +3621,41 @@
                   "id": "0eae8897-8f00-4d60-9e2c-114f2fb35fce",
                   "position": 0,
                   "weightKg": 12,
-                  "reps": 10
+                  "reps": 6
+                },
+                {
+                  "id": "8c812888-043a-4c04-a28e-90c637fad58a",
+                  "position": 1,
+                  "weightKg": 10,
+                  "reps": 4
                 }
               ],
               "createdAt": "2026-09-21T12:22:46.601Z",
-              "updatedAt": "2026-09-21T12:22:46.601Z"
+              "updatedAt": "2026-09-21T12:26:45.679Z"
+            },
+            {
+              "id": "d13b1a2d-b239-4634-b95e-98d36dbc4873",
+              "position": 2,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "82f95218-30eb-4181-bdf6-a65ca869dd96",
+                  "position": 0,
+                  "weightKg": 12,
+                  "reps": 6
+                }
+              ],
+              "createdAt": "2026-09-21T12:26:46.685Z",
+              "updatedAt": "2026-09-21T12:26:46.685Z"
             }
           ]
         }
       ],
       "createdAt": "2026-09-21T11:49:29.523Z",
-      "updatedAt": "2026-09-21T12:22:46.601Z",
+      "updatedAt": "2026-09-21T12:26:46.685Z",
       "completedAt": null,
       "deletedAt": null
     }
