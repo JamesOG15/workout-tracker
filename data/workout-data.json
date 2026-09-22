@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1374,
+  "dataRevision": 1376,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-22T06:47:02.976Z",
+  "updatedAt": "2026-09-22T17:35:13.297Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -3657,6 +3657,30 @@
       "createdAt": "2026-09-21T11:49:29.523Z",
       "updatedAt": "2026-09-21T12:30:35.271Z",
       "completedAt": "2026-09-21T12:30:35.271Z",
+      "deletedAt": null
+    },
+    {
+      "id": "e1c885c5-5a03-438f-80ac-8a226ca28c18",
+      "name": "Back and legs?",
+      "workoutDate": "2026-09-22",
+      "status": "in_progress",
+      "templateId": null,
+      "note": null,
+      "exercises": [
+        {
+          "id": "ac11ce33-4c33-4204-8612-080e3ca3e74d",
+          "exerciseId": "d5cd4102-332f-4ac7-92ca-501f20ff1f2a",
+          "position": 0,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": []
+        }
+      ],
+      "createdAt": "2026-09-22T17:35:09.765Z",
+      "updatedAt": "2026-09-22T17:35:13.297Z",
+      "completedAt": null,
       "deletedAt": null
     }
   ],
