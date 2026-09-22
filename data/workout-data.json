@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1428,
+  "dataRevision": 1430,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-22T17:58:49.838Z",
+  "updatedAt": "2026-09-22T18:01:35.464Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -3843,7 +3843,7 @@
               "id": "b117bfe8-37b0-4bec-93cb-a3735c07432b",
               "position": 1,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
@@ -3855,13 +3855,31 @@
                 }
               ],
               "createdAt": "2026-09-22T17:58:49.838Z",
-              "updatedAt": "2026-09-22T17:58:49.838Z"
+              "updatedAt": "2026-09-22T18:01:34.755Z"
+            },
+            {
+              "id": "04758dc0-d995-4377-baab-8b04ff15eb98",
+              "position": 2,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "bb0a7e41-a5ac-4c43-8282-bce8dbfdccb2",
+                  "position": 0,
+                  "weightKg": 93,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-09-22T18:01:35.464Z",
+              "updatedAt": "2026-09-22T18:01:35.464Z"
             }
           ]
         }
       ],
       "createdAt": "2026-09-22T17:35:09.765Z",
-      "updatedAt": "2026-09-22T17:58:49.838Z",
+      "updatedAt": "2026-09-22T18:01:35.464Z",
       "completedAt": null,
       "deletedAt": null
     }
