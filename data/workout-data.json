@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1432,
+  "dataRevision": 1433,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-22T18:04:39.460Z",
+  "updatedAt": "2026-09-22T18:04:39.472Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -3879,8 +3879,8 @@
         }
       ],
       "createdAt": "2026-09-22T17:35:09.765Z",
-      "updatedAt": "2026-09-22T18:04:39.460Z",
-      "completedAt": "2026-09-22T18:04:39.460Z",
+      "updatedAt": "2026-09-22T18:04:39.472Z",
+      "completedAt": "2026-09-22T18:04:39.472Z",
       "deletedAt": null
     }
   ],
