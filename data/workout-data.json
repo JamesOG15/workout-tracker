@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1400,
+  "dataRevision": 1409,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-22T17:44:29.881Z",
+  "updatedAt": "2026-09-22T17:48:06.266Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -304,6 +304,15 @@
       "isArchived": false,
       "createdAt": "2026-09-12T12:58:51.537Z",
       "updatedAt": "2026-09-12T12:58:51.537Z"
+    },
+    {
+      "id": "599f30cb-92b0-452c-a97c-52145cb0749e",
+      "name": "Rear Delt Machine",
+      "muscleGroupId": "7c75e2d5-6f54-47ac-a8a6-5b8aaa21ea85",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-09-22T17:47:40.723Z",
+      "updatedAt": "2026-09-22T17:47:40.723Z"
     }
   ],
   "templates": [
@@ -3737,10 +3746,57 @@
               "updatedAt": "2026-09-22T17:44:29.881Z"
             }
           ]
+        },
+        {
+          "id": "2bbccdbc-f77e-458c-a6bd-b33f710f0b4a",
+          "exerciseId": "599f30cb-92b0-452c-a97c-52145cb0749e",
+          "position": 1,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "9eb1463c-ef4d-4d88-90af-26d3c9bf22cb",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "8f370cff-7135-489b-a655-3aecf7c54cae",
+                  "position": 0,
+                  "weightKg": 39,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-09-22T17:47:58.992Z",
+              "updatedAt": "2026-09-22T17:48:03.564Z"
+            },
+            {
+              "id": "c206ef45-a47b-4ae0-93fc-08aa0b28e4e1",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "54ee9412-2052-4133-a783-ae6acc63bc35",
+                  "position": 0,
+                  "weightKg": 39,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-09-22T17:48:06.266Z",
+              "updatedAt": "2026-09-22T17:48:06.266Z"
+            }
+          ]
         }
       ],
       "createdAt": "2026-09-22T17:35:09.765Z",
-      "updatedAt": "2026-09-22T17:44:29.881Z",
+      "updatedAt": "2026-09-22T17:48:06.266Z",
       "completedAt": null,
       "deletedAt": null
     }
