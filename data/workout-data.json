@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1497,
+  "dataRevision": 1510,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-30T17:44:01.052Z",
+  "updatedAt": "2026-09-30T17:51:50.386Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -3887,7 +3887,7 @@
       "id": "a5e3dcb2-e43c-46c6-a265-90297224d96d",
       "name": "Chest and arms",
       "workoutDate": "2026-09-30",
-      "status": "in_progress",
+      "status": "completed",
       "templateId": null,
       "note": null,
       "exercises": [
@@ -3993,7 +3993,7 @@
               "id": "a2455126-bab0-42ac-854f-1180720acaa1",
               "position": 1,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
@@ -4001,18 +4001,36 @@
                   "id": "5eadbde3-7364-416b-9c74-d001fb6a8d67",
                   "position": 0,
                   "weightKg": 12,
-                  "reps": 10
+                  "reps": 6
                 }
               ],
               "createdAt": "2026-09-30T17:44:01.052Z",
-              "updatedAt": "2026-09-30T17:44:01.052Z"
+              "updatedAt": "2026-09-30T17:51:31.858Z"
+            },
+            {
+              "id": "8f6e81f1-1015-408f-93f2-c96c986cf682",
+              "position": 2,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "9bc95113-c7bf-4ca5-b1ac-1d9a1cc8a2a6",
+                  "position": 0,
+                  "weightKg": 10,
+                  "reps": 8
+                }
+              ],
+              "createdAt": "2026-09-30T17:51:32.407Z",
+              "updatedAt": "2026-09-30T17:51:42.626Z"
             }
           ]
         }
       ],
       "createdAt": "2026-09-30T17:27:31.826Z",
-      "updatedAt": "2026-09-30T17:44:01.052Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-30T17:51:50.386Z",
+      "completedAt": "2026-09-30T17:51:50.386Z",
       "deletedAt": null
     }
   ],
@@ -4183,6 +4201,14 @@
       "kind": "snapshot",
       "createdAt": "2026-09-21T12:30:35.257Z",
       "updatedAt": "2026-09-21T12:30:35.257Z"
+    },
+    {
+      "id": "weekly-2026-09-28",
+      "weekStartDate": "2026-09-28",
+      "target": 3,
+      "kind": "snapshot",
+      "createdAt": "2026-09-30T17:51:50.386Z",
+      "updatedAt": "2026-09-30T17:51:50.386Z"
     }
   ]
 }
