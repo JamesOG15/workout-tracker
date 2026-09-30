@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1443,
+  "dataRevision": 1490,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-09-30T17:29:29.750Z",
+  "updatedAt": "2026-09-30T17:34:32.468Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -3922,25 +3922,49 @@
               "id": "edfa33fc-2aea-43e7-a6f7-e48b096e83ef",
               "position": 1,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
-              "note": null,
+              "note": "Think I got 6, not sure",
               "segments": [
                 {
                   "id": "917884b4-a423-477e-9bb2-e6951730f591",
                   "position": 0,
                   "weightKg": 28,
-                  "reps": 9
+                  "reps": 6
+                },
+                {
+                  "id": "939c98cf-8c18-49a7-a3b8-99f833b54368",
+                  "position": 1,
+                  "weightKg": 24,
+                  "reps": 2
                 }
               ],
               "createdAt": "2026-09-30T17:29:29.750Z",
-              "updatedAt": "2026-09-30T17:29:29.750Z"
+              "updatedAt": "2026-09-30T17:34:21.926Z"
+            },
+            {
+              "id": "19271ba6-5365-491b-aec9-41518b7f9334",
+              "position": 2,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "5783dfed-ccd3-4371-879b-1fc233b9fcd7",
+                  "position": 0,
+                  "weightKg": 28,
+                  "reps": 6
+                }
+              ],
+              "createdAt": "2026-09-30T17:34:32.468Z",
+              "updatedAt": "2026-09-30T17:34:32.468Z"
             }
           ]
         }
       ],
       "createdAt": "2026-09-30T17:27:31.826Z",
-      "updatedAt": "2026-09-30T17:29:29.750Z",
+      "updatedAt": "2026-09-30T17:34:32.468Z",
       "completedAt": null,
       "deletedAt": null
     }
