@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1602,
+  "dataRevision": 1616,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-10-05T12:05:20.339Z",
+  "updatedAt": "2026-10-05T12:18:40.735Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -4037,7 +4037,7 @@
       "id": "7c0833ac-d6c7-4e89-9863-dce901e1ca40",
       "name": "Workout",
       "workoutDate": "2026-10-05",
-      "status": "in_progress",
+      "status": "completed",
       "templateId": null,
       "note": null,
       "exercises": [
@@ -4303,7 +4303,7 @@
               "id": "cd20acd1-7431-4af7-8186-30618fa3e202",
               "position": 2,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
@@ -4311,18 +4311,24 @@
                   "id": "a6f18a18-ea0f-446f-b9e8-8dcc28d41f31",
                   "position": 0,
                   "weightKg": 7.9,
-                  "reps": 8
+                  "reps": 5
+                },
+                {
+                  "id": "7f93add4-ac52-4d99-af16-1a8a241e7fdd",
+                  "position": 1,
+                  "weightKg": 5.7,
+                  "reps": 3
                 }
               ],
               "createdAt": "2026-10-05T12:05:20.339Z",
-              "updatedAt": "2026-10-05T12:05:20.339Z"
+              "updatedAt": "2026-10-05T12:09:48.287Z"
             }
           ]
         }
       ],
       "createdAt": "2026-10-05T11:27:06.031Z",
-      "updatedAt": "2026-10-05T12:05:20.339Z",
-      "completedAt": null,
+      "updatedAt": "2026-10-05T12:18:40.735Z",
+      "completedAt": "2026-10-05T12:18:40.735Z",
       "deletedAt": null
     }
   ],
@@ -4501,6 +4507,14 @@
       "kind": "snapshot",
       "createdAt": "2026-09-30T17:51:50.386Z",
       "updatedAt": "2026-09-30T17:51:50.386Z"
+    },
+    {
+      "id": "weekly-2026-10-05",
+      "weekStartDate": "2026-10-05",
+      "target": 3,
+      "kind": "snapshot",
+      "createdAt": "2026-10-05T12:18:40.718Z",
+      "updatedAt": "2026-10-05T12:18:40.718Z"
     }
   ]
 }
