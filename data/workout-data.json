@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1666,
+  "dataRevision": 1667,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-10-19T11:26:39.709Z",
+  "updatedAt": "2026-10-19T11:28:04.593Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -327,10 +327,10 @@
       "id": "480efe81-db2e-4253-ae7c-41ec27189c93",
       "name": "Machine Chest Press",
       "muscleGroupId": "35134dec-908b-4b12-9d0a-7f4fbf95cb75",
-      "permanentNote": null,
+      "permanentNote": "On 6 seat height",
       "isArchived": false,
       "createdAt": "2026-10-19T11:25:59.845Z",
-      "updatedAt": "2026-10-19T11:26:25.644Z"
+      "updatedAt": "2026-10-19T11:28:04.593Z"
     }
   ],
   "templates": [
