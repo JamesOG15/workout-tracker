@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1658,
+  "dataRevision": 1666,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-10-19T11:23:35.635Z",
+  "updatedAt": "2026-10-19T11:26:39.709Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -316,12 +316,21 @@
     },
     {
       "id": "1c25de73-2178-4a64-b5b2-977f101d81f7",
-      "name": "Machine shoulder press",
+      "name": "Machine Shoulder Press",
       "muscleGroupId": "d048ddd6-7c9e-43bf-8527-5f30f78da724",
       "permanentNote": null,
       "isArchived": false,
       "createdAt": "2026-10-19T11:22:28.328Z",
-      "updatedAt": "2026-10-19T11:22:28.328Z"
+      "updatedAt": "2026-10-19T11:26:39.709Z"
+    },
+    {
+      "id": "480efe81-db2e-4253-ae7c-41ec27189c93",
+      "name": "Machine Chest Press",
+      "muscleGroupId": "35134dec-908b-4b12-9d0a-7f4fbf95cb75",
+      "permanentNote": null,
+      "isArchived": false,
+      "createdAt": "2026-10-19T11:25:59.845Z",
+      "updatedAt": "2026-10-19T11:26:25.644Z"
     }
   ],
   "templates": [
@@ -4464,7 +4473,7 @@
               "id": "cf385874-6d90-46c1-b3f2-87b68c2a9bc7",
               "position": 1,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
@@ -4472,17 +4481,27 @@
                   "id": "5f421dbe-ceba-4282-9eb3-65ee4f637651",
                   "position": 0,
                   "weightKg": 32,
-                  "reps": 10
+                  "reps": 5
                 }
               ],
               "createdAt": "2026-10-19T11:23:35.635Z",
-              "updatedAt": "2026-10-19T11:23:35.635Z"
+              "updatedAt": "2026-10-19T11:25:45.150Z"
             }
           ]
+        },
+        {
+          "id": "8ff01788-b1ae-4497-b9f7-0acdf5463cb0",
+          "exerciseId": "480efe81-db2e-4253-ae7c-41ec27189c93",
+          "position": 1,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": []
         }
       ],
       "createdAt": "2026-10-19T11:22:18.180Z",
-      "updatedAt": "2026-10-19T11:23:35.635Z",
+      "updatedAt": "2026-10-19T11:26:09.689Z",
       "completedAt": null,
       "deletedAt": null
     }
