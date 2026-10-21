@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1692,
+  "dataRevision": 1701,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-10-21T17:30:55.617Z",
+  "updatedAt": "2026-10-21T17:35:53.573Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -4550,25 +4550,54 @@
               "id": "9ab06ec0-93a5-47f2-95ad-3098597547d1",
               "position": 2,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
                 {
                   "id": "d386c7f5-67ce-438c-951c-d7339947c1ea",
                   "position": 0,
-                  "weightKg": 14,
-                  "reps": 7
+                  "weightKg": 18,
+                  "reps": 8
                 }
               ],
               "createdAt": "2026-10-21T17:30:55.617Z",
-              "updatedAt": "2026-10-21T17:30:55.617Z"
+              "updatedAt": "2026-10-21T17:35:42.419Z"
+            }
+          ]
+        },
+        {
+          "id": "db208c06-9335-4844-8d4e-12f594f53cfc",
+          "exerciseId": "fa28aa8e-dc79-4701-a533-8ced71f4c364",
+          "position": 1,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "8b716822-f020-43fa-95a6-ccbcffcccd97",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "e98cd272-d122-4a4c-97ba-1b94ee99b334",
+                  "position": 0,
+                  "weightKg": 12,
+                  "reps": 10
+                }
+              ],
+              "createdAt": "2026-10-21T17:35:53.573Z",
+              "updatedAt": "2026-10-21T17:35:53.573Z"
             }
           ]
         }
       ],
       "createdAt": "2026-10-21T17:23:52.175Z",
-      "updatedAt": "2026-10-21T17:30:55.617Z",
+      "updatedAt": "2026-10-21T17:35:53.573Z",
       "completedAt": null,
       "deletedAt": null
     }
