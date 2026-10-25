@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1762,
+  "dataRevision": 1776,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-10-25T11:32:36.675Z",
+  "updatedAt": "2026-10-25T11:32:48.638Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -4707,7 +4707,7 @@
               "setType": "working",
               "isCompleted": true,
               "rir": null,
-              "note": "Usi",
+              "note": "Using straps",
               "segments": [
                 {
                   "id": "8da9c15a-dc9e-4623-963e-c066104ce05b",
@@ -4717,13 +4717,31 @@
                 }
               ],
               "createdAt": "2026-10-25T11:32:15.692Z",
-              "updatedAt": "2026-10-25T11:32:36.675Z"
+              "updatedAt": "2026-10-25T11:32:43.599Z"
+            },
+            {
+              "id": "8b02096a-e4cc-4b9c-a71a-e4548dcda85f",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "e4a20109-bcf9-4264-8854-20a86c44be49",
+                  "position": 0,
+                  "weightKg": 14,
+                  "reps": 8
+                }
+              ],
+              "createdAt": "2026-10-25T11:32:45.712Z",
+              "updatedAt": "2026-10-25T11:32:48.638Z"
             }
           ]
         }
       ],
       "createdAt": "2026-10-25T11:14:58.505Z",
-      "updatedAt": "2026-10-25T11:32:23.534Z",
+      "updatedAt": "2026-10-25T11:32:45.712Z",
       "completedAt": null,
       "deletedAt": null
     }
