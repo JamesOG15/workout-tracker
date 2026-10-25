@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1817,
+  "dataRevision": 1828,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-10-25T11:54:58.293Z",
+  "updatedAt": "2026-10-25T20:48:20.673Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -4623,7 +4623,7 @@
       "id": "66d9ff33-5f81-4587-b84c-b97fa529694c",
       "name": "Workout",
       "workoutDate": "2026-10-25",
-      "status": "in_progress",
+      "status": "completed",
       "templateId": null,
       "note": null,
       "exercises": [
@@ -4841,7 +4841,7 @@
               "id": "14b113f2-0a36-4e7e-b7cc-53d6aa794234",
               "position": 1,
               "setType": "working",
-              "isCompleted": false,
+              "isCompleted": true,
               "rir": null,
               "note": null,
               "segments": [
@@ -4850,17 +4850,23 @@
                   "position": 0,
                   "weightKg": 9,
                   "reps": 5
+                },
+                {
+                  "id": "916eb880-cf5b-48e8-9ed8-ee665bdcd724",
+                  "position": 1,
+                  "weightKg": 4.5,
+                  "reps": 8
                 }
               ],
               "createdAt": "2026-10-25T11:52:01.858Z",
-              "updatedAt": "2026-10-25T11:52:01.858Z"
+              "updatedAt": "2026-10-25T20:48:19.347Z"
             }
           ]
         }
       ],
       "createdAt": "2026-10-25T11:14:58.505Z",
-      "updatedAt": "2026-10-25T11:54:58.293Z",
-      "completedAt": null,
+      "updatedAt": "2026-10-25T20:48:20.673Z",
+      "completedAt": "2026-10-25T20:48:20.673Z",
       "deletedAt": null
     }
   ],
