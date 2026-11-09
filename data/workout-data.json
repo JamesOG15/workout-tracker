@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1909,
+  "dataRevision": 1910,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-11-09T18:49:37.863Z",
+  "updatedAt": "2026-11-09T18:51:00.806Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -5134,10 +5134,20 @@
               "updatedAt": "2026-11-09T18:49:37.863Z"
             }
           ]
+        },
+        {
+          "id": "8f01c0bc-2792-44de-b466-0b42a2df2c42",
+          "exerciseId": "fa28aa8e-dc79-4701-a533-8ced71f4c364",
+          "position": 1,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": []
         }
       ],
       "createdAt": "2026-11-09T18:45:11.859Z",
-      "updatedAt": "2026-11-09T18:49:37.863Z",
+      "updatedAt": "2026-11-09T18:51:00.806Z",
       "completedAt": null,
       "deletedAt": null
     }
