@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "dataRevision": 1926,
+  "dataRevision": 1933,
   "createdAt": "2026-07-19T20:46:48.193Z",
-  "updatedAt": "2026-11-09T19:00:11.325Z",
+  "updatedAt": "2026-11-16T12:32:30.444Z",
   "settings": {
     "weeklyTarget": 3,
     "weekStartsOn": "monday",
@@ -5204,6 +5204,67 @@
       "createdAt": "2026-11-09T18:45:11.859Z",
       "updatedAt": "2026-11-09T19:00:11.325Z",
       "completedAt": "2026-11-09T19:00:11.325Z",
+      "deletedAt": null
+    },
+    {
+      "id": "7110b60b-39f5-4cc0-bd58-8e535e228604",
+      "name": "Workout",
+      "workoutDate": "2026-11-16",
+      "status": "in_progress",
+      "templateId": null,
+      "note": null,
+      "exercises": [
+        {
+          "id": "7e9b6e76-3cd0-4426-b193-3f8e7b681b8f",
+          "exerciseId": "bef5aded-717e-4ac6-a811-09dd82415da8",
+          "position": 0,
+          "note": null,
+          "targetRepMin": null,
+          "targetRepMax": null,
+          "warmUpGuidance": null,
+          "sets": [
+            {
+              "id": "29d01bec-be2a-4028-b5a1-c578a6e70b2c",
+              "position": 0,
+              "setType": "working",
+              "isCompleted": true,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "cd4b4d3a-1d98-4158-bbe1-235f0d294678",
+                  "position": 0,
+                  "weightKg": 30,
+                  "reps": 9
+                }
+              ],
+              "createdAt": "2026-11-16T12:32:24.837Z",
+              "updatedAt": "2026-11-16T12:32:28.113Z"
+            },
+            {
+              "id": "10ed2097-5ce6-4d0f-b3dd-5d766a532893",
+              "position": 1,
+              "setType": "working",
+              "isCompleted": false,
+              "rir": null,
+              "note": null,
+              "segments": [
+                {
+                  "id": "2eba6e9a-f033-46db-a172-3797426dde58",
+                  "position": 0,
+                  "weightKg": 30,
+                  "reps": 9
+                }
+              ],
+              "createdAt": "2026-11-16T12:32:30.444Z",
+              "updatedAt": "2026-11-16T12:32:30.444Z"
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-11-16T12:32:11.642Z",
+      "updatedAt": "2026-11-16T12:32:30.444Z",
+      "completedAt": null,
       "deletedAt": null
     }
   ],
